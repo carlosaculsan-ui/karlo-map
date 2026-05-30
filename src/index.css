@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+@theme {
+  --font-cinzel: 'Cinzel', serif;
+  --font-inter: 'Inter', sans-serif;
+}
+
+/* ─── Keyframes ─────────────────────────────────────────────────── */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.15; transform: scale(0.8); }
+  50%       { opacity: 1;    transform: scale(1);   }
+}
+
+@keyframes driftA {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  40%       { transform: translate(22px, -28px) scale(1.09); }
+  70%       { transform: translate(-14px, 12px) scale(0.93); }
+}
+
+@keyframes driftB {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  35%       { transform: translate(-18px, 20px) scale(1.06); }
+  65%       { transform: translate(10px, -14px) scale(0.94); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.07; }
+  50%       { opacity: 0.22; }
+}
+
+@keyframes markerPulse {
+  0%   { transform: scale(0.4); opacity: 0.9; }
+  80%  { opacity: 0; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
+/* ─── Timeline slider ───────────────────────────────────────────── */
+
+input[type='range'].timeline-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  outline: none;
+  height: 4px;
+  border-radius: 9999px;
+  width: 100%;
+  background: transparent;
+}
+
+input[type='range'].timeline-slider::-webkit-slider-runnable-track {
+  background: linear-gradient(
+    to right,
+    #f97316 var(--fill, 0%),
+    rgba(255, 255, 255, 0.1) var(--fill, 0%)
+  );
+  height: 4px;
+  border-radius: 9999px;
+}
+
+input[type='range'].timeline-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #f97316;
+  box-shadow: 0 0 12px rgba(249, 115, 22, 0.8);
+  margin-top: -8px;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+input[type='range'].timeline-slider:active::-webkit-slider-thumb {
+  transform: scale(1.25);
+}
+
+input[type='range'].timeline-slider::-moz-range-track {
+  background: rgba(255, 255, 255, 0.1);
+  height: 4px;
+  border-radius: 9999px;
+}
+
+input[type='range'].timeline-slider::-moz-range-progress {
+  background: #f97316;
+  height: 4px;
+  border-radius: 9999px;
+}
+
+input[type='range'].timeline-slider::-moz-range-thumb {
+  border: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #f97316;
+  box-shadow: 0 0 12px rgba(249, 115, 22, 0.8);
+  cursor: pointer;
+}
+
+/* ─── tsParticles canvas ────────────────────────────────────────── */
+/* The effects canvas is purely decorative — it must not intercept  */
+/* pointer events so the MapLibre map remains fully interactive.     */
+#karlo-map-effects,
+#karlo-map-effects canvas {
+  pointer-events: none !important;
+}
+
+/* ─── Focus & tap highlight reset ──────────────────────────────── */
+/* Remove default browser focus rings — components use custom styles */
+*:focus {
+  outline: none;
+}
+
+/* Kill the blue tap flash on mobile browsers */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ─── Global reset ──────────────────────────────────────────────── */
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Inter', system-ui, sans-serif;
+}
