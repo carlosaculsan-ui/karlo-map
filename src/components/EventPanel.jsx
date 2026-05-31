@@ -1,12 +1,13 @@
 import { useRef } from 'react'
 
+// Mental model: red = conflict · blue = governance · amber = culture/spirit · teal = commerce · purple = disaster · indigo = exploration
 const BADGE = {
   revolution: { bg: 'bg-red-500/20',    text: 'text-red-400',    label: 'Revolution' },
-  war:        { bg: 'bg-orange-500/20', text: 'text-orange-400', label: 'War'        },
+  war:        { bg: 'bg-red-700/20',    text: 'text-red-300',    label: 'War'        },
   disaster:   { bg: 'bg-purple-500/20', text: 'text-purple-400', label: 'Disaster'   },
   politics:   { bg: 'bg-blue-500/20',   text: 'text-blue-400',   label: 'Politics'   },
-  culture:    { bg: 'bg-green-500/20',  text: 'text-green-400',  label: 'Culture'    },
-  religion:   { bg: 'bg-yellow-500/20', text: 'text-yellow-400', label: 'Religion'   },
+  culture:    { bg: 'bg-amber-500/20',  text: 'text-amber-400',  label: 'Culture'    },
+  religion:   { bg: 'bg-amber-300/20',  text: 'text-amber-300',  label: 'Religion'   },
   trade:      { bg: 'bg-teal-500/20',   text: 'text-teal-400',   label: 'Trade'      },
   exploration:{ bg: 'bg-indigo-500/20', text: 'text-indigo-400', label: 'Exploration'},
 }
@@ -99,20 +100,17 @@ export default function EventPanel({ events, open, onClose }) {
                     key={i}
                     className="rounded-xl border border-white/5 bg-white/[0.04] p-4"
                   >
-                    <div className="mb-2 flex items-start justify-between gap-3">
-                      <h3
-                        className="text-sm font-semibold leading-snug text-white"
-                        style={{ fontFamily: "'Cinzel', serif" }}
-                      >
+                    <div className="mb-2.5 flex items-start justify-between gap-3">
+                      <h3 className="text-sm font-bold leading-snug text-white tracking-wide">
                         {event.title}
                       </h3>
                       <span
-                        className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-medium ${badge.bg} ${badge.text}`}
+                        className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-semibold ${badge.bg} ${badge.text}`}
                       >
                         {badge.label}
                       </span>
                     </div>
-                    <p className="text-xs leading-relaxed text-white/45">
+                    <p className="text-xs leading-loose text-white/50">
                       {event.description}
                     </p>
                   </div>
@@ -120,6 +118,7 @@ export default function EventPanel({ events, open, onClose }) {
               })}
             </div>
           )}
+
         </div>
       </div>
     </div>

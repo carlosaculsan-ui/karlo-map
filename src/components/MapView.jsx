@@ -16,11 +16,11 @@ const STYLES = {
 
 const CATEGORY_COLOR = {
   revolution:  '#ef4444',
-  war:         '#f97316',
+  war:         '#dc2626',
   disaster:    '#a855f7',
   politics:    '#3b82f6',
-  culture:     '#22c55e',
-  religion:    '#eab308',
+  culture:     '#f59e0b',
+  religion:    '#fcd34d',
   trade:       '#14b8a6',
   exploration: '#6366f1',
 }
