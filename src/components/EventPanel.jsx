@@ -25,7 +25,7 @@ export default function EventPanel({ events, open, onClose }) {
         }}
       >
         {/* Mobile drag handle */}
-        <div className="flex justify-center pt-2.5 pb-0.5 md:hidden">
+        <div className="flex justify-center pt-1.5 pb-0 md:hidden">
           <div className="h-1 w-10 rounded-full bg-white/20" />
         </div>
 
@@ -33,7 +33,7 @@ export default function EventPanel({ events, open, onClose }) {
         <div className="absolute left-6 right-6 top-0 h-px rounded-full bg-gradient-to-r from-transparent via-orange-500/40 to-transparent" />
 
         {/* Header */}
-        <div className="flex shrink-0 items-center justify-between px-4 pt-4 pb-3 border-b border-white/5">
+        <div className="flex shrink-0 items-center justify-between px-4 pt-1.5 pb-1.5 md:pt-4 md:pb-3 border-b border-white/5">
           <span
             className="select-none text-[11px] tracking-[0.45em] text-orange-400/80 uppercase"
             style={{ fontFamily: "'Cinzel', serif" }}

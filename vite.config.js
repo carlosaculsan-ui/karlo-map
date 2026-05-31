@@ -9,7 +9,7 @@ export default defineConfig({
     tailwindcss(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['Icon.png'],
+      includeAssets: ['Logo.png'],
       manifest: {
         name: 'Karlo Map',
         short_name: 'Karlo Map',
@@ -22,7 +22,7 @@ export default defineConfig({
         start_url: '/',
         icons: [
           {
-            src: 'Icon.png',
+            src: 'Logo.png',
             sizes: 'any',
             type: 'image/png',
             purpose: 'any maskable',

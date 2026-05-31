@@ -97,33 +97,45 @@ function addRouteLayersToMap(map, era) {
 
 // ── Marker DOM builder ────────────────────────────────────────────────────────
 
-function makeMarkerEl(category) {
-  const color = CATEGORY_COLOR[category] ?? '#6b7280'
-
+function makeMarkerEl() {
   const wrapper = document.createElement('div')
   Object.assign(wrapper.style, {
-    width: '28px', height: '38px', cursor: 'pointer',
+    width: '44px', height: '56px', cursor: 'pointer',
   })
 
-  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-  svg.setAttribute('width', '28')
-  svg.setAttribute('height', '38')
-  svg.setAttribute('viewBox', '0 0 28 38')
-  svg.setAttribute('fill', 'none')
-  Object.assign(svg.style, {
-    filter: `drop-shadow(0 3px 10px ${color}99)`,
-    animation: 'pinFloat 3s ease-in-out infinite',
-  })
-
-  svg.innerHTML = `
-    <path d="M14 2C8.477 2 4 6.477 4 13C4 21.5 14 36 14 36C14 36 24 21.5 24 13C24 6.477 19.523 2 14 2Z"
-          fill="${color}dd" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
-    <circle cx="14" cy="13" r="5" fill="rgba(255,255,255,0.15)"/>
-    <circle cx="14" cy="13" r="3" fill="rgba(255,255,255,0.85)"/>
-    <circle cx="14" cy="13" r="1.5" fill="${color}"/>
+  wrapper.innerHTML = `
+    <svg width="44" height="56" viewBox="0 0 44 56" fill="none" xmlns="http://www.w3.org/2000/svg"
+         style="filter:drop-shadow(0 4px 12px rgba(0,0,0,0.6));animation:pinFloat 3s ease-in-out infinite;display:block;">
+      <!-- Pin body -->
+      <path d="M22 2C12.06 2 4 10.06 4 20C4 33.5 22 54 22 54C22 54 40 33.5 40 20C40 10.06 31.94 2 22 2Z"
+            fill="#0d1420" stroke="#c9970a" stroke-width="1.8"/>
+      <!-- Outer ring -->
+      <circle cx="22" cy="20" r="14.5" fill="none" stroke="#c9970a" stroke-width="1.2"/>
+      <!-- Inner dashed ring -->
+      <circle cx="22" cy="20" r="11" fill="none" stroke="#9a720a" stroke-width="0.6" stroke-dasharray="2.5 2.5"/>
+      <!-- N point (bright, large) -->
+      <polygon points="22,7 24,18 22,16 20,18" fill="#e8b020"/>
+      <!-- S point -->
+      <polygon points="22,33 24,22 22,24 20,22" fill="#9a720a"/>
+      <!-- E point -->
+      <polygon points="35,20 24,18 26,20 24,22" fill="#9a720a"/>
+      <!-- W point -->
+      <polygon points="9,20 20,18 18,20 20,22" fill="#9a720a"/>
+      <!-- NE diagonal -->
+      <polygon points="32,10 24,18 25.5,16.5" fill="#c9970a" opacity="0.75"/>
+      <!-- NW diagonal -->
+      <polygon points="12,10 20,18 18.5,16.5" fill="#c9970a" opacity="0.75"/>
+      <!-- SE diagonal -->
+      <polygon points="32,30 24,22 25.5,23.5" fill="#c9970a" opacity="0.75"/>
+      <!-- SW diagonal -->
+      <polygon points="12,30 20,22 18.5,23.5" fill="#c9970a" opacity="0.75"/>
+      <!-- Center jewel -->
+      <circle cx="22" cy="20" r="3.2" fill="#c9970a"/>
+      <circle cx="22" cy="20" r="1.8" fill="#0d1420"/>
+      <circle cx="22" cy="20" r="0.9" fill="#e8b020"/>
+    </svg>
   `
 
-  wrapper.appendChild(svg)
   return wrapper
 }
 
@@ -276,7 +288,7 @@ export default function MapView({ selectedYear, onYearChange, onOpenQuiz }) {
     }
 
     yearEvts.forEach(event => {
-      const el = makeMarkerEl(event.category)
+      const el = makeMarkerEl()
       el.addEventListener('click', () => setPanelOpen(true))
       const marker = new maplibregl.Marker({ element: el })
         .setLngLat([event.lng, event.lat])

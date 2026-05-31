@@ -39,6 +39,14 @@
   50%       { opacity: 0.22; }
 }
 
+.custom-map-marker,
+.custom-map-marker * {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
 @keyframes markerPulse {
   0%   { transform: scale(0.4); opacity: 0.9; }
   80%  { opacity: 0; }

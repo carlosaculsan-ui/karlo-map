@@ -78,9 +78,9 @@ export default function IntroScreen({ onBegin }) {
 
         {/* Logo */}
         <img
-          src="/Icon.png"
+          src="/Logo.png"
           alt="Karlo Map logo"
-          className="h-24 w-24 rounded-2xl object-contain sm:h-32 sm:w-32"
+          className="h-24 w-24 sm:h-32 sm:w-32"
           style={{
             animation: 'fadeInUp 1s 0.35s ease forwards',
             opacity: 0,
