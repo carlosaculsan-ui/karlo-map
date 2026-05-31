@@ -168,13 +168,16 @@ export default function MapView({ selectedYear, onYearChange }) {
   const [mapTheme,  setMapTheme]  = useState('explore')
   const [eraInfo,   setEraInfo]   = useState(null)   // era object currently shown in popup
 
-  // ── Era popup dismissal ───────────────────────────────────────────────────
+  // ── Global Escape handler — closes whichever overlay is topmost ──────────
   useEffect(() => {
-    if (!eraInfo) return
-    const onKey = (e) => { if (e.key === 'Escape') setEraInfo(null) }
+    const onKey = (e) => {
+      if (e.key !== 'Escape') return
+      if (eraInfo)    { setEraInfo(null);    return }
+      if (panelOpen)  { setPanelOpen(false); return }
+    }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [eraInfo])
+  }, [eraInfo, panelOpen])
 
   // ── Init map ──────────────────────────────────────────────────────────────
   useEffect(() => {

@@ -62,10 +62,11 @@ input[type='range'].timeline-slider {
   appearance: none;
   cursor: pointer;
   outline: none;
-  height: 4px;
+  height: 24px;
   border-radius: 9999px;
   width: 100%;
   background: transparent;
+  touch-action: none;
 }
 
 input[type='range'].timeline-slider::-webkit-slider-runnable-track {
@@ -85,7 +86,6 @@ input[type='range'].timeline-slider::-webkit-slider-thumb {
   border-radius: 50%;
   background: #f97316;
   box-shadow: 0 0 12px rgba(249, 115, 22, 0.8);
-  margin-top: -8px;
   cursor: pointer;
   transition: transform 0.1s ease;
 }
