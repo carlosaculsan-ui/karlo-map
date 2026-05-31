@@ -6,20 +6,31 @@ const MAX = 2026
 const TICKS = [900, 1200, 1521, 1800, 1898, 2026]
 
 export default function YearSlider({ year, onChange, hasEvents }) {
-  const [editing, setEditing]   = useState(false)
-  const [inputVal, setInputVal] = useState('')
+  const [inputVal, setInputVal] = useState(String(year))
+  const [error, setError]       = useState(false)
+  const [focused, setFocused]   = useState(false)
   const inputId = useId()
+
+  // Keep input display in sync with slider/arrow changes, but not while user is typing
+  if (!focused && inputVal !== String(year)) {
+    setInputVal(String(year))
+  }
 
   const progress = ((year - MIN) / (MAX - MIN)) * 100
 
-  const commitInput = () => {
-    const parsed = parseInt(inputVal, 10)
-    if (!isNaN(parsed)) {
-      onChange(Math.min(MAX, Math.max(MIN, parsed)))
+  const commit = (raw) => {
+    const parsed = parseInt(raw, 10)
+    if (isNaN(parsed) || parsed < MIN || parsed > MAX) {
+      setError(true)
+      setInputVal(String(year))
+      setTimeout(() => setError(false), 600)
+      return
     }
-    setInputVal('')
-    setEditing(false)
+    setError(false)
+    onChange(parsed)
+    setInputVal(String(parsed))
   }
+
 
   return (
     <div
@@ -29,46 +40,42 @@ export default function YearSlider({ year, onChange, hasEvents }) {
       <div className="mx-auto max-w-2xl px-5 py-4">
         <div className="flex items-center gap-4">
 
-          {/* Left: year label + year number */}
+          {/* Left: year input */}
           <div className="w-28 shrink-0">
-            <div className="mb-1 flex items-center gap-1.5">
-              <span className="select-none text-[10px] tracking-[0.35em] text-white/30 uppercase">
+            <div className="mb-1.5 flex items-center gap-1.5">
+              <label
+                htmlFor={inputId}
+                className="select-none text-[10px] tracking-[0.35em] text-white/30 uppercase cursor-pointer"
+              >
                 Year
-              </span>
+              </label>
               {hasEvents && (
                 <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-orange-500" />
               )}
             </div>
-
-            {editing ? (
-              <input
-                id={inputId}
-                type="number"
-                value={inputVal}
-                min={MIN}
-                max={MAX}
-                autoFocus
-                onChange={(e) => setInputVal(e.target.value)}
-                onBlur={commitInput}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter')  commitInput()
-                  if (e.key === 'Escape') { setInputVal(''); setEditing(false) }
-                }}
-                className="w-full rounded-lg bg-white/5 px-2 py-0.5 text-center font-mono text-3xl font-bold text-orange-300 ring-1 ring-orange-400/40 outline-none transition-shadow focus:ring-orange-400/70 [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
-              />
-            ) : (
-              <button
-                onClick={() => { setInputVal(String(year)); setEditing(true) }}
-                className="flex select-none flex-col focus:outline-none"
-              >
-                <span className="font-mono text-3xl font-bold text-orange-300 transition-colors hover:text-orange-200">
-                  {year}
-                </span>
-                <span className="text-[8px] tracking-[0.3em] text-white/20 uppercase">
-                  tap to set
-                </span>
-              </button>
-            )}
+            <input
+              id={inputId}
+              type="number"
+              min={MIN}
+              max={MAX}
+              value={inputVal}
+              onChange={(e) => setInputVal(e.target.value)}
+              onFocus={(e) => { setFocused(true); e.target.select() }}
+              onBlur={(e) => { setFocused(false); commit(e.target.value) }}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') { e.target.blur() }
+                if (e.key === 'Escape') { setInputVal(String(year)); setFocused(false); e.target.blur() }
+              }}
+              className={`w-full rounded-lg bg-white/8 px-2 py-1 text-center font-mono text-3xl font-bold outline-none transition-all duration-200
+                [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none
+                ${error
+                  ? 'text-red-400 ring-1 ring-red-500/70'
+                  : 'text-orange-300 ring-1 ring-orange-400/30 hover:ring-orange-400/50 focus:ring-orange-400/70'
+                }`}
+            />
+            <p className={`mt-1 text-center text-[8px] tracking-widest uppercase transition-colors duration-200 ${error ? 'text-red-400/70' : 'text-white/20'}`}>
+              {error ? `${MIN} – ${MAX}` : 'enter year'}
+            </p>
           </div>
 
           {/* Divider */}

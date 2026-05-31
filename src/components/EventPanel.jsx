@@ -11,7 +11,6 @@ const BADGE = {
   exploration:{ bg: 'bg-indigo-500/20', text: 'text-indigo-400', label: 'Exploration'},
 }
 
-// MapView only renders this component when events.length > 0, so no empty state needed.
 export default function EventPanel({ events, open, onClose }) {
   const touchStartY = useRef(0)
 
@@ -67,38 +66,60 @@ export default function EventPanel({ events, open, onClose }) {
           </button>
         </div>
 
-        {/* Scrollable event cards */}
+        {/* Scrollable event cards / empty state */}
         <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 pb-4">
-          <div className="space-y-3">
-            {events.map((event, i) => {
-              const badge = BADGE[event.category] ?? {
-                bg: 'bg-gray-500/20', text: 'text-gray-400', label: event.category,
-              }
-              return (
-                <div
-                  key={i}
-                  className="rounded-xl border border-white/5 bg-white/[0.04] p-4"
-                >
-                  <div className="mb-2 flex items-start justify-between gap-3">
-                    <h3
-                      className="text-sm font-semibold leading-snug text-white"
-                      style={{ fontFamily: "'Cinzel', serif" }}
-                    >
-                      {event.title}
-                    </h3>
-                    <span
-                      className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-medium ${badge.bg} ${badge.text}`}
-                    >
-                      {badge.label}
-                    </span>
+          {events.length === 0 ? (
+            <div className="flex flex-col items-center justify-center gap-3 py-8 text-center">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="text-white/20">
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="12" y1="8" x2="12" y2="12" />
+                  <line x1="12" y1="16" x2="12.01" y2="16" />
+                </svg>
+              </div>
+              <p
+                className="text-[10px] tracking-[0.35em] text-white/25 uppercase"
+                style={{ fontFamily: "'Cinzel', serif" }}
+              >
+                No written records
+              </p>
+              <p className="text-[11px] leading-relaxed text-white/20">
+                No historical records were written during this period.
+                Oral traditions and local memory may still hold this history.
+              </p>
+            </div>
+          ) : (
+            <div className="space-y-3">
+              {events.map((event, i) => {
+                const badge = BADGE[event.category] ?? {
+                  bg: 'bg-gray-500/20', text: 'text-gray-400', label: event.category,
+                }
+                return (
+                  <div
+                    key={i}
+                    className="rounded-xl border border-white/5 bg-white/[0.04] p-4"
+                  >
+                    <div className="mb-2 flex items-start justify-between gap-3">
+                      <h3
+                        className="text-sm font-semibold leading-snug text-white"
+                        style={{ fontFamily: "'Cinzel', serif" }}
+                      >
+                        {event.title}
+                      </h3>
+                      <span
+                        className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-medium ${badge.bg} ${badge.text}`}
+                      >
+                        {badge.label}
+                      </span>
+                    </div>
+                    <p className="text-xs leading-relaxed text-white/45">
+                      {event.description}
+                    </p>
                   </div>
-                  <p className="text-xs leading-relaxed text-white/45">
-                    {event.description}
-                  </p>
-                </div>
-              )
-            })}
-          </div>
+                )
+              })}
+            </div>
+          )}
         </div>
       </div>
     </div>

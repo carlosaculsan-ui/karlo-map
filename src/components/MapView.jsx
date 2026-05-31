@@ -34,7 +34,7 @@ const DASH_SEQ = [
 // ── Era helpers ───────────────────────────────────────────────────────────────
 
 function getEraForYear(year) {
-  if (year < 900 || year > 1565) return null
+  if (year < 900 || year > 2026) return null
   // Search in reverse so later eras win at shared boundaries (e.g. year 1521)
   for (let i = eras.length - 1; i >= 0; i--) {
     const e = eras[i]
@@ -166,6 +166,7 @@ export default function MapView({ selectedYear, onYearChange }) {
   const [mapReady,  setMapReady]  = useState(false)
   const [panelOpen, setPanelOpen] = useState(false)
   const [mapTheme,  setMapTheme]  = useState('explore')
+  const [eraInfo,   setEraInfo]   = useState(null)   // era object currently shown in popup
 
   // ── Init map ──────────────────────────────────────────────────────────────
   useEffect(() => {
@@ -251,7 +252,7 @@ export default function MapView({ selectedYear, onYearChange }) {
     const era      = getEraForYear(selectedYear)
 
     if (yearEvts.length === 0) {
-      setPanelOpen(false)
+      setPanelOpen(true)
       return
     }
 
@@ -306,14 +307,58 @@ export default function MapView({ selectedYear, onYearChange }) {
         ))}
       </div>
 
-      {/* Era badge — top-center, appears only in Era Mode */}
+      {/* Era badge — top-center, appears only when an era is active */}
       {currentEra && (
-        <div className="pointer-events-none absolute top-4 left-1/2 z-10 -translate-x-1/2">
-          <div className="rounded-full bg-black/60 px-3 py-1 backdrop-blur-sm">
+        <div className="absolute top-4 left-1/2 z-10 -translate-x-1/2">
+          <button
+            onClick={() => setEraInfo(eraInfo?.name === currentEra.name ? null : currentEra)}
+            className="rounded-full bg-black/60 px-3 py-1 backdrop-blur-sm focus:outline-none hover:bg-black/75 transition-colors"
+          >
             <span className="select-none whitespace-nowrap text-xs tracking-widest text-amber-400 uppercase">
               {currentEra.name}
             </span>
+          </button>
+        </div>
+      )}
+
+      {/* Era info popup */}
+      {eraInfo && (
+        <div
+          className="absolute top-14 left-1/2 z-20 -translate-x-1/2 w-80 max-w-[calc(100vw-2rem)] rounded-2xl p-4"
+          style={{
+            background: 'rgba(5, 8, 15, 0.93)',
+            backdropFilter: 'blur(18px)',
+            border: '1px solid rgba(251,191,36,0.15)',
+          }}
+        >
+          <div className="absolute left-8 right-8 top-0 h-px rounded-full bg-gradient-to-r from-transparent via-amber-500/40 to-transparent" />
+          <div className="mb-1 flex items-start justify-between gap-3">
+            <div>
+              <p
+                className="text-[10px] tracking-[0.35em] text-amber-400/60 uppercase mb-1"
+                style={{ fontFamily: "'Cinzel', serif" }}
+              >
+                {eraInfo.startYear} – {eraInfo.endYear}
+              </p>
+              <h3
+                className="text-sm font-semibold text-white leading-snug"
+                style={{ fontFamily: "'Cinzel', serif" }}
+              >
+                {eraInfo.name}
+              </h3>
+            </div>
+            <button
+              onClick={() => setEraInfo(null)}
+              className="shrink-0 rounded-full p-1 text-white/30 transition-colors hover:text-white/70 focus:outline-none"
+            >
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                <path d="M18 6L6 18M6 6l12 12" />
+              </svg>
+            </button>
           </div>
+          <p className="mt-2 text-xs leading-relaxed text-white/50">
+            {eraInfo.description}
+          </p>
         </div>
       )}
 
@@ -323,24 +368,12 @@ export default function MapView({ selectedYear, onYearChange }) {
         hasEvents={exactYearEvents.length > 0}
       />
 
-      {exactYearEvents.length > 0 && (
-        <EventPanel
-          events={exactYearEvents}
-          open={panelOpen}
-          onClose={() => setPanelOpen(false)}
-        />
-      )}
+      <EventPanel
+        events={exactYearEvents}
+        open={panelOpen}
+        onClose={() => setPanelOpen(false)}
+      />
 
-      {/* Blank-year note — shown in Era Mode when the selected year has no records */}
-      {currentEra && exactYearEvents.length === 0 && (
-        <div className="pointer-events-none absolute bottom-[120px] left-1/2 z-10 -translate-x-1/2">
-          <div className="rounded-full bg-black/50 px-4 py-1.5 backdrop-blur-sm">
-            <span className="select-none whitespace-nowrap text-[10px] tracking-[0.3em] text-white/30 uppercase">
-              No Specific Written Milestones Available
-            </span>
-          </div>
-        </div>
-      )}
 
       {/* Dark loading veil — fades out when map tiles are ready */}
       <div

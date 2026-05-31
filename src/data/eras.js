@@ -46,6 +46,45 @@ const eras = [
     tradeRoutes: [],
     milestoneYears: [1521, 1522, 1543, 1565],
   },
+  {
+    startYear: 1565,
+    endYear: 1896,
+    name: 'Spanish Colonial Period',
+    description:
+      'Spain establishes Manila in 1571, making it the colonial capital and the heart of the Manila Galleon Trade linking Asia to the Americas. Three centuries of Spanish rule reshape religion, governance, and culture — Catholicism takes deep root, new cities rise, and a distinctly Filipino identity begins to form beneath the weight of colonial administration and the friar orders.',
+    tradeRoutes: [
+      { from: [120.9842, 14.5995], to: [119.3000, 26.0500], label: 'Manila → Fujian' },
+      { from: [120.9842, 14.5995], to: [123.9017, 10.2929], label: 'Manila → Cebu'   },
+    ],
+    milestoneYears: [1565, 1571, 1600, 1700, 1762, 1800, 1872, 1892],
+  },
+  {
+    startYear: 1896,
+    endYear: 1946,
+    name: 'Revolution & American Rule',
+    description:
+      'The Katipunan sparks a revolution against Spain in 1896, giving rise to the first Philippine Republic under Emilio Aguinaldo. The Spanish-American War of 1898 transfers sovereignty to the United States, beginning a new colonial era marked by public education, infrastructure, and the Philippine Commonwealth — leading toward promised independence in 1946.',
+    tradeRoutes: [],
+    milestoneYears: [1896, 1898, 1899, 1902, 1935, 1941, 1945, 1946],
+  },
+  {
+    startYear: 1946,
+    endYear: 1986,
+    name: 'Independence & Martial Law',
+    description:
+      'The Philippines gains full independence on July 4, 1946, inaugurating the Third Republic. Decades of fragile democracy are shattered when Ferdinand Marcos declares Martial Law in 1972, concentrating power and silencing opposition for over a decade. The assassination of Benigno Aquino in 1983 ignites a national awakening that culminates in the peaceful People Power Revolution of 1986.',
+    tradeRoutes: [],
+    milestoneYears: [1946, 1965, 1972, 1983, 1986],
+  },
+  {
+    startYear: 1986,
+    endYear: 2026,
+    name: 'Contemporary Philippines',
+    description:
+      'The EDSA People Power Revolution restores democracy, and a new constitution is ratified in 1987. The nation navigates rapid urbanization, economic growth, territorial disputes in the West Philippine Sea, waves of overseas migration, devastating natural disasters, and the challenges of democratic governance — forging a modern identity shaped by resilience, diaspora, and a vibrant, complex culture.',
+    tradeRoutes: [],
+    milestoneYears: [1986, 1987, 1991, 2001, 2013, 2016, 2020, 2022],
+  },
 ]
 
 export default eras
