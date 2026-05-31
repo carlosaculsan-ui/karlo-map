@@ -9,7 +9,7 @@ export default defineConfig({
     tailwindcss(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.svg', 'pwa-icon.svg'],
+      includeAssets: ['Icon.png'],
       manifest: {
         name: 'Karlo Map',
         short_name: 'Karlo Map',
@@ -22,16 +22,10 @@ export default defineConfig({
         start_url: '/',
         icons: [
           {
-            src: 'pwa-icon.svg',
+            src: 'Icon.png',
             sizes: 'any',
-            type: 'image/svg+xml',
-            purpose: 'any',
-          },
-          {
-            src: 'pwa-icon.svg',
-            sizes: 'any',
-            type: 'image/svg+xml',
-            purpose: 'maskable',
+            type: 'image/png',
+            purpose: 'any maskable',
           },
         ],
       },

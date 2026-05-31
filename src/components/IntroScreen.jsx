@@ -76,6 +76,18 @@ export default function IntroScreen({ onBegin }) {
           Philippine History Explorer
         </p>
 
+        {/* Logo */}
+        <img
+          src="/Icon.png"
+          alt="Karlo Map logo"
+          className="h-24 w-24 rounded-2xl object-contain sm:h-32 sm:w-32"
+          style={{
+            animation: 'fadeInUp 1s 0.35s ease forwards',
+            opacity: 0,
+            filter: 'drop-shadow(0 0 24px rgba(249,115,22,0.4))',
+          }}
+        />
+
         {/* Title */}
         <h1
           className="text-5xl font-bold tracking-widest text-white sm:text-7xl"
