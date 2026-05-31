@@ -142,18 +142,19 @@ export default function YearSlider({ year, onChange, hasEvents }) {
                 />
               </div>
 
-              {/* Tick labels */}
+              {/* Tick labels — clickable year shortcuts */}
               <div className="relative mt-1.5 h-4">
                 {TICKS.map((tick) => {
                   const pct = ((tick - MIN) / (MAX - MIN)) * 100
                   return (
-                    <span
+                    <button
                       key={tick}
-                      className="absolute -translate-x-1/2 select-none text-[9px] font-medium text-white/40"
+                      onClick={() => onChange(tick)}
+                      className="absolute -translate-x-1/2 text-[9px] font-medium text-white/40 hover:text-orange-400 transition-colors focus:outline-none"
                       style={{ left: `${pct}%` }}
                     >
                       {tick}
-                    </span>
+                    </button>
                   )
                 })}
               </div>

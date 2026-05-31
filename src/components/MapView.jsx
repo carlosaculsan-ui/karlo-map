@@ -163,10 +163,11 @@ export default function MapView({ selectedYear, onYearChange }) {
   const currentEraRef       = useRef(null)   // tracks active era for style.load re-add
   const animFrameRef        = useRef(null)   // requestAnimationFrame id for dash animation
 
-  const [mapReady,  setMapReady]  = useState(false)
-  const [panelOpen, setPanelOpen] = useState(false)
-  const [mapTheme,  setMapTheme]  = useState('explore')
-  const [eraInfo,   setEraInfo]   = useState(null)   // era object currently shown in popup
+  const [mapReady,     setMapReady]     = useState(false)
+  const [panelOpen,    setPanelOpen]    = useState(false)
+  const [mapTheme,     setMapTheme]     = useState('explore')
+  const [eraInfo,      setEraInfo]      = useState(null)
+  const [themeLoading, setThemeLoading] = useState(false)
 
   // ── Global Escape handler — closes whichever overlay is topmost ──────────
   useEffect(() => {
@@ -195,7 +196,7 @@ export default function MapView({ selectedYear, onYearChange }) {
       'top-right',
     )
 
-    mapRef.current.on('load', () => setMapReady(true))
+    mapRef.current.once('idle', () => setMapReady(true))
 
     return () => {
       if (animFrameRef.current) cancelAnimationFrame(animFrameRef.current)
@@ -210,12 +211,14 @@ export default function MapView({ selectedYear, onYearChange }) {
     if (!initialStyleApplied.current) { initialStyleApplied.current = true; return }
 
     const map = mapRef.current
+    setThemeLoading(true)
     map.setStyle(STYLES[mapTheme])
 
     // GL layers are wiped on setStyle — re-add trade routes once new style loads
     map.once('style.load', () => {
       const era = currentEraRef.current
       if (era?.tradeRoutes?.length) addRouteLayersToMap(map, era)
+      map.once('idle', () => setThemeLoading(false))
     })
   }, [mapTheme, mapReady])
 
@@ -388,12 +391,37 @@ export default function MapView({ selectedYear, onYearChange }) {
         hasEvents={exactYearEvents.length > 0}
       />
 
+      {/* Reopen tab — appears on the right edge when panel is closed */}
+      {!panelOpen && (
+        <button
+          onClick={() => setPanelOpen(true)}
+          className="absolute top-36 right-0 z-20 flex flex-col items-center gap-1 rounded-l-xl bg-black/70 px-2 py-3 backdrop-blur-sm ring-1 ring-white/10 transition-colors hover:bg-black/85 focus:outline-none"
+        >
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="text-white/50">
+            <rect x="3" y="3" width="18" height="18" rx="2" />
+            <line x1="9" y1="3" x2="9" y2="21" />
+          </svg>
+          <span
+            className="select-none text-[8px] tracking-[0.3em] text-white/40 uppercase"
+            style={{ writingMode: 'vertical-rl', fontFamily: "'Cinzel', serif" }}
+          >
+            {exactYearEvents.length > 0 ? `${exactYearEvents.length} Event${exactYearEvents.length > 1 ? 's' : ''}` : 'Events'}
+          </span>
+        </button>
+      )}
+
       <EventPanel
         events={exactYearEvents}
         open={panelOpen}
         onClose={() => setPanelOpen(false)}
       />
 
+
+      {/* Theme-switch veil — covers white flash during style transition */}
+      <div
+        className="pointer-events-none absolute inset-0 z-40 bg-[#0a0d14] transition-opacity duration-500"
+        style={{ opacity: themeLoading ? 1 : 0 }}
+      />
 
       {/* Dark loading veil — fades out when map tiles are ready */}
       <div
