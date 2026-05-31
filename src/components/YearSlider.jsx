@@ -71,7 +71,7 @@ export default function YearSlider({ year, onChange, hasEvents }) {
       className="absolute bottom-0 left-0 right-0 z-10 bg-black/65 backdrop-blur-md rounded-t-2xl"
       style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
     >
-      <div className="px-5 py-4">
+      <div className="px-3 py-3 md:px-5 md:py-4">
         <div className="flex items-center gap-4">
 
           {/* Left: year input */}
@@ -166,8 +166,8 @@ export default function YearSlider({ year, onChange, hasEvents }) {
                 />
               </div>
 
-              {/* Tick labels — clickable year shortcuts */}
-              <div className="relative mt-1.5 h-4">
+              {/* Tick labels — clickable year shortcuts, hidden on narrow screens */}
+              <div className="relative mt-1.5 h-4 hidden md:block">
                 {TICKS.map((tick) => {
                   const pct = ((tick - MIN) / (MAX - MIN)) * 100
                   return (

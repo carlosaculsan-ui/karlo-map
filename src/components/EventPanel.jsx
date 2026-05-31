@@ -13,16 +13,22 @@ const BADGE = {
 export default function EventPanel({ events, open, onClose }) {
   return (
     <div
-      className="absolute top-16 right-3 bottom-36 z-20 w-80 max-w-[calc(100vw-1.5rem)] transition-all duration-300 ease-out"
-      style={{ opacity: open ? 1 : 0, transform: open ? 'translateX(0)' : 'translateX(calc(100% + 1rem))', pointerEvents: open ? 'auto' : 'none' }}
+      className="event-panel-wrapper absolute z-20 transition-all duration-300 ease-out"
+      style={{ opacity: open ? 1 : 0, pointerEvents: open ? 'auto' : 'none' }}
+      data-open={String(open)}
     >
       <div
-        className="relative h-full rounded-2xl flex flex-col ring-1 ring-white/8"
+        className="relative h-full rounded-t-2xl md:rounded-2xl flex flex-col ring-1 ring-white/8"
         style={{
           background: 'rgba(26, 25, 23, 0.95)',
           backdropFilter: 'blur(20px)',
         }}
       >
+        {/* Mobile drag handle */}
+        <div className="flex justify-center pt-2.5 pb-0.5 md:hidden">
+          <div className="h-1 w-10 rounded-full bg-white/20" />
+        </div>
+
         {/* Amber accent line along the top edge */}
         <div className="absolute left-6 right-6 top-0 h-px rounded-full bg-gradient-to-r from-transparent via-orange-500/40 to-transparent" />
 

@@ -145,3 +145,40 @@ html, body, #root {
   overflow: hidden;
   font-family: 'Inter', system-ui, sans-serif;
 }
+
+/* ─── EventPanel responsive positioning ─────────────────────────── */
+/* Mobile: slides up from bottom as a sheet                          */
+/* Desktop (md+): slides in from the right as a side panel          */
+
+.event-panel-wrapper {
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 6rem;
+  height: min(55vh, 460px);
+}
+
+.event-panel-wrapper[data-open="false"] {
+  transform: translateY(110%);
+}
+
+.event-panel-wrapper[data-open="true"] {
+  transform: translateY(0);
+}
+
+@media (min-width: 768px) {
+  .event-panel-wrapper {
+    top: 4rem;
+    right: 0.75rem;
+    bottom: 9rem;
+    left: auto;
+    width: 20rem;
+    max-width: calc(100vw - 1.5rem);
+    height: auto;
+  }
+  .event-panel-wrapper[data-open="false"] {
+    transform: translateX(calc(100% + 1rem));
+  }
+  .event-panel-wrapper[data-open="true"] {
+    transform: translateX(0);
+  }
+}

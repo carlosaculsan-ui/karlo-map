@@ -332,7 +332,7 @@ export default function MapView({ selectedYear, onYearChange, onOpenQuiz }) {
 
       {/* Era badge — top-center, appears only when an era is active */}
       {currentEra && (
-        <div className="absolute top-4 left-1/2 z-10 -translate-x-1/2">
+        <div className="absolute top-14 left-1/2 z-10 -translate-x-1/2 md:top-4">
           <button
             onClick={() => setEraInfo(eraInfo?.name === currentEra.name ? null : currentEra)}
             className="rounded-full bg-black/60 px-3 py-1 backdrop-blur-sm focus:outline-none hover:bg-black/75 transition-colors"
@@ -352,7 +352,7 @@ export default function MapView({ selectedYear, onYearChange, onOpenQuiz }) {
       {/* Era info popup */}
       {eraInfo && (
         <div
-          className="absolute top-14 left-1/2 z-20 -translate-x-1/2 w-80 max-w-[calc(100vw-2rem)] rounded-2xl p-4"
+          className="absolute top-24 left-1/2 z-20 -translate-x-1/2 w-80 max-w-[calc(100vw-2rem)] rounded-2xl p-4 md:top-14"
           style={{
             background: 'rgba(5, 8, 15, 0.93)',
             backdropFilter: 'blur(18px)',
