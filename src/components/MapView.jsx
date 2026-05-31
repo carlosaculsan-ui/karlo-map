@@ -168,6 +168,14 @@ export default function MapView({ selectedYear, onYearChange }) {
   const [mapTheme,  setMapTheme]  = useState('explore')
   const [eraInfo,   setEraInfo]   = useState(null)   // era object currently shown in popup
 
+  // ── Era popup dismissal ───────────────────────────────────────────────────
+  useEffect(() => {
+    if (!eraInfo) return
+    const onKey = (e) => { if (e.key === 'Escape') setEraInfo(null) }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [eraInfo])
+
   // ── Init map ──────────────────────────────────────────────────────────────
   useEffect(() => {
     if (mapRef.current) return
@@ -257,7 +265,9 @@ export default function MapView({ selectedYear, onYearChange }) {
     }
 
     yearEvts.forEach(event => {
-      const marker = new maplibregl.Marker({ element: makeMarkerEl(event.category) })
+      const el = makeMarkerEl(event.category)
+      el.addEventListener('click', () => setPanelOpen(true))
+      const marker = new maplibregl.Marker({ element: el })
         .setLngLat([event.lng, event.lat])
         .addTo(mapRef.current)
       markersRef.current.push(marker)
@@ -321,6 +331,11 @@ export default function MapView({ selectedYear, onYearChange }) {
             </span>
           </button>
         </div>
+      )}
+
+      {/* Click-outside backdrop for era popup */}
+      {eraInfo && (
+        <div className="absolute inset-0 z-[19]" onClick={() => setEraInfo(null)} />
       )}
 
       {/* Era info popup */}
