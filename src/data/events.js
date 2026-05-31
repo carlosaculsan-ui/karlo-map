@@ -2850,28 +2850,1382 @@ const events = [
     effect: 'pulse',
   },
 
+  // ── 1921 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1921,
+    title: 'The Arrival of the Wood-Forbes Mission and the Reversal of Harrison\'s Policies',
+    description:
+      'Following the election of Republican US President Warren G. Harding, a special fact-finding commission led by former Governor-General William Cameron Forbes and Major General Leonard Wood arrives in Manila. The Wood-Forbes Report concludes that the rapid \'Filipinization\' under the previous Harrison administration had left the colony administratively inefficient, financially unstable, and unready for independent statehood. Wood is subsequently appointed Governor-General and immediately institutes a rigid, hands-on administration. He aggressively vetoes local legislative acts, cracks down on fiscal mismanagement at the Philippine National Bank, and seeks to restore strict American executive authority, directly clashing with the entrenched leaders of the Partido Nacionalista.',
+    location: 'Palacio del Gobernador, Intramuros, Manila',
+    lat: 14.5919,
+    lng: 120.9731,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 1922 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1922,
+    title: 'The Split within the Partido Nacionalista and the Colectivista Ascendancy',
+    description:
+      'Deep tactical and personal rivalries within the dominant Partido Nacionalista culminate in an open political schism. Manuel L. Quezon rebels against the highly centralized, \'unipersonal\' leadership style of Speaker Sergio Osmeña, launching the Partido Nacionalista Colectivista. Quezon champions a platform of collective leadership and democratic consensus, utilizing the split to build a new power base among younger provincial elites. Following a bitter campaign during the June legislative elections, Quezon\'s Colectivistas achieve a decisive victory. Quezon assumes the Senate Presidency with absolute control over the legislative agenda, effectively eclipsing Osmeña as the undisputed paramount leader of the Philippine independence movement.',
+    location: 'Ayuntamiento de Manila, Intramuros, Manila',
+    lat: 14.5927,
+    lng: 120.9744,
+    category: 'politics',
+    effect: null,
+  },
+
+  // ── 1923 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1923,
+    title: 'The Cabinet Crisis of 1923 and the Conley Affair',
+    description:
+      'Political tensions between native leaders and Governor-General Leonard Wood explode into a full constitutional crisis over the case of Ray Conley, an American detective in the Manila Police Department suspended for alleged corruption. Wood bypasses local administrative channels to reinstate Conley, prompting Secretary of the Interior José P. Laurel to resign in protest. On July 17, all Filipino members of the Cabinet and the Council of State, led by Senate President Quezon and Speaker Roxas, tender a dramatic collective resignation. This coordinated political strike is designed to paralyze Wood\'s administration and force the US government to address the boundaries of colonial executive interference.',
+    location: 'Malacañang Palace, Manila',
+    lat: 14.5942,
+    lng: 120.9944,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 1924 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1924,
+    title: 'The Colorum Uprising in Surigao and the Rise of Millenarian Resistance',
+    description:
+      'An armed peasant rebellion erupts in Socorro, Surigao, led by the Sacdalista and Colorum secret societies under the spiritual leadership of Felix Bernales. Composed primarily of impoverished, disenfranchised rural tenants, these millenarian movements blend Catholic mysticism, anti-colonial zeal, and radical demands for immediate land redistribution. Armed with traditional weapons and an absolute belief in spiritual invulnerability, the rebels successfully ambush local Philippine Constabulary detachments. The colonial state responds with overwhelming military force, deploying naval gunboats and infantry units to crush the uprising, highlighting the severe agrarian distress festering beneath the surface of elite politics.',
+    location: 'Socorro, Bucas Grande Island, Surigao del Norte',
+    lat: 9.6178,
+    lng: 125.9556,
+    category: 'revolution',
+    effect: 'pulse',
+  },
+
+  // ── 1925 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1925,
+    title: 'The Intramuros Strike and the Rapid Expansion of the Bolshevik Movement',
+    description:
+      'Manila\'s industrial landscape faces deep polarization as Crisanto Evangelista leads a massive, coordinated strike of the Union de Impresores de Filipinas (Printers\' Union), effectively paralyzing the capital\'s printing presses and newspaper publications. Simultaneously, radical labor organizers deepen their ideological ties with international communist networks, sending delegates to the Pan-Pacific Labor Conference in Canton. This Marxist shift culminates in the restructuring of the Congreso Obrera de Filipinas (COF) along class-conscious, anti-imperialist lines, laying the structural and organizational groundwork for the formal entry of scientific socialism into the Philippine political sphere.',
+    location: 'Intramuros, Manila',
+    lat: 14.5910,
+    lng: 120.9754,
+    category: 'trade',
+    effect: null,
+  },
+
+  // ── 1926 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1926,
+    title: 'The Supreme National Council and the Push for a Plebiscite',
+    description:
+      'In an effort to rebuild a unified front against the unyielding administration of Governor-General Wood, Manuel L. Quezon forms the Supreme National Council. This coalition successfully unites all major political parties, agricultural associations, and labor groups under a singular executive body tasked with centralizing the campaign for independence. The Council drafts bills demanding a nationwide plebiscite on immediate independence to counter American assertions that the population is deeply divided on the issue. Wood immediately utilizes his executive powers to veto the plebiscite measure, prompting native politicians to launch an aggressive fundraising campaign to send regular lobbying delegations directly to Washington.',
+    location: 'Ayuntamiento de Manila, Intramuros, Manila',
+    lat: 14.5927,
+    lng: 120.9744,
+    category: 'politics',
+    effect: null,
+  },
+
+  // ── 1927 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1927,
+    title: 'The Death of Governor-General Wood and the Appointment of Henry Stimson',
+    description:
+      'Governor-General Leonard Wood dies suddenly in Boston during a medical visit, bringing an abrupt end to a tumultuous six-year administration defined by intense executive-legislative deadlock. The US government appoints Henry L. Stimson as his successor. Stimson adopts a radically different, highly diplomatic approach; he restores the advisory capacity of the Council of State, regularizes informal consultations with Quezon and Osmeña, and abandons the frequent use of the executive veto. This strategic shift pacifies the native political leadership and restores a smoothly functioning administrative relationship, allowing elite politicians to refocus on economic policy.',
+    location: 'Malacañang Palace, Manila',
+    lat: 14.5942,
+    lng: 120.9944,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 1928 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1928,
+    title: 'The Expansion of the Sugar Central System and the Global Trade Peak',
+    description:
+      'The Philippine sugar industry achieves unprecedented production volumes due to massive capital investments in highly automated, modern corporate mills known as \'centrals,\' primarily concentrated in Negros Occidental and Pampanga. Financed largely by PNB loans and advanced American machinery, these centrals rapidly process vast fields of cane grown by elite hacenderos. Because the Payne-Aldrich and Underwood-Simmons acts grant these products unrestricted, duty-free entry into the highly lucrative US market, the colony\'s economic elite amasses vast fortunes, further consolidating their absolute control over both provincial landholdings and national legislative policy.',
+    location: 'Silay, Negros Occidental',
+    lat: 10.7986,
+    lng: 122.9756,
+    category: 'trade',
+    effect: null,
+  },
+
+  // ── 1929 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1929,
+    title: 'The Inception of the Great Depression and the Collapse of Commodity Prices',
+    description:
+      'The catastrophic Wall Street crash of October 1929 reverberates across the globe, severely damaging the export-dependent economy of the Philippines. International demand for primary colonial exports—such as abaca, coconut oil, tobacco, and timber—collapses within months, triggering widespread corporate bankruptcies and massive wage cuts across provincial plantations. While the elite sugar sector temporarily survives due to protective US tariff walls, the severe economic contraction plunges hundreds of thousands of rural agricultural laborers into extreme poverty, accelerating social radicalization and setting off intense tenant unrest across the agricultural heartland of Central Luzon.',
+    location: 'Port of Manila, Manila',
+    lat: 14.5994,
+    lng: 120.9678,
+    category: 'trade',
+    effect: 'pulse',
+  },
+
+  // ── 1930 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1930,
+    title: 'The Formal Founding of the Partido Comunista de las Islas Filipinas (PKP)',
+    description:
+      'On November 7, the anniversary of the Bolshevik Revolution, veteran labor leader Crisanto Evangelista officially announces the founding of the Partido Comunista de las Islas Filipinas (PKP) during a massive rally of over sixty thousand workers at the Plaza Moriones in Tondo. The PKP adopts a revolutionary Marxist-Leninist platform, openly calling for the immediate overthrow of American imperialism, the liquidation of the landlord class, and the establishment of a sovereign Soviet-style workers\' republic. The rapid mobilization of the urban working class alarms both the American colonial administration and the native landowning elite, who immediately unleash state security forces to monitor communist cadres.',
+    location: 'Plaza Moriones, Tondo, Manila',
+    lat: 14.6097,
+    lng: 120.9631,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 1931 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1931,
+    title: 'The Tayug Uprising and the Judicial Outlawing of the PKP',
+    description:
+      'On January 10, hundreds of impoverished, armed peasants belonging to a millenarian society led by Pedro Calosa attack and seize the municipal hall of Tayug, Pangasinan. The rebels systematically burn all land titles, tax records, and debt contracts stored in the municipal archives, declaring a war against landlord tyranny before being suppressed by the Philippine Constabulary. In response to this rising tide of rural radicalism, the Court of First Instance moves decisively against urban agitators, declaring the PKP an illegal organization. Crisanto Evangelista and dozens of top communist cadres are arrested and sentenced to prison for sedition, forcing the Marxist movement deep underground.',
+    location: 'Tayug, Pangasinan',
+    lat: 16.0283,
+    lng: 120.7456,
+    category: 'revolution',
+    effect: 'pulse',
+  },
+
+  // ── 1932 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1932,
+    title: 'The Departure of the OSROX Mission and the Rise of the Sakdal Movement',
+    description:
+      'As the Great Depression deepens in the United States, American domestic farm groups lobby aggressively to grant independence to the Philippines in order to erect tariff barriers against cheap colonial imports. Seizing this opportunity, Sergio Osmeña and Manuel Roxas lead the OSROX Mission to Washington to secure an autonomy bill. Concurrently, charismatic writer Benigno Ramos officially launches the Sakdal movement in Luzon. Publishing a fiery Tagalog newspaper, the Sakdalistas fiercely attack the elite leadership of the Nacionalista Party, accusing Quezon and Osmeña of operating as colonial puppets who are deliberately delaying true independence while enriching their own class.',
+    location: 'Manila',
+    lat: 14.5995,
+    lng: 120.9842,
+    category: 'politics',
+    effect: null,
+  },
+
+  // ── 1933 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1933,
+    title: 'The Hare-Hawes-Cutting Act and the Historic Quezon-Osmeña Feud',
+    description:
+      'The US Congress passes the Hare-Hawes-Cutting Act over President Hoover\'s veto, promising Philippine independence after a ten-year transition period but retaining extensive US military and naval bases. In Manila, a titanic political war erupts between the \'Pros\' led by Osmeña and Roxas (who support the bill) and the \'Antis\' led by Manuel L. Quezon (who fiercely opposes it, arguing that the retention of US military bases violates true national sovereignty). Quezon successfully utilizes his absolute control over the Philippine Legislature to reject the bill, severely damaging Osmeña\'s political standing and setting off a high-stakes struggle for complete dominance over the decolonization process.',
+    location: 'Legislative Building, Manila',
+    lat: 14.5869,
+    lng: 120.9812,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 1934 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1934,
+    title: 'The Tydings-McDuffie Act and the Election of the Constitutional Convention',
+    description:
+      'Manuel L. Quezon travels to Washington and maneuvers brilliantly to secure the passage of the Tydings-McDuffie Act. This new decolonization law is nearly identical to the rejected Hare-Hawes-Cutting bill, but it alters the clause on military installations, promising the total withdrawal of US land bases upon independence. The Philippine Legislature swiftly accepts the act. In July, voters across the islands elect a distinguished group of 202 delegates to a Constitutional Convention tasked with drafting the organic law for the upcoming transition state. Preeminent jurist Claro M. Recto is elected President of the convention, guiding the body toward creating a powerful, highly centralized executive branch.',
+    location: 'Legislative Building, Manila',
+    lat: 14.5869,
+    lng: 120.9812,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 1935 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1935,
+    title: 'The Sakdal Uprising and the Inauguration of the Philippine Commonwealth',
+    description:
+      'On May 2, believing that the upcoming Commonwealth is an elite conspiracy to lock in economic inequality, the Sakdal movement launches a coordinated, armed uprising across Laguna, Bulacan, and Cavite. Armed peasants seize municipal buildings, pulling down American and Commonwealth flags. The Philippine Constabulary crushes the rebellion within forty-eight hours, killing over fifty Sakdalistas. Months later, on November 15, following a landslide election victory that reunited the Nacionalista factions, the Philippine Commonwealth is officially inaugurated. Manuel L. Quezon takes the oath of office as President alongside Vice President Sergio Osmeña, launching a semi-sovereign transition government before a crowd of a quarter-million citizens.',
+    location: 'Legislative Building Grounds, Manila',
+    lat: 14.5869,
+    lng: 120.9812,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 1936 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1936,
+    title: 'Commonwealth Act No. 1 and the Creation of the Philippine Army under MacArthur',
+    description:
+      'President Manuel L. Quezon signs his very first legislative measure, Commonwealth Act No. 1, also known as the National Defense Act. This landmark law establishes the structural foundation for a sovereign military infrastructure. Quezon recruits retired US Army Chief of Staff General Douglas MacArthur, appointing him Military Advisor to the Commonwealth with the rank of Field Marshal. MacArthur drafts a comprehensive defense master plan centered on the creation of a small professional core and the rapid training of a massive citizen army reserve through biannual regional conscription cohorts, aiming to make the archipelago completely cost-prohibitive to any foreign invader by 1946.',
+    location: 'No. 1 Victoria Street, Intramuros, Manila',
+    lat: 14.5905,
+    lng: 120.9750,
+    category: 'politics',
+    effect: null,
+  },
+
+  // ── 1937 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1937,
+    title: 'The Plebiscite on Women\'s Suffrage and the Proclamation of the National Language',
+    description:
+      'On April 30, a nationwide plebiscite on women\'s suffrage delivers a landslide victory, with over 447,000 women voting in favor of expanding political rights, easily surpassing the constitutional threshold of 300,000 affirmative votes. This historic reform grants Filipinas full voting rights and eligibility to run for public office. Later that year, on December 30, acting upon the systematic recommendations of the Institute of National Language, President Quezon issues Executive Order No. 134, officially proclaiming a national language based entirely on Tagalog. This policy aims to build a cohesive national identity, but it triggers lingering cultural resentment among non-Tagalog ethno-linguistic majorities in the Visayas and Mindanao.',
+    location: 'Malacañang Palace, Manila',
+    lat: 14.5942,
+    lng: 120.9944,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 1938 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1938,
+    title: 'The Social Justice Program and the Merger of the PKP and Socialist Parties',
+    description:
+      'Faced with deepening agrarian unrest and frequent strikes by tenant organizations like the Aguman ding Maldang Talapagobra (AMT) in Central Luzon, President Quezon launches his ambitious \'Social Justice\' program. The state passes laws setting a minimum wage and creating arbitration courts, but these measures are consistently sabotaged by powerful landlord blocs in the National Assembly. Recognizing the limitations of piecemeal reforms, Pedro Abad Santos\'s Socialist Party officially merges with Crisanto Evangelista\'s recently pardoned PKP. This powerful alliance unites urban industrial labor with millions of organized rural tenants, creating a potent, highly disciplined left-wing front.',
+    location: 'San Fernando, Pampanga',
+    lat: 15.0286,
+    lng: 120.6898,
+    category: 'politics',
+    effect: null,
+  },
+
+  // ── 1939 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1939,
+    title: 'The Outbreak of War in Europe and the Establishment of the Department of National Defense',
+    description:
+      'As Nazi Germany\'s invasion of Poland triggers the outbreak of World War II in Europe, the Commonwealth government moves to secure its administrative security apparatus. The National Assembly passes legislation creating the Department of National Defense (DND), centralizing operational control over the Philippine Army, the Constabulary, and emergency civil defense systems under a single cabinet secretary. President Quezon assumes expansive emergency executive powers to control commodity prices, prevent hoarding, and secure strategic transport infrastructure, as the global threat environment grows increasingly volatile and unpredictable.',
+    location: 'Manila',
+    lat: 14.5995,
+    lng: 120.9842,
+    category: 'politics',
+    effect: null,
+  },
+
+  // ── 1940 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1940,
+    title: 'The Constitutional Amendments on Presidential Terms and Re-establishment of the Senate',
+    description:
+      'The Commonwealth government executes a series of sweeping constitutional amendments that fundamentally reshape the institutional architecture of the state. The unicameral National Assembly is abolished and replaced with a bicameral Philippine Congress, restoring the Senate elected at-large. Crucially, the single six-year presidential term is amended to a four-year term with eligibility for a single re-election, a structural modification designed to allow Manuel L. Quezon to maintain executive power beyond 1941. These changes consolidate political authority within the Nacionalista party machine, drawing sharp criticism from civil libertarians who fear a creeping trend toward authoritarian governance.',
+    location: 'Legislative Building, Manila',
+    lat: 14.5869,
+    lng: 120.9812,
+    category: 'politics',
+    effect: null,
+  },
+
+  // ── 1941 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1941,
+    title: 'The Mobilization of USAFFE, the Pearl Harbor Attack, and the Invasion of Luzon',
+    description:
+      'As war with Imperial Japan looms, US President Franklin D. Roosevelt issues a military order mobilizing all forces of the Philippine Commonwealth into the service of the United States, creating the United States Army Forces in the Far East (USAFFE) under General Douglas MacArthur. On December 8, just hours after the strike on Pearl Harbor, Japanese bombers destroy American air assets at Clark Field. Days later, General Masaharu Homma\'s 14th Army lands massive amphibious forces at Lingayen Gulf. Caught off-balance, MacArthur abandons his coastal defense plan and invokes War Plan Orange-3, ordering a rapid retreat toward the Bataan Peninsula. On December 26, MacArthur declares Manila an Open City to save it from destruction, but Japanese forces occupy the capital on January 2, 1942, as Quezon and the Commonwealth leadership flee to Corregidor Island.',
+    location: 'Lingayen Gulf, Pangasinan',
+    lat: 16.2000,
+    lng: 120.2500,
+    category: 'war',
+    effect: 'pulse',
+  },
+
+  // ── 1942 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1942,
+    title: 'The Fall of Bataan, the Death March, Corregidor\'s Surrender, and Rise of the Hukbalahap',
+    description:
+      'For three months, starving and disease-ridden USAFFE forces wage a heroic defense on the Bataan Peninsula. On April 9, Major General Edward P. King Jr. surrenders over seventy-five thousand troops, triggering the infamous Bataan Death March where thousands of Filipino and American prisoners are brutally marched eighty miles to Camp O\'Donnell under torturous conditions. On May 6, Lieutenant General Jonathan Wainwright surrenders the island fortress of Corregidor, completing the Japanese conquest of the islands. President Quezon escapes via submarine to establish a government-in-exile in Washington. Meanwhile, in the swamps of Central Luzon, radical peasant leaders led by Luis Taruc found the Hukbalahap (People\'s Army Against Japan), launching a highly effective guerrilla campaign that targets both Japanese occupiers and collaborating landlords.',
+    location: 'Mariveles, Bataan',
+    lat: 14.4333,
+    lng: 120.4833,
+    category: 'war',
+    effect: 'pulse',
+  },
+
+  // ── 1943 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1943,
+    title: 'Inauguration of the Japanese-Sponsored Second Philippine Republic',
+    description:
+      'Seeking to co-opt local nationalist sentiments and secure regional administrative stability, the Japanese Imperial Army commands the creation of a puppet government. On October 14, the Second Philippine Republic is officially inaugurated under a new constitution drafted by the KALIBAPI party. José P. Laurel is inaugurated as President. Laurel performs a high-stakes political balancing act; while he publicly praises pan-Asian solidarity to pacify the Japanese military administration, he steadfastly refuses to enforce a military draft of Filipino youth to fight against the Allies. The puppet state suffers from hyperinflation, severe food shortages, and complete lack of popular legitimacy, as underground guerrilla networks expand across every province.',
+    location: 'Legislative Building, Manila',
+    lat: 14.5869,
+    lng: 120.9812,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 1944 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1944,
+    title: 'The Death of Quezon, the Battle of Leyte Gulf, and MacArthur\'s Return',
+    description:
+      'On August 1, Commonwealth President Manuel L. Quezon dies of tuberculosis in Saranac Lake, New York; Sergio Osmeña immediately assumes the wartime presidency. Months later, the Allied counter-offensive reaches the archipelago. On October 20, General Douglas MacArthur, wading through the surf at Red Beach alongside President Osmeña, fulfills his famous vow, declaring, \'I have returned!\' The Japanese navy moves to intercept the landings, triggering the Battle of Leyte Gulf—the largest naval battle in modern history—which decisively shatters the Imperial Japanese Navy. US and Filipino guerrilla forces launch an intense land campaign to liberate the Visayas, cutting off Japanese lines of communication.',
+    location: 'Red Beach, Palo, Leyte',
+    lat: 11.1683,
+    lng: 125.0128,
+    category: 'war',
+    effect: 'pulse',
+  },
+
+  // ── 1945 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1945,
+    title: 'The Devastation of Manila, the Liberation Campaign, and the Surrender of Yamashita',
+    description:
+      'The liberation of the capital turns into an apocalyptic catastrophe. Rear Admiral Sanji Iwabuchi ignores orders to evacuate, locking twenty thousand Japanese sailors inside Manila. During the month-long Battle of Manila, trapped Japanese forces execute the Manila Massacre, slaughtering over one hundred thousand innocent civilians. Heavy Allied artillery completely destroys Intramuros and the capital\'s historic core, making Manila the second most devastated Allied capital of World War II after Warsaw. On February 27, MacArthur turns over the civilian administration to President Osmeña. In the Cordillera mountains, General Tomoyuki Yamashita wages a fierce rearguard defense until officially surrendering in Baguio on September 3, bringing an end to the brutal occupation.',
+    location: 'Intramuros, Manila',
+    lat: 14.5910,
+    lng: 120.9754,
+    category: 'war',
+    effect: 'pulse',
+  },
+
+  // ── 1946 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1946,
+    title: 'Proclamation of Sovereign Independence and the Election of Manuel Roxas',
+    description:
+      'In April, Manuel Roxas wins a bitter presidential election, defeating incumbent Sergio Osmeña and splitting the Nacionalistas to form the Liberal Party. On July 4, precisely as mandated by the Tydings-McDuffie Act, the United States officially withdraws its sovereignty, and the Third Philippine Republic is proclaimed. Roxas takes the oath of office as the first President of the fully sovereign nation. The young republic faces monumental challenges: a completely devastated capital, a bankrupted treasury, and a growing leftist insurgency in Central Luzon, forcing the government to rely heavily on American financial reconstruction packages that come with strict strings attached.',
+    location: 'Grandstand, Rizal Park, Manila',
+    lat: 14.5825,
+    lng: 120.9742,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 1947 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1947,
+    title: 'The Bell Trade Act, the Parity Rights Amendment, and the Military Bases Agreement',
+    description:
+      'To secure 620 million dollars in war rehabilitation funds from the US, President Roxas forces through the deeply controversial Bell Trade Act, which requires amending the Philippine Constitution to grant American citizens equal economic rights (\'parity rights\') to exploit local natural resources and public utilities. Simultaneously, Roxas signs the US-Philippines Military Bases Agreement, granting the United States ninety-nine-year leases over twenty-three strategic military installations, including Subic Naval Base and Clark Air Base. These agreements trigger fierce condemnation from nationalists like Claro M. Recto, who argue that the economic and military pacts reduce the nation\'s independence to a neo-colonial facade.',
+    location: 'Manila',
+    lat: 14.5995,
+    lng: 120.9842,
+    category: 'trade',
+    effect: 'pulse',
+  },
+
+  // ── 1948 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1948,
+    title: 'The Death of Roxas, the Quirino Succession, and the Amnesty Failure with the Huks',
+    description:
+      'On April 15, President Manuel Roxas suffers a fatal heart attack after delivering a speech at Clark Air Base; Vice President Elpidio Quirino immediately assumes the presidency. Facing an intensifying armed insurgency by the Hukbalahap, Quirino attempts a policy of pacification, declaring a general amnesty and allowing Huk leader Luis Taruc to take his elected seat in Congress. However, negotiations collapse within weeks over mutual distrust regarding the terms of disarmament and the government\'s refusal to implement genuine land reform. Taruc returns to the hills, officially renaming the movement the Hukbong Mapagpalaya ng Bayan (HMB) and launching an all-out revolutionary war to overthrow the state.',
+    location: 'Clark Air Base, Pampanga',
+    lat: 15.1867,
+    lng: 120.5600,
+    category: 'politics',
+    effect: null,
+  },
+
+  // ── 1949 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1949,
+    title: 'The Fraudulent 1949 Elections and the Peak of the Huk Rebellion',
+    description:
+      'Elpidio Quirino wins re-election against Jose P. Laurel in what is widely condemned as the most corrupt, violent, and fraudulent election in Philippine democratic history, defined by rampant ballot-snatching and the infamous phrase \'even the birds and the trees voted\' in pro-Quirino provinces. The total loss of public faith in democratic institutions causes recruitment for the Huk insurgency to skyrocket. Armed Huk regiments expand their operations across Luzon, successfully raiding provincial capitals, threatening the outskirts of Manila, and prompting the US Joint Military Advisory Group (JUSMAG) to urgently intervene with massive shipments of military hardware.',
+    location: 'Manila',
+    lat: 14.5995,
+    lng: 120.9842,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 1950 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1950,
+    title: 'The Appointment of Magsaysay, the Politburo Arrests, and Deployment to the Korean War',
+    description:
+      'Faced with total state collapse, President Quirino appoints charismatic congressman Ramon Magsaysay as Secretary of National Defense. Magsaysay aggressively restructures the military, cracks down on battlefield corruption, and utilizes advanced intelligence assets to execute a brilliant midnight raid in Manila, arresting the entire urban Politburo of the PKP, including Chairman Jose Lava. This decapitation strike paralyzes the communist insurgency. Simultaneously, to demonstrate its commitment to the global anti-communist alliance, the Philippine government passes the Foreign Assistance Act, deploying the Philippine Expeditionary Forces to Korea (PEFTOK) to fight alongside UN forces, securing its status as a vital strategic partner in the developing Cold War.',
+    location: 'Tondo, Manila',
+    lat: 14.6111,
+    lng: 120.9697,
+    category: 'war',
+    effect: 'pulse',
+  },
+
+  // ── 1951 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1951,
+    title: 'The Battle of Yultong and the Signing of the US-Philippines Mutual Defense Treaty',
+    description:
+      'In April, the 10th Battalion Combat Team (BCT) of the Philippine Expeditionary Forces to Korea (PEFTOK) wins a legendary defensive victory against overwhelming Chinese forces at the Battle of Yultong, cementing the combat reputation of the young republic\'s military. Back in Washington, on August 30, representatives of both nations officially sign the landmark United States-Philippines Mutual Defense Treaty (MDT). The treaty establishes an institutional framework where both nations pledge to support each other in the event of an external armed attack in the Pacific, firmly anchoring Philippine foreign policy and national security within the geopolitical framework of the Western bloc during the Cold War.',
+    location: 'Washington, D.C.',
+    lat: 38.8951,
+    lng: -77.0364,
+    category: 'war',
+    effect: 'pulse',
+  },
+
+  // ── 1952 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1952,
+    title: 'The Enactment of the Magna Carta of Labor and the Expansion of JUSMAG Counter-Insurgency',
+    description:
+      'To address deep-seated social grievances and counter Marxist propaganda, the Philippine Congress passes Republic Act No. 875, popularly known as the \'Magna Carta of Labor,\' which legally protects the rights of workers to form independent unions and engage in collective bargaining. Concurrently, Defense Secretary Ramon Magsaysay, working closely with Colonel Edward Lansdale of the Joint US Military Advisory Group (JUSMAG), heavily expands psychological warfare and civic action operations. By combining aggressive military tracking with the Economic Development Corps (EDCOR)—which offers cleared land to surrendered rebels—the government successfully breaks the back of the Huk movement in Central Luzon.',
+    location: 'Camp Murphy, Quezon City',
+    lat: 14.6186,
+    lng: 121.0633,
+    category: 'politics',
+    effect: null,
+  },
+
+  // ── 1953 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1953,
+    title: 'The Landslide Election of Ramon Magsaysay and the Birth of Populist Politics',
+    description:
+      'Ramon Magsaysay resigns from the Quirino cabinet, switches political parties to head the Nacionalista ticket, and launches a revolutionary, American-style populist presidential campaign. Breaking tradition by visiting remote rural barrios, kissing babies, and wearing the traditional native barong tagalog, Magsaysay captures the popular imagination. Supported by the National Movement for Free Elections (NAMFREL) to ensure a clean vote, Magsaysay wins a historic landslide victory against Elpidio Quirino. His inauguration marks a profound shift in national politics, breaking the aristocratic aloofness of the old elite and establishing the rural peasant class as a crucial electoral force.',
+    location: 'Independence Grandstand, Rizal Park, Manila',
+    lat: 14.5825,
+    lng: 120.9742,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 1954 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1954,
+    title: 'The Surrender of Luis Taruc and the Signing of the SEATO Treaty',
+    description:
+      'On May 17, following intensive secret negotiations brokered by young presidential emissary Benigno \'Ninoy\' Aquino Jr., paramount Huk leader Luis Taruc officially surrenders to the government, effectively bringing an end to the decade-long communist agrarian rebellion in Luzon. Months later, in September, President Magsaysay hosts an international diplomatic summit that culminates in the signing of the Manila Pact, establishing the Southeast Asia Treaty Organization (SEATO). Headquartered in Bangkok with the Philippines as a foundational member, this mutual defense alliance is explicitly designed to contain the expansion of communism across the region.',
+    location: 'Manila',
+    lat: 14.5995,
+    lng: 120.9842,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 1955 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1955,
+    title: 'The Laurel-Langley Agreement and the Enactment of the Land Reform Act',
+    description:
+      'Senator José P. Laurel successfully concludes complex economic negotiations in Washington, signing the Laurel-Langley Agreement. This historic pact modifies the restrictive 1946 Bell Trade Act by accelerating the application of tariffs on US goods entering the Philippines while slowing down tariffs on Philippine exports to the US, giving the young republic breathing room to build up its domestic industries. Concurrently, President Magsaysay pressures a reluctant Congress to pass Republic Act No. 1400 (Land Reform Act), creating the Land Tenure Administration to expropriate large landed estates for redistribution to tenant farmers, though landlord opposition reduces its overall implementation.',
+    location: 'Legislative Building, Manila',
+    lat: 14.5869,
+    lng: 120.9812,
+    category: 'trade',
+    effect: 'pulse',
+  },
+
+  // ── 1956 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1956,
+    title: 'The Passage of the Rizal Law and the Signing of the San Francisco Reparations Agreement',
+    description:
+      'A fierce ideological war erupts over Republic Act No. 1425 (The Rizal Law), which mandates the compulsory reading of José Rizal\'s anti-clerical novels, Noli Me Tángere and El Filibusterismo, in all schools. Despite a bitter campaign by the Catholic Church hierarchy to block the bill, nationalist senators Claro M. Recto and José P. Laurel successfully push it into law to foster secular patriotism. In July, the government signs a definitive reparations agreement with Imperial Japan in San Francisco, securing 550 million dollars in industrial capital goods and services to rebuild the nation\'s shattered infrastructure, paving the way for the normalization of diplomatic relations.',
+    location: 'Legislative Building, Manila',
+    lat: 14.5869,
+    lng: 120.9812,
+    category: 'politics',
+    effect: null,
+  },
+
+  // ── 1957 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1957,
+    title: 'The Tragic Death of Magsaysay and the Ascendancy of Carlos P. Garcia',
+    description:
+      'On March 17, the presidential aircraft Mt. Pinatubo crashes into Mount Manunggal in Cebu, instantly killing President Ramon Magsaysay and plunging the nation into sudden, deep mourning. Vice President Carlos P. Garcia immediately assumes the executive office and goes on to win a full presidential term in November. Garcia shifts the direction of the state away from Magsaysay\'s intense focus on rural development and American alignment, working instead to stabilize the country\'s dwindling foreign exchange reserves and laying the conceptual groundwork for an economic policy designed to protect native business interests from foreign domination.',
+    location: 'Mount Manunggal, Balamban, Cebu',
+    lat: 10.4578,
+    lng: 123.7844,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 1958 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1958,
+    title: 'The Proclamation of the Filipino First Policy',
+    description:
+      'On August 21, the National Economic Council under President Carlos P. Garcia formally adopts Resolution No. 204, institutionalizing the landmark Filipino First policy. This economic doctrine consciously prioritizes Filipino businesses, entrepreneurs, and local capital over foreign investors in the allocation of scarce foreign exchange, import licenses, and government contracts. The policy triggers a major wave of domestic industrialization and import-substitution, leading to a boom in local manufacturing, textiles, and food processing. However, it also draws fierce criticism from American trade groups and international financial institutions who argue that it discriminates against foreign capital investments.',
+    location: 'Manila',
+    lat: 14.5995,
+    lng: 120.9842,
+    category: 'trade',
+    effect: 'pulse',
+  },
+
+  // ── 1959 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1959,
+    title: 'The Bohlen-Serrano Agreement and the Capture of Foreign Exchange Control',
+    description:
+      'Foreign Affairs Secretary Felixberto Serrano and US Ambassador Charles E. Bohlen sign a historic diplomatic accord that fundamentally revises the highly uneven 1947 Military Bases Agreement. The Bohlen-Serrano Agreement dramatically reduces the lease terms of US military bases from ninety-nine years down to twenty-five years and mandates prior consultation with the Philippine government before deploying US forces for combat operations outside SEATO actions. Concurrently, the Central Bank imposes a margin fee on sales of foreign exchange, aggressively strengthening state control over the economy and reinforcing the nationalist industrial push of the Garcia administration.',
+    location: 'Department of Foreign Affairs, Manila',
+    lat: 14.5912,
+    lng: 120.9789,
+    category: 'politics',
+    effect: null,
+  },
+
+  // ── 1960 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1960,
+    title: 'The Launch of the First Marikina Valley Structural Program and the Death of Claro M. Recto',
+    description:
+      'The government launches large-scale public infrastructure projects, including the dynamic transformation of the Marikina Valley into a major industrial shoe-manufacturing hub and the expansion of suburban power grids. In October, while on an official cultural tour in Rome, preeminent nationalist statesman and constitutional legal expert Claro M. Recto dies suddenly of a heart attack. His unexpected passing deprives the country\'s nationalist movement of its chief intellectual architect at a time when tensions over American economic influence, the presence of military bases, and structural agrarian reform are intensifying across the country.',
+    location: 'Marikina, Metro Manila',
+    lat: 14.6507,
+    lng: 121.1029,
+    category: 'trade',
+    effect: null,
+  },
+
+  // ── 1961 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1961,
+    title: 'The Election of Diosdado Macapagal and the Shift to Free-Market Decontrol',
+    description:
+      'Diosdado Macapagal, campaigning as the \'Poor Boy from Lubao,\' wins the presidency under the Liberal Party banner, defeating incumbent Carlos P. Garcia. Backed by international financial institutions, Macapagal immediately dismantles Garcia\'s nationalist trade policies, lifting foreign exchange controls and allowing the Philippine peso to float freely against the US dollar. While this \'decontrol\' policy pleases foreign investors and provincial agricultural exporters, it causes a sharp devaluation of the currency and inflicts heavy financial damage on the young, urban manufacturing industries that had grown under the protection of the Filipino First policy.',
+    location: 'Malacañang Palace, Manila',
+    lat: 14.5942,
+    lng: 120.9944,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 1962 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1962,
+    title: 'Changing Independence Day to June 12 and the Launch of the Sabah Claim',
+    description:
+      'In a profound symbolic move to assert national sovereignty, President Diosdado Macapagal issues Executive Order No. 28, officially shifting the celebration of Philippine Independence Day from July 4 (the day the US withdrew sovereignty in 1946) to June 12 (the anniversary of Emilio Aguinaldo\'s 1898 declaration in Cavite). Concurrently, following the formal turnover of sovereign rights from the heirs of the Sultan of Sulu, Macapagal files an official, historic diplomatic claim over British North Borneo (Sabah), directly challenging the British-backed plan to incorporate the strategic territory into the upcoming Federation of Malaysia.',
+    location: 'Malacañang Palace, Manila',
+    lat: 14.5942,
+    lng: 120.9944,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 1963 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1963,
+    title: 'The Agricultural Land Reform Code and the Formation of Maphilindo',
+    description:
+      'President Macapagal signs the historic Republic Act No. 3844, also known as the Agricultural Land Reform Code. This landmark legislation seeks to abolish the century-old share tenancy system, replacing it with an agricultural leasehold system designed to eventually transform poor tenants into owner-cultivators. On the diplomatic front, Macapagal hosts a major regional summit that creates Maphilindo, a short-lived, non-communist confederation linking Malaysia, the Philippines, and Indonesia. The alliance quickly falls apart due to Indonesia\'s aggressive confrontation policy and Manila\'s ongoing territorial dispute over Sabah.',
+    location: 'Legislative Building, Manila',
+    lat: 14.5869,
+    lng: 120.9812,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 1964 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1964,
+    title: 'The Inception of the International Rice Research Institute (IRRI) and Student Radicalization',
+    description:
+      'The International Rice Research Institute (IRRI) in Los Baños begins large-scale laboratory testing of high-yielding semi-dwarf rice varieties (such as IR8), launching the Green Revolution that dramatically increases agricultural yields across Asia. In Manila, deep social discontent over urban poverty and the growing escalation of the Vietnam War sparks an explosive wave of student radicalization. Charismatic university professor Jose Maria Sison officially founds the Kabataang Makabayan (Nationalist Youth), creating a powerful, highly disciplined student organization that bridges urban campus activism with the burgeoning rural peasant movement.',
+    location: 'Los Baños, Laguna',
+    lat: 14.1674,
+    lng: 121.2428,
+    category: 'politics',
+    effect: null,
+  },
+
+  // ── 1965 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1965,
+    title: 'The Election of Ferdinand Marcos and the Rise of Infra-Driven Politics',
+    description:
+      'Senate President Ferdinand E. Marcos breaks ranks with the Liberal Party, secures the Nacionalista presidential nomination, and wins a hard-fought election against incumbent Diosdado Macapagal. Marcos assumes office with a highly modernizing, ambitious platform focused on large-scale infrastructure development. Leveraging foreign loans, his administration launches a massive, nationwide construction blitz of roads, bridges, public school buildings, and irrigation networks, utilizing the engineering units of the Armed Forces of the Philippines to accelerate construction and consolidate his political support across the provinces.',
+    location: 'Independence Grandstand, Rizal Park, Manila',
+    lat: 14.5825,
+    lng: 120.9742,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 1966 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1966,
+    title: 'The Deployment of PHILCAG to Vietnam and the Manila Summit Conference',
+    description:
+      'Despite fierce legislative opposition from nationalist politicians, President Marcos signs a bill authorizing the deployment of the Philippine Civic Action Group (PHILCAG V), sending over two thousand military engineers, medical personnel, and security troops to South Vietnam to support Allied war efforts. In October, Marcos hosts the historic Manila Summit Conference, bringing together heads of state from the United States, South Korea, Australia, and other allied nations to coordinate regional strategy regarding the Vietnam War, significantly raising his international profile as a key regional ally of Washington.',
+    location: 'Manila Hotel, Ermita, Manila',
+    lat: 14.5794,
+    lng: 120.9722,
+    category: 'war',
+    effect: 'pulse',
+  },
+
+  // ── 1967 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1967,
+    title: 'The Founding of ASEAN and the Lapiang Malaya Massacre',
+    description:
+      'On August 8, Foreign Affairs Secretary Narciso Ramos signs the Bangkok Declaration alongside regional leaders, formally establishing the Association of Southeast Asian Nations (ASEAN) to accelerate economic growth and regional stability. In Manila, deep domestic social tensions explode into violence on May 21 when members of the Lapiang Malaya, a millenarian peasant sect led by Valentin de los Santos armed only with traditional swords, march down Taft Avenue demanding the overthrow of the state. The Philippine Constabulary opens fire with automatic weapons, killing thirty-three sect members and exposing the raw, unresolved socio-economic alienation in the provinces.',
+    location: 'Taft Avenue, Pasay City',
+    lat: 14.5458,
+    lng: 120.9936,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 1968 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1968,
+    title: 'The Jabidah Massacre, Moro Mobilization, and the Re-establishment of the CPP',
+    description:
+      'In March, news leaks out of a clandestine military camp on Corregidor Island detailing the Jabidah Massacre, where army handlers allegedly executed dozens of young Muslim recruits who mutinied after learning they were being trained to infiltrate Sabah. The incident sparks widespread outrage across Mindanao, prompting Cotabato Governor Udtog Matalam to issue the Moro Liberation Manifesto. Concurrently, on December 26, Jose Maria Sison meets with a core group of radical cadres in Pangasinan to formally re-establish the Communist Party of the Philippines (CPP) on Marxist-Leninist-Mao Zedong Thought lines, openly plotting a protracted people\'s war.',
+    location: 'Corregidor Island, Cavite',
+    lat: 14.3822,
+    lng: 120.5733,
+    category: 'revolution',
+    effect: 'pulse',
+  },
+
+  // ── 1969 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1969,
+    title: 'The Founding of the New People\'s Army and the Historic Re-election of Marcos',
+    description:
+      'On March 29, Jose Maria Sison partners with Bernabe Buscayno (\'Commander Dante\'), leader of a remnant Huk faction, to form the New People\'s Army (NPA) in Tarlac, launching an armed rural insurgency. In November, President Marcos pulls off a historic political feat, breaking the country\'s traditional \'one-term jinx\' to win a highly contentious re-election against Sergio Osmeña Jr. The campaign is defined by massive state spending on infrastructure, which completely drains the national treasury, triggers a major balance-of-payments crisis, and forces the administration to seek emergency loans from the International Monetary Fund.',
+    location: 'Capas, Tarlac',
+    lat: 15.3319,
+    lng: 120.5908,
+    category: 'revolution',
+    effect: 'pulse',
+  },
+
+  // ── 1970 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1970,
+    title: 'The First Quarter Storm and the Floating of the Peso',
+    description:
+      'In January, economic collapse and fury over election spending spark the First Quarter Storm (FQS). Tens of thousands of student radicals clash with police outside Congress and attempt to storm Malacañang Palace, leading to weeks of violent street battles. To secure an IMF stabilization plan, the government floats the peso, causing its value to crash from four pesos to over six pesos per US dollar. The resultant hyperinflation sparks massive labor strikes and transport boycotts, turning Manila into an ideological battleground as the political system begins to fracture under the weight of civil unrest and economic strain.',
+    location: 'Mendiola Street, San Miguel, Manila',
+    lat: 14.5992,
+    lng: 120.9931,
+    category: 'revolution',
+    effect: 'pulse',
+  },
+
+  // ── 1971 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1971,
+    title: 'The Plaza Miranda Bombing and Suspension of the Writ of Habeas Corpus',
+    description:
+      'On August 21, during a packed Liberal Party campaign rally at Plaza Miranda in Quiapo, two fragmentation grenades explode on stage, killing nine people and severely injuring top opposition leaders. President Ferdinand Marcos blames the Communist Party of the Philippines for the attack and immediately issues Proclamation No. 889, suspending the Writ of Habeas Corpus across the nation. This allows state security forces to detain suspected subversives without a warrant, escalating the political atmosphere as student activists and civil libertarians accuse the administration of orchestrating a systemic crackdown on democratic dissent.',
+    location: 'Plaza Miranda, Quiapo, Manila',
+    lat: 14.5983,
+    lng: 120.9836,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 1972 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1972,
+    title: 'Declaration of Martial Law and the Founding of the Moro National Liberation Front',
+    description:
+      'On September 23, citing a growing communist insurgency and urban anarchy, President Marcos appears on national television to announce Proclamation No. 1081, placing the entire nation under Martial Law. He shuts down Congress, padlocks independent media outlets, and orders the immediate arrest of key opposition leaders, including Senator Benigno \'Ninoy\' Aquino Jr. In response to the loss of Muslim political representation under the centralized regime, Nur Misuari formally organizes the Moro National Liberation Front (MNLF) in Mindanao, launching an all-out, armed separatist rebellion that plunges the southern provinces into a bloody civil war.',
+    location: 'Malacañang Palace, Manila',
+    lat: 14.5942,
+    lng: 120.9944,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 1973 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1973,
+    title: 'Ratification of the 1973 Constitution and the Launch of the Overseas Filipino Worker (OFW) Program',
+    description:
+      'President Marcos signs the 1973 Constitution, replacing the American-style presidential system with a French-style parliamentary model that permits him to rule indefinitely as both President and Prime Minister. Ratification is achieved through hand-votes in tightly controlled Citizen Assemblies rather than a secret ballot. Facing an acute balance-of-payments crisis and severe domestic unemployment, the regime enacts a temporary labor export framework. This system institutionalizes the deployment of contract workers to the oil-booming Middle East, unexpectedly launching the modern global Overseas Filipino Worker (OFW) phenomenon.',
+    location: 'Malacañang Palace, Manila',
+    lat: 14.5942,
+    lng: 120.9944,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 1974 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1974,
+    title: 'The Battle of Jolo and the Inception of the Presidential Decree on Coconut Levy',
+    description:
+      'The conflict in the south reaches an apocalyptic peak as MNLF forces seize the town of Jolo. Armed forces launch a devastating counter-offensive using heavy artillery and air strikes, causing firestorms that level the historic municipality, killing thousands of civilians and displacing over forty thousand residents. In Manila, Marcos issues Presidential Decree No. 582, formalizing the Coconut Levy fund. Ostensibly a tax collected from small farmers to modernize the industry, the enormous fund is instead structurally funneled into private banks and conglomerates controlled by close presidential associates, creating a powerful oligarchy.',
+    location: 'Jolo, Sulu',
+    lat: 6.0525,
+    lng: 121.0011,
+    category: 'war',
+    effect: 'pulse',
+  },
+
+  // ── 1975 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1975,
+    title: 'The Signing of the Tondo Expropriation Act and the First Metro Manila Commission',
+    description:
+      'The urban poor movement achieves a milestone as organizations like ZOTO push back against structural displacement, forcing the regime to issue Presidential Decree No. 814, which mandates the upgrading of slums rather than outright demolition in Tondo\'s maritime zones. Seeking to streamline administrative control over the rapidly growing metropolis, Marcos creates the Metro Manila Commission via Presidential Decree No. 824. He appoints First Lady Imelda Marcos as Governor, granting her an independent institutional power base to launch grandiose, debt-financed cultural and architectural vanity projects along Manila Bay.',
+    location: 'Tondo, Manila',
+    lat: 14.6111,
+    lng: 120.9697,
+    category: 'politics',
+    effect: null,
+  },
+
+  // ── 1976 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1976,
+    title: 'The Tripoli Agreement and the Magnitude 8.0 Moro Gulf Earthquake',
+    description:
+      'Under diplomatic pressure from the Organization of Islamic Cooperation, First Lady Imelda Marcos travels to Libya, culminating in the signing of the Tripoli Agreement between the government and the MNLF. The treaty promises political autonomy to thirteen provinces in Mindanao, temporarily halting large-scale conventional warfare. In August, a catastrophic magnitude 8.0 earthquake strikes the Moro Gulf, generating massive tsunamis that devastate coastal communities across southwestern Mindanao, killing over eight thousand people and highlighting the fragile administrative rescue capabilities of the state.',
+    location: 'Moro Gulf, Mindanao',
+    lat: 6.7500,
+    lng: 123.5000,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 1977 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1977,
+    title: 'The Capture of Jose Maria Sison and Military Commission No. 2 Verdict on Ninoy Aquino',
+    description:
+      'In a major counter-insurgency victory, military intelligence tracking leads to the capture of CPP Chairman Jose Maria Sison in San Fernando, La Union, temporarily disrupting the tactical leadership of the communist movement. Days later, Military Commission No. 2 sentences jailed opposition icon Benigno \'Ninoy\' Aquino Jr. to death by firing squad for alleged subversion and murder. The arbitrary military verdict triggers widespread international condemnation and a domestic outcry, forcing Marcos to stay the execution as Aquino\'s international stature as a democratic martyr deepens.',
+    location: 'Fort Bonifacio, Taguig',
+    lat: 14.5322,
+    lng: 121.0414,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 1978 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1978,
+    title: 'The Interim Batasang Pambansa Elections and the Historic Noise Barrage',
+    description:
+      'The regime holds the first national legislative elections under Martial Law for the new Interim Batasang Pambansa. Jailed opposition leader Ninoy Aquino leads the Laban party from his cell, challenging the state\'s KBL party. On April 6, the night before the vote, millions of residents across Manila stage a spontaneous, thunderous Noise Barrage, banging pots, honking car horns, and shouting to protest the regime. The following day, the KBL claims a clean sweep amid rampant ballot fraud, demonstrating that while the regime controlled the counts, it had lost its grip on urban popular support.',
+    location: 'Metro Manila',
+    lat: 14.5995,
+    lng: 120.9842,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 1979 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1979,
+    title: 'The Revision of the US Military Bases Agreement and the Inception of the Second Oil Crisis',
+    description:
+      'To address growing nationalist pressure, the government signs a major revision to the Military Bases Agreement, officially restoring Philippine sovereignty over the land area of Clark and Subic installations and placing them under native base commanders. However, the United States maintains operational military use. Concurrently, the Iranian Revolution triggers the second global oil crisis. Energy costs skyrocket, inflicting heavy structural damage on the domestic economy, accelerating inflation, and forcing the state to heavily borrow from international syndicates to sustain its massive infrastructure program.',
+    location: 'Clark Air Base, Pampanga',
+    lat: 15.1867,
+    lng: 120.5600,
+    category: 'trade',
+    effect: null,
+  },
+
+  // ── 1980 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1980,
+    title: 'The Exile of Ninoy Aquino and the Execution of the Chico River Dam Protests',
+    description:
+      'Following a severe heart attack in prison, Ninoy Aquino is allowed by Marcos to fly to the United States for emergency medical surgery, beginning a three-year political exile in Boston. In the Cordillera mountains, Kalinga and Bontoc tribal communities achieve an indigenous milestone under leader Macli-ing Dulag, mounting fierce resistance against the World Bank-funded Chico River Dam Project. In April, military personnel assassinate Dulag in his home, turning him into an iconic symbol of tribal resistance and driving hundreds of indigenous youth into the ranks of the New People\'s Army.',
+    location: 'Bugnay, Tinglayan, Kalinga',
+    lat: 17.2833,
+    lng: 121.1667,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 1981 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1981,
+    title: 'The Official Lifting of Martial Law and the Visit of Pope John Paul II',
+    description:
+      'Seeking to normalize his international image ahead of a historic visit by Pope John Paul II, President Marcos signs Proclamation No. 2045, officially lifting Martial Law after nine years. However, he retains expansive legislative powers via hidden decrees, alongside absolute control over the military and the right to detain citizens indefinitely. During his apostolic tour, Pope John Paul II delivers a blunt, televised speech at Malacañang Palace, firmly declaring that human rights must never be sacrificed for national security or state engineering, dealing a major symbolic blow to the regime\'s legitimacy.',
+    location: 'Malacañang Palace, Manila',
+    lat: 14.5942,
+    lng: 120.9944,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 1982 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1982,
+    title: 'The Founding of the National Democratic Front (NDF) Urban Networks and the Escalation of the Sugar Crisis',
+    description:
+      'Despite the formal lifting of Martial Law, the economy continues to crater as the global sugar market experiences a catastrophic structural price collapse. The state-run buying monopoly, NASUTRA, mismanages sugar stocks, bankrupting thousands of small farms across Negros Island and causing severe widespread famine. Exploiting this economic collapse, the communist underground expands its urban resistance networks under the National Democratic Front (NDF), mobilizing progressive trade unions, progressive clergy, and human rights lawyers into a highly organized, nationwide anti-Marcos front.',
+    location: 'Bacolod, Negros Occidental',
+    lat: 10.6667,
+    lng: 122.9500,
+    category: 'trade',
+    effect: null,
+  },
+
+  // ── 1983 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1983,
+    title: 'The Assassination of Ninoy Aquino and the Outbreak of Economic Collapse',
+    description:
+      'On August 21, returning from exile to lead the opposition, Ninoy Aquino is shot dead on the tarmac of Manila International Airport while under military escort. The assassination sparks massive outrage. His funeral procession draws over two million citizens, transforming political fear into open defiance. The assassination triggers a catastrophic economic crisis; foreign banks freeze credit lines, triggering a massive flight of capital. The government defaults on its external debt, forcing inflation past fifty percent and shattering the business elite\'s confidence in Marcos\'s capacity to govern.',
+    location: 'Manila International Airport, Pasay',
+    lat: 14.5083,
+    lng: 121.0194,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 1984 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1984,
+    title: 'The Agrava Commission Report and the Rise of the Parliament of the Streets',
+    description:
+      'The independent Agrava Fact-Finding Board releases its report on the Aquino assassination, rejecting the military\'s claim that a lone communist hitman was responsible. Instead, the board concludes that a high-level military conspiracy orchestrated the killing, implicating top generals. Emboldened by these findings, diverse social groups coalesce into the Parliament of the Streets. Regular, massive protest marches paralyze Manila\'s business districts, uniting traditional politicians, radical student cadres, and corporate executives under the banner of the August Twenty-One Movement (ATOM).',
+    location: 'Ayala Avenue, Makati',
+    lat: 14.5547,
+    lng: 121.0244,
+    category: 'politics',
+    effect: null,
+  },
+
+  // ── 1985 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1985,
+    title: 'The Announcement of the Snap Presidential Election and the Rise of Cory Aquino',
+    description:
+      'Appearing on American television to counter growing international isolation, President Marcos surprises the nation by announcing a snap presidential election for early 1986 to prove his popular mandate. The fractured opposition unifies behind Ninoy\'s widow, Corazon \'Cory\' Aquino, who launches a powerful campaign powered by a massive civic movement. Aquino adopts the color yellow, drawing millions of citizens to her rallies, turning the upcoming vote into a high-stakes referendum on the survival of the dictatorship.',
+    location: 'Manila',
+    lat: 14.5995,
+    lng: 120.9842,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
   // ── 1986 ─────────────────────────────────────────────────────────────────────
   {
     year: 1986,
-    title: 'EDSA People Power Revolution',
+    title: 'The EDSA People Power Revolution and the Flight of the Marcos Family',
     description:
-      'Millions of Filipinos gather peacefully along Epifanio de los Santos Avenue in Metro Manila, forcing Ferdinand Marcos to flee after 21 years of authoritarian rule and restoring democratic governance.',
-    lat: 14.6392,
-    lng: 121.0336,
+      'Following widespread fraud during the February 7 election, Defense Minister Juan Ponce Enrile and General Fidel V. Ramos launch a military mutiny. Catholic Archbishop Jaime Cardinal Sin appeals to the public via radio, prompting millions of unarmed citizens to flood Epifanio de los Santos Avenue (EDSA) to shield the rebels with their bodies. Armed tanks refuse to fire on the crowds. On February 25, Corazon Aquino is sworn in as President. Deserted by the military and the US government, Marcos and his family flee via US helicopters to Hawaii, ending twenty years of authoritarian rule in a non-violent People Power Revolution.',
+    location: 'EDSA, Quezon City',
+    lat: 14.5995,
+    lng: 121.0544,
+    category: 'revolution',
+    effect: 'pulse',
+  },
+
+  // ── 1987 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1987,
+    title: 'Ratification of the 1987 Constitution, the Mendiola Massacre, and the August Coup d\'État',
+    description:
+      'Voters overwhelmingly ratify a new, democratic 1987 Constitution, restoring a bicameral Congress and instituting strict checks on presidential war powers. However, structural instability plagues the young democracy. On January 22, state forces open fire on protesting farmers during the Mendiola Massacre, killing thirteen. In August, right-wing military renegades led by Colonel Gringo Honasan launch a bloody coup attempt against the Aquino government, attacking Malacañang Palace and killing over fifty people before being suppressed, exposing deep ideological fractures within the post-Marcos military.',
+    location: 'Mendiola Street, San Miguel, Manila',
+    lat: 14.5992,
+    lng: 120.9931,
     category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 1988 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1988,
+    title: 'Enactment of the Comprehensive Agrarian Reform Law (CARL)',
+    description:
+      'President Corazon Aquino signs Republic Act No. 6657, enacting the Comprehensive Agrarian Reform Program (CARP). Designed to address centuries of agrarian unrest, the law aims to redistribute commercial agricultural lands to landless farmers. However, the legislation features major structural loopholes inserted by landowning elites in Congress, such as stock distribution options. This allows prominent estates—including the Aquino family\'s own Hacienda Luisita—to legally bypass land redistribution, triggering ongoing protests from left-wing peasant groups.',
+    location: 'Hacienda Luisita, Tarlac',
+    lat: 15.4411,
+    lng: 120.6128,
+    category: 'politics',
+    effect: null,
+  },
+
+  // ── 1989 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1989,
+    title: 'The December Coup d\'État and the Death of Ferdinand Marcos in Exile',
+    description:
+      'The Reform the Armed Forces Movement (RAM) launches its most destructive coup attempt yet, seizing the military headquarters at Camp Aguinaldo and deploying rebel T-28 Trojan aircraft to bomb Malacañang Palace. The mutineers seize Makati\'s financial district, trapping foreign tourists. The coup is broken only after US fighter jets fly intimidation sorties over rebel bases. Months earlier, in September, deposed dictator Ferdinand Marcos dies of organ failure in Honolulu, Hawaii, with President Aquino refusing to allow his body back into the country for burial to prevent political unrest.',
+    location: 'Makati Central Business District',
+    lat: 14.5547,
+    lng: 121.0244,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 1990 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1990,
+    title: 'The Magnitude 7.7 Luzon Earthquake and the Rise of the Built-Operate-Transfer (BOT) Law',
+    description:
+      'On July 16, a catastrophic magnitude 7.7 earthquake rips through Central Luzon along the Digdig Fault, completely collapsing luxury hotels in Baguio, destroying coastal infrastructure in Dagupan, and killing over 1,600 people. Faced with a crippled infrastructure landscape and severe nationwide electricity shortages, Congress passes Republic Act No. 6957, institutionalizing the Build-Operate-Transfer (BOT) law. This landmark economic legislation allows private corporations to finance and build major public infrastructure projects, reshaping the landscape of public works development.',
+    location: 'Baguio City, Benguet',
+    lat: 16.4023,
+    lng: 120.5961,
+    category: 'disaster',
     effect: 'pulse',
   },
 
   // ── 1991 ─────────────────────────────────────────────────────────────────────
   {
     year: 1991,
-    title: 'Mount Pinatubo Eruption',
+    title: 'The Catastrophic Eruption of Mount Pinatubo and the Historical Rejection of the US Bases Treaty',
     description:
-      'The second-largest volcanic eruption of the 20th century devastates Central Luzon. Towering ash columns and subsequent lahars displace hundreds of thousands and permanently reshape the landscape of Pampanga and Zambales.',
-    lat: 15.1429,
-    lng: 120.3496,
+      'On June 15, after centuries of dormancy, Mount Pinatubo explodes in the second-largest terrestrial volcanic eruption of the twentieth century, launching millions of tons of sulfur dioxide into the stratosphere and burying Central Luzon in volcanic ash and lahars. Weeks later, on September 16, a historic nationalist milestone is achieved when the Philippine Senate votes 12-11 to reject the RP-US Treaty of Friendship, Cooperation, and Security. This historic legislative action officially terminates the leases of American forces, ending nearly a century of continuous US military presence on Philippine soil.',
+    location: 'Mount Pinatubo, Zambales',
+    lat: 15.1417,
+    lng: 120.3500,
     category: 'disaster',
     effect: 'ash',
+  },
+
+  // ── 1992 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1992,
+    title: 'The Election of Fidel V. Ramos and the Dismantling of the Telecommunications Monopoly',
+    description:
+      'Fidel V. Ramos wins a highly competitive, multi-candidate presidential election to succeed Corazon Aquino. Ramos immediately prioritizes political stabilization and economic liberalization. To revitalize the economy, his administration aggressively targets the century-old telecommunications monopoly held by PLDT. By issuing Executive Order No. 59, Ramos mandates interconnectivity across all telecommunications networks, opening up the domestic market to local and international corporate competitors, which triggers an explosive modernization boom in digital infrastructure.',
+    location: 'Malacañang Palace, Manila',
+    lat: 14.5942,
+    lng: 120.9944,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 1993 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1993,
+    title: 'The Resolution of the Power Crisis and the Legal Re-establishment of the Central Bank',
+    description:
+      'President Ramos successfully resolves the crippling power crisis of the early 1990s by utilizing emergency fast-track executive powers to build new generation plants through private sector BOT contracts, effectively ending daily eight-hour blackouts in Manila. Concurrently, Congress passes the New Central Bank Act, legally liquidating the debt-ridden colonial Central Bank and replacing it with the Bangko Sentral ng Pilipinas (BSP). This structural reform establishes an independent monetary authority focused on price stability, boosting international confidence.',
+    location: 'Bangko Sentral ng Pilipinas, Manila',
+    lat: 14.5653,
+    lng: 120.9836,
+    category: 'trade',
+    effect: null,
+  },
+
+  // ── 1994 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1994,
+    title: 'The Entry into the World Trade Organization (WTO) and the Grand Opening of Subic Freeport',
+    description:
+      'Following intense debate, the Philippine Senate ratifies the General Agreement on Tariffs and Trade (GATT), formally admitting the nation into the World Trade Organization (WTO). This accelerates economic globalization by slashing import tariffs across agricultural and industrial lines. Simultaneously, the former US naval facility is successfully transformed into the Subic Bay Freeport Zone under Richard Gordon. This special economic zone draws hundreds of millions of dollars in foreign corporate manufacturing investments, becoming a premier engine of economic growth.',
+    location: 'Subic Bay Freeport Zone, Zambales',
+    lat: 14.8219,
+    lng: 120.2711,
+    category: 'trade',
+    effect: 'pulse',
+  },
+
+  // ── 1995 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1995,
+    title: 'The Execution of Flor Contemplacion and the Passing of the Migrant Workers Act',
+    description:
+      'The execution of Filipina domestic worker Flor Contemplacion in Singapore for murder sparks unprecedented national grief and fury, severely straining diplomatic relations between the two nations. The tragedy exposes the harsh realities and vulnerabilities faced by millions of citizens working abroad. In immediate response to the popular outcry, President Ramos signs Republic Act No. 8042, also known as the Migrant Workers and Overseas Filipinos Act, institutionalizing legal protections, emergency repatriation frameworks, and welfare services for the global diaspora.',
+    location: 'Manila',
+    lat: 14.5995,
+    lng: 120.9842,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 1996 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1996,
+    title: 'The Signing of the MNLF Peace Agreement and the Hosting of the APEC Summit',
+    description:
+      'On September 2, President Ramos and Nur Misuari sign a definitive historic Peace Agreement between the government and the MNLF, officially ending twenty-four years of continuous armed separatist rebellion. Misuari is subsequently elected Governor of the Autonomous Region in Muslim Mindanao (ARMM). Months later, the nation proudly showcases its economic resurgence by hosting the Asia-Pacific Economic Cooperation (APEC) Summit in Subic, welcoming world leaders and solidifying its reputation as the new Tiger Cub Economy of Asia.',
+    location: 'Malacañang Palace, Manila',
+    lat: 14.5942,
+    lng: 120.9944,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 1997 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1997,
+    title: 'The Outbreak of the Asian Financial Crisis and the Privatization of MWSS',
+    description:
+      'The sudden collapse of the Thai baht triggers the devastating Asian Financial Crisis, causing the Philippine peso to plummet from twenty-six pesos to over forty pesos per US dollar within months. Property markets crash and corporate debt defaults spike. Amid the financial storm, the government executes the largest water privatization in the world, splitting the Metropolitan Waterworks and Sewerage System (MWSS) into private concessions awarded to Manila Water and Maynilad, structurally transforming urban utility management.',
+    location: 'Manila',
+    lat: 14.5995,
+    lng: 120.9842,
+    category: 'trade',
+    effect: 'pulse',
+  },
+
+  // ── 1998 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1998,
+    title: 'The Election of Joseph Estrada and the Philippine Centennial Celebration',
+    description:
+      'On June 12, the nation celebrates the grand centennial of the declaration of independence from Spain, marked by massive cultural celebrations across the historical sites of Cavite and Manila. Months later, charismatic former actor Joseph Ejercito Estrada wins the presidency by a massive landslide under the populist slogan \'Huwag kang matakot, kay Erap ang mahirap\' (Do not fear, Erap is for the poor), capturing the support of the marginalized working class but raising deep anxieties among macroeconomic technocrats and the business elite.',
+    location: 'Barasoain Church, Malolos, Bulacan',
+    lat: 14.8456,
+    lng: 120.8117,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 1999 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 1999,
+    title: 'The Ratification of the Visiting Forces Agreement (VFA) and the Grounding of the BRP Sierra Madre',
+    description:
+      'Amid growing territorial incursions by China in the South China Sea, the Senate ratifies the Visiting Forces Agreement (VFA), restoring a formal mechanism for large-scale joint military exercises with the United States. Seeking to assert sovereign rights over Ayungin Shoal (Second Thomas Shoal), the Philippine Navy intentionally runs aground the World War II-era tank landing ship BRP Sierra Madre. A small detachment of marine personnel is stationed aboard the rusty vessel, establishing a permanent geopolitical outpost in the disputed waters.',
+    location: 'Ayungin Shoal, South China Sea',
+    lat: 9.7333,
+    lng: 114.8667,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 2000 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 2000,
+    title: 'The All-Out War Policy in Mindanao, the Rizal Day Bombings, and the Impeachment of Estrada',
+    description:
+      'President Estrada launches a highly controversial All-Out War policy against the Moro Islamic Liberation Front (MILF), deploying heavy artillery to capture the rebel stronghold of Camp Abubakar. In October, whistleblower Chavit Singson accuses Estrada of receiving millions in illegal gambling payoffs, triggering a political explosion. In November, the House of Representatives votes to impeach Estrada, sending the case to the Senate for trial. As the historic trial begins in December, coordinated terrorist blasts rock Manila on Rizal Day, killing twenty-two people and plunging the capital into deep political and security chaos.',
+    location: 'Camp Abubakar, Barira, Maguindanao',
+    lat: 7.4833,
+    lng: 124.3167,
+    category: 'war',
+    effect: 'pulse',
+  },
+
+  // ── 2001 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 2001,
+    title: 'The EDSA II Revolution, the Ouster of Estrada, and the Post-9/11 Security Pivot',
+    description:
+      'In January 2001, a dramatic 11–1 vote by senator-judges to block the opening of a critical second envelope containing bank records triggers a massive walkout by prosecutors and sparks the EDSA II People Power revolution. Hundreds of thousands gather at the EDSA Shrine, prompting the military and police leadership to withdraw institutional support from President Joseph Estrada. The Supreme Court declares the presidency vacant, and Vice President Gloria Macapagal-Arroyo is sworn in as the 14th President amid intense economic instability, high fiscal deficits, and capital flight. The year is further marred by violent counter-reactions from Estrada\'s poorest supporters who storm Malacañang on May 1 (EDSA III), and high-profile Abu Sayyaf kidnappings that pivot Arroyo heavily toward Washington, bringing US military aid and Balikatan joint exercises back to Mindanao under the post-9/11 War on Terror framework.',
+    location: 'EDSA Shrine, Quezon City',
+    lat: 14.5912,
+    lng: 121.0583,
+    category: 'revolution',
+    effect: 'pulse',
+  },
+
+  // ── 2002 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 2002,
+    title: 'The Comprehensive Dangerous Drugs Act and Institutional Anti-Narcotics Re-engineering',
+    description:
+      'To combat a massive domestic explosion in the trafficking and consumption of crystalline methamphetamine (shabu) orchestrated by transnational organized crime syndicates, the state enacts Republic Act No. 9165, known as the Comprehensive Dangerous Drugs Act of 2002. This legislation completely overhauls the state\'s anti-narcotics framework by institutionalizing a dual command structure: the Dangerous Drugs Board (DDB) as the strategic policy-making body, and the Philippine Drug Enforcement Agency (PDEA) as the premier civil enforcement arm. The law positions the Philippines as an aggressive regional partner in ASEAN\'s collective push for a drug-free zone, streamlining intelligence sharing with the US DEA. However, by introducing strict mandatory minimum sentences and limiting plea bargaining, it establishes the statutory baseline that later defined the 2016 drug war while triggering long-term prison overcrowding.',
+    location: 'Quezon City, Metro Manila',
+    lat: 14.6507,
+    lng: 121.0331,
+    category: 'politics',
+    effect: null,
+  },
+
+  // ── 2003 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 2003,
+    title: 'The Oakwood Mutiny, Military Factionalism, and the SARS Containment Success',
+    description:
+      'On July 27, 2003, deep structural corruption and demoralization within the Armed Forces of the Philippines (AFP) boil over when a faction of over three hundred junior officers calling themselves the Magdalo group—led by Lieutenant Senior Grade Antonio Trillanes IV—seize the Oakwood Premier apartments in Makati\'s financial district. They wire the complex with explosives and demand the resignation of President Arroyo over allegations that senior officials were selling weapons to communist and Moro rebels, exposing severe internal stability vulnerabilities to global markets before surrendering peacefully. Concurrently, the Department of Health achieves a major public health milestone by successfully containing the localized introduction of Severe Acute Respiratory Syndrome (SARS) through aggressive contact tracing and strict airport quarantines, limiting national casualties to just 14 cases.',
+    location: 'Ayala Center, Makati City',
+    lat: 14.5501,
+    lng: 121.0253,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 2004 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 2004,
+    title: 'The Highly Contested 2004 Presidential Election and the Political Demise of Fernando Poe Jr.',
+    description:
+      'The May 2004 presidential election becomes a deeply polarized battle between the incumbent Gloria Macapagal-Arroyo, backed by the traditional economic elite promising fiscal continuity, and legendary action film icon Fernando Poe Jr. (FPJ), a beloved populist figure commanding immense cultural capital among the working class. Arroyo is officially declared the winner by a margin of one million votes, but the opposition immediately alleges systematic, state-engineered electoral fraud and vote rigging in Mindanao. The political temperature reaches a boiling point when FPJ suffers a sudden, fatal hemorrhagic stroke on December 14, 2004, plunging millions of his devotees into deep mourning, leaving a massive leadership vacuum in the populist opposition, and permanently damaging public trust in the formal democratic process.',
+    location: 'Manila, Metro Manila',
+    lat: 14.5995,
+    lng: 120.9842,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 2005 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 2005,
+    title: 'The Hello Garci Crisis and the Macroeconomic Shield of the E-VAT Law',
+    description:
+      'In June 2005, the Philippine state faces a massive institutional crisis when audio recordings emerge of a wiretapped phone conversation allegedly between President Arroyo and Election Commissioner Virgilio Garcillano discussing the manipulation of the 2004 vote counts. The Hello Garci tapes trigger a profound political breakdown, forcing the mass resignation of key cabinet secretaries (the Hyatt 10) and prompting widespread street protests demanding regime change. To stave off a looming fiscal sovereign default and balance-of-payments collapse amid the political chaos, the administration successfully pushes through Congress the highly unpopular Expanded Value-Added Tax (E-VAT) law (RA 9337), raising the VAT rate to 12% and expanding it to energy and petroleum products, a move that structurally stabilized the country\'s sovereign credit profile and laid the groundwork for a decade of macroeconomic expansion.',
+    location: 'Batasang Pambansa, Quezon City',
+    lat: 14.6922,
+    lng: 121.0944,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 2006 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 2006,
+    title: 'Proclamation 1017 Authoritarian Pivot, Death Penalty Abolition, and the Guimaras Oil Spill',
+    description:
+      'In February 2006, following intelligence reports of an imminent coup plot involving an alliance of right-wing military mutineers and left-wing communist radicals, President Arroyo issues Proclamation No. 1017. This decree places the nation under a State of Emergency, banning public rallies, executing warrantless arrests of opposition figures, and raiding independent media outlets, drawing sharp international criticism over a slide back into martial law. Amid this authoritarian shift, the government passes a major human rights milestone in June by enacting Republic Act No. 9346, which officially abolishes the death penalty, sparing over 1,200 inmates and opening up EU trade concessions. Two months later, the country suffers its worst ecological disaster when the M/T Solar 1 sinks off Guimaras, spilling over two million liters of bunker fuel into critical marine sanctuaries, forcing a structural overhaul of domestic maritime environmental laws.',
+    location: 'Guimaras Strait',
+    lat: 10.5833,
+    lng: 122.6167,
+    category: 'disaster',
+    effect: 'pulse',
+  },
+
+  // ── 2007 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 2007,
+    title: 'The Manila Peninsula Siege and the Strategic Political Pardon of Joseph Estrada',
+    description:
+      'In September 2007, the anti-graft court Sandiganbayan sentences former President Joseph Estrada to life imprisonment for plunder, but President Arroyo grants him a full executive pardon just six weeks later to defuse potential urban uprisings and court his political base. Weeks later, on November 29, political volatility flares again when Senator-elect Antonio Trillanes IV and Brigadier General Danilo Lim walk out of their subversion trial and seize the luxury Manila Peninsula Hotel in Makati. They demand the immediate removal of the president, but government forces respond with overwhelming tactical force, driving an armored personnel carrier into the hotel lobby and using tear gas to enforce a quick surrender within hours, signaling to global markets that the state maintained control over the military chain of command.',
+    location: 'The Manila Peninsula, Makati City',
+    lat: 14.5549,
+    lng: 121.0249,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 2008 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 2008,
+    title: 'The MOA-AD Collapse, Resumption of Moro Bush Warfare, and the Global Financial Crisis',
+    description:
+      'In August 2008, the government and the Moro Islamic Liberation Front (MILF) prepare to sign the historic Memorandum of Agreement on Ancestral Domain (MOA-AD) in Malaysia, granting the Moro people an expanded autonomous homeland. However, Christian politicians challenge the pact, and the Supreme Court declares it unconstitutional on the grounds that it creates a separate state within the republic. The sudden collapse of the agreement causes rogue MILF commanders to launch coordinated attacks across Central Mindanao, triggering full-scale bush warfare that displaces over 500,000 civilians. Concurrently, the global financial shock strikes; while domestic growth slows dramatically, the country avoids a banking collapse due to strict central bank regulations and robust remittance inflows from the global OFW diaspora.',
+    location: 'Cotabato City, Maguindanao',
+    lat: 7.2206,
+    lng: 124.2444,
+    category: 'war',
+    effect: 'pulse',
+  },
+
+  // ── 2009 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 2009,
+    title: 'The Maguindanao Massacre Warlord Atrocity and the Devastation of Typhoon Ondoy',
+    description:
+      'On November 23, 2009, weak state authority in the regions culminates in the worst political atrocity in modern Philippine history when 58 people—including 32 journalists—are ambushed and executed by a warlord\'s private army in Ampatuan, Maguindanao, to block a rival\'s gubernatorial filing. President Arroyo places the province under Martial Law to disarm the Ampatuan clan, drawing intense global condemnation that brands the nation as highly dangerous for journalists. Earlier, on September 26, Typhoon Ondoy (Ketsana) drops a month\'s worth of rain on Metro Manila in just six hours, submerging 80% of the capital, causing hundreds of casualties, and forcing international development agencies to radically pivot funding toward urban climate-change adaptation and disaster risk reduction.',
+    location: 'Ampatuan, Maguindanao',
+    lat: 6.8122,
+    lng: 124.4233,
+    category: 'disaster',
+    effect: 'pulse',
+  },
+
+  // ── 2010 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 2010,
+    title: 'The Rise of Benigno Aquino III, the Automated Election Milestone, and the Quirino Hostage Crisis',
+    description:
+      'The May 2010 national elections mark a major historical milestone as the country executes its first-ever fully automated vote utilizing optical scan machines to deliver rapid, indisputable results within days. Riding a massive wave of public sentiment following the death of his mother, democracy icon Cory Aquino, Benigno \'Noynoy\' Aquino III wins the presidency on an explicit anti-corruption platform (\'Kung walang corrupt, walang mahirap\'). His administration\'s honeymoon period is abruptly ended on August 23, 2010, when a disgruntled former police officer hijacks a tourist bus at the Quirino Grandstand. A botched tactical rescue by local police results in the deaths of eight Hong Kong tourists, triggering a severe international diplomatic crisis that exposes deep deficiencies in the state\'s crisis-management protocols.',
+    location: 'Quirino Grandstand, Manila',
+    lat: 14.5826,
+    lng: 120.9729,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 2011 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 2011,
+    title: 'The Judicial Prosecution of Gloria Arroyo and the K-to-12 Basic Education Overhaul',
+    description:
+      'Fulfilling his anti-corruption promises, President Aquino\'s state prosecutors file formal charges of electoral sabotage against former President Gloria Macapagal-Arroyo regarding the 2007 midterms. Government agents intercept Arroyo at the Manila international airport as she attempts to leave the country, placing her under high-profile hospital arrest at the Veterans Memorial Medical Center. Concurrently, to align the nation\'s massive migrant labor force and domestic services economy with international academic standards, the Department of Education launches the implementation of the K-to-12 Basic Education Program (RA 10533), structurally adding mandatory kindergarten and two years of senior high school to the public school cycle.',
+    location: 'Pasay City, Metro Manila',
+    lat: 14.535,
+    lng: 121.011,
+    category: 'politics',
+    effect: null,
+  },
+
+  // ── 2012 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 2012,
+    title: 'The Scarborough Shoal Standoff, the Impeachment of CJ Corona, and the Enactment of the RH Law',
+    description:
+      'In April 2012, a tense maritime standoff erupts at Scarborough Shoal when Chinese surveillance vessels physically block Philippine navy assets from arresting Chinese poachers, resulting in Beijing seizing effective control of the reef and prompting Manila to prepare a formal legal challenge under UNCLOS. Domestically, the administration secures a major political victory by successfully convicting impeached Supreme Court Chief Justice Renato Corona for failing to accurately disclose his assets in his SALN. In December, after over a decade of fierce resistance from the Catholic hierarchy, Congress passes the landmark Responsible Parenthood and Reproductive Health Act of 2012 (RA 10354), establishing modern, state-mandated reproductive healthcare access for the poor.',
+    location: 'Scarborough Shoal, West Philippine Sea',
+    lat: 15.1167,
+    lng: 117.7667,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 2013 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 2013,
+    title: 'The Trauma of Super Typhoon Yolanda, the Zamboanga Siege, and the PDAF Pork Barrel Scandal',
+    description:
+      'In September 2013, a rogue faction of the MNLF launches the Zamboanga City Siege, leading to three weeks of heavy urban combat that displaces over 100,000 residents. In November, Super Typhoon Yolanda (Haiyan)—one of the strongest tropical cyclones ever recorded—slams into the Visayas with a devastating five-meter storm surge, obliterating Tacloban City and killing over 6,300 people, a disaster that triggered a massive multi-national humanitarian military deployment. Simultaneously, investigative journalists expose the multi-billion-peso Priority Development Assistance Fund (PDAF) scam, revealing systematic funneled legislative pork barrel funds into fake NGOs, causing deep public disillusionment with elite governance that fueled the rise of the 2016 populist movement.',
+    location: 'Tacloban City, Leyte',
+    lat: 11.2444,
+    lng: 125.0039,
+    category: 'disaster',
+    effect: 'pulse',
+  },
+
+  // ── 2014 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 2014,
+    title: 'The Signing of the Comprehensive Agreement on the Bangsamoro Peace Treaty',
+    description:
+      'Following seventeen years of grueling negotiations to resolve a separatist conflict that claimed over 120,000 lives and trapped resource-rich provinces in deep structural poverty, the government and the Moro Islamic Liberation Front (MILF) sign the historic Comprehensive Agreement on the Bangsamoro (CAB) at Malacañang Palace. Highly praised by the United Nations and the international community, this landmark peace treaty outlines a comprehensive roadmap: the decommissioning and demobilization of over 10,000 armed rebel fighters, and the structural creation of a new, highly autonomous political entity with expanded powers over taxation, sharia law, and natural resources, providing a permanent legal blueprint for peace.',
+    location: 'Malacañang Palace, Manila',
+    lat: 14.5942,
+    lng: 120.9944,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 2015 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 2015,
+    title: 'The Mamasapano Tactical Tragedy, the SAF 44, and the Grand Apostolic Visit of Pope Francis',
+    description:
+      'In January 2015, millions of ecstatic faithful brave torrential rains to attend an outdoor mass celebrated by Pope Francis at Manila\'s Luneta Park, establishing a global record for an apostolic gathering with six million attendees. Days later, a covert anti-terrorist operation known as Oplan Exodus in Mamasapano, Maguindanao, goes catastrophically wrong. An elite unit of the Special Action Force neutralizes international terrorist Marwan but is ambushed and cut off by local rebel factions. Due to a breakdown in communication with the military command, 44 elite commandos (the SAF 44) are killed in action, triggering a massive collapse in public trust, inflaming anti-Moro sentiment, and halting the immediate passage of the Bangsamoro peace legislation.',
+    location: 'Mamasapano, Maguindanao',
+    lat: 6.9406,
+    lng: 124.5275,
+    category: 'war',
+    effect: 'pulse',
+  },
+
+  // ── 2016 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 2016,
+    title: 'The Election of Rodrigo Duterte, the Launch of the War on Drugs, and the Arbitral Victory at The Hague',
+    description:
+      'In May 2016, Davao City Mayor Rodrigo Duterte wins the presidency by a landslide on an uncompromising anti-establishment, populist platform. He immediately launches a highly controversial, state-led War on Drugs (Project Double Barrel), instructing law enforcement and encouraging vigilante groups to apply lethal force against suspected drug dealers and users. This campaign results in thousands of extrajudicial killings, drawing sharp condemnation from global human rights bodies. Concurrently, on July 12, the Permanent Court of Arbitration in The Hague delivers a historic milestone victory for Manila, ruling that China\'s nine-dash line claims over the South China Sea have no basis in international law under UNCLOS. However, President Duterte chooses to downplay the ruling in an effort to court Chinese infrastructure loans, shifting the nation\'s traditional foreign policy alignment away from Washington and toward Beijing.',
+    location: 'Malacañang Palace, Manila',
+    lat: 14.5942,
+    lng: 120.9944,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 2017 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 2017,
+    title: 'The Five-Month Urban Siege of Marawi, the Declaration of Mindanao Martial Law, and the TRAIN Law Tax Overhaul',
+    description:
+      'In May, ISIS-affiliated militants led by the Maute and Abu Sayyaf groups launch a surprise armed takeover of Marawi City in Mindanao, attempting to establish an Islamic caliphate in Southeast Asia. President Duterte places the entire island of Mindanao under Martial Law as the Armed Forces engage in a brutal, five-month urban siege involving heavy house-to-house combat, artillery barrages, and air strikes. The city is liberated in October after the deaths of over one thousand militants, soldiers, and civilians, leaving the historic Islamic city completely in ruins and displacing hundreds of thousands of residents. In December, the regime signs the TRAIN Law (Tax Reform for Acceleration and Inclusion), structurally overhauling individual income taxation by lowering income taxes while aggressively increasing excise taxes on fuel, automobiles, and sugary drinks to fund the Build, Build, Build infrastructure campaign.',
+    location: 'Marawi City, Lanao del Sur',
+    lat: 8.0031,
+    lng: 124.2853,
+    category: 'war',
+    effect: 'pulse',
+  },
+
+  // ── 2018 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 2018,
+    title: 'The Environmental Closure of Boracay Island, the Enactment of the Bangsamoro Organic Law, and Runaway Inflation',
+    description:
+      'Calling the country\'s premier tourist destination a \'cesspool\' due to rapid, unregulated commercial development and raw sewage discharge, President Duterte orders the unprecedented, total closure of Boracay Island to all tourists for six months. A massive inter-agency task force rehabilitates the island\'s coastal ecosystem, setting a global precedent for radical environmental state intervention. In politics, Duterte signs the historic Bangsamoro Organic Law (BOL), codifying the previous peace treaties and providing the legal mechanism to create a powerful autonomous Muslim territory. Economically, the year is marked by severe macroeconomic stress as global crude spikes and domestic implementation of the TRAIN law combine to push local inflation to a nine-year high of 6.7%, triggering widespread public outcry over soaring prices of rice and basic commodities.',
+    location: 'Boracay Island, Aklan',
+    lat: 11.9674,
+    lng: 121.9248,
+    category: 'trade',
+    effect: 'pulse',
+  },
+
+  // ── 2019 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 2019,
+    title: 'The Ratification of the BARMM, the Jolo Cathedral Bombing, and the Implementation of the Rice Tariffication Law',
+    description:
+      'Voters overwhelmingly ratify the Bangsamoro Organic Law in a historic regional plebiscite, officially establishing the new Bangsamoro Autonomous Region in Muslim Mindanao (BARMM) and dissolving the ineffective ARMM. Days later, twin suicide bombings orchestrated by the Abu Sayyaf group hit the Cathedral of Our Lady of Mount Carmel in Jolo, killing over twenty people and highlighting the resilience of radical splinter cells despite the peace process. In economic policy, the state signs the Rice Tariffication Law (RA 11203), lifting decades of quantitative import restrictions on foreign rice and replacing them with tariffs. While this structural shift successfully stabilizes urban food prices and lowers inflation, it floods the domestic market with cheap imports, severely undercutting the livelihoods of local smallholder farmers.',
+    location: 'Cotabato City, BARMM',
+    lat: 7.2206,
+    lng: 124.2444,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 2020 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 2020,
+    title: 'The Taal Volcano Eruption, the COVID-19 Lockdown Shockwave, and the Forced Shutdown of ABS-CBN',
+    description:
+      'In January, the Taal Volcano suffers a major phreatomagmatic eruption, blanketing Calabarzon and Metro Manila in thick ash and halting economic activity. By March, as the global COVID-19 pandemic accelerates, the administration enforces one of the longest, strictest continuous pandemic lockdowns in the world, shutting down public transit, freezing the economy, and restricting millions to their homes. Amid this profound public health and economic crisis, the government draws fierce domestic and international criticism when a staunchly loyalist Congress officially denies a franchise renewal to ABS-CBN, forcing the country\'s largest independent broadcast network off the air, which fundamentally alters the domestic media landscape and shrinks press freedom.',
+    location: 'Taal Volcano, Batangas',
+    lat: 14.0111,
+    lng: 120.9978,
+    category: 'disaster',
+    effect: 'ash',
+  },
+
+  // ── 2021 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 2021,
+    title: 'The Passing of Noynoy Aquino, the Pandemic Delta Variant Wave, and Hidilyn Diaz\'s Historic Olympic Gold',
+    description:
+      'In June, former President Benigno \'Noynoy\' Aquino III dies of renal disease, prompting a nationwide re-evaluation of his administration\'s economic and anti-corruption legacy. Throughout the year, the state struggles through multiple pandemic waves driven by the deadly Delta variant, stretching the hospital infrastructure to its absolute limit and slowly rolling out foreign-sourced vaccines to reopen the economic core. In July, weightlifter Hidilyn Diaz achieves a historic national sports milestone, winning the country\'s first-ever Olympic gold medal at the Tokyo Games, providing a powerful moment of unified national pride and psychological relief amidst the prolonged gloom of pandemic isolation and economic contraction.',
+    location: 'Manila, Metro Manila',
+    lat: 14.5995,
+    lng: 120.9842,
+    category: 'culture',
+    effect: 'pulse',
+  },
+
+  // ── 2022 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 2022,
+    title: 'The Return of the Marcoses via the UniTeam Alliance and the Complete Post-Pandemic Reopening',
+    description:
+      'In a historic political realignment, Ferdinand \'Bongbong\' Marcos Jr.—the son of the former dictator—unites with Davao City Mayor Sara Duterte to form the powerhouse UniTeam alliance. Marcos Jr. wins the presidential election by an absolute majority, capturing over thirty-one million votes and returning the Marcos family to Malacañang Palace thirty-six years after their ouster in the 1986 EDSA Revolution. The new administration fully removes remaining pandemic travel restrictions, dismantles mandatory masking protocols, fully reopens face-to-face schooling, and attempts to manage severe post-pandemic global inflation, agricultural supply line crises, and soaring domestic commodity prices.',
+    location: 'Malacañang Palace, Manila',
+    lat: 14.5942,
+    lng: 120.9944,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 2023 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 2023,
+    title: 'The Creation of the Maharlika Sovereign Wealth Fund and Dangerous Flashpoints in the West Philippine Sea',
+    description:
+      'President Marcos Jr. signs into law the highly debated Maharlika Investment Fund (MIF), creating the nation\'s first sovereign wealth fund despite intense pushback from economists over fiscal transparency, state debt, and the utilization of government bank capital. In foreign policy, the administration shifts radically away from Duterte\'s pro-Beijing stance, expanding US access to strategic military bases under EDCA. This pivots the state into direct confrontation with China, resulting in frequent, dangerous maritime encounters involving high-pressure water cannons, laser targeting, and physical ship collisions around Ayungin Shoal.',
+    location: 'Ayungin Shoal, West Philippine Sea',
+    lat: 9.7333,
+    lng: 114.8667,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 2024 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 2024,
+    title: 'The Complete Collapse of the UniTeam Coalition, the POGO Ban, and the Arrest of Apollo Quiboloy',
+    description:
+      'The dominant political alliance fractures completely as Vice President Sara Duterte resigns from the Marcos cabinet, exposing a bitter feud between the political houses of Manila and Davao. The administration launches a heavy domestic crackdown and total ban on Philippine Offshore Gaming Operators (POGOs) due to national security threats and criminal syndicates, highlighted by the high-profile senate investigation and flight of Mayor Alice Guo. State forces pull off a major operational milestone by arresting fugitive doomsday preacher Apollo Quiboloy inside his vast Davao compound following a dramatic, multi-week police siege.',
+    location: 'Davao City, Mindanao',
+    lat: 7.0731,
+    lng: 125.6128,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 2025 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 2025,
+    title: 'The Proxy Battlefield Midterms, Legislative Drug War Inquiries, and Constitutional Cha-Cha Battles',
+    description:
+      'The country holds high-stakes midterm legislative elections, operating as a direct proxy battlefield between the loyalist Marcos Alyansa para sa Bagong Pilipinas and the opposing Duterte faction. The political discourse is intensely dominated by fierce judicial and legislative battles over proposed Charter Change (Cha-Cha) economic provisions, severe legislative inquiries into the extrajudicial funding of the previous administration\'s drug war, and highly complex economic policy adjustments designed to mitigate deep climate vulnerabilities across vulnerable agricultural regions.',
+    location: 'Batasang Pambansa, Quezon City',
+    lat: 14.6922,
+    lng: 121.0944,
+    category: 'politics',
+    effect: 'pulse',
+  },
+
+  // ── 2026 ─────────────────────────────────────────────────────────────────────
+  {
+    year: 2026,
+    title: 'The Consolidation of the Bagong Pilipinas Vision, Maritime Defense Posturing, and Tech-Sector AI Integration',
+    description:
+      'Reaching the present day, the administration aggressively consolidates its domestic policy platform under the Bagong Pilipinas brand, prioritizing large-scale structural infrastructure modernization and comprehensive digital integration across public services. In international relations, Manila hardens its permanent maritime defense posture in the West Philippine Sea through upgraded security alliances with regional democratic partners like Japan and Australia, while navigating complex digital landscape shifts like real-time AI implementation across the local tech and business process outsourcing sectors.',
+    location: 'Malacañang Palace, Manila',
+    lat: 14.5942,
+    lng: 120.9944,
+    category: 'politics',
+    effect: 'pulse',
   },
 ]
 
