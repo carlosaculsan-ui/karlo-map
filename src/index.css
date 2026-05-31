@@ -154,7 +154,7 @@ html, body, #root {
   left: 0.75rem;
   right: 0.75rem;
   bottom: calc(6.5rem + env(safe-area-inset-bottom, 0px));
-  height: min(55vh, 460px);
+  height: min(38vh, 300px);
 }
 
 .event-panel-wrapper[data-open="false"] {

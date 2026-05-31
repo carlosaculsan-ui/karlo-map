@@ -334,7 +334,11 @@ export default function MapView({ selectedYear, onYearChange, onOpenQuiz }) {
       {currentEra && (
         <div className="absolute top-14 left-1/2 z-10 -translate-x-1/2 md:top-4">
           <button
-            onClick={() => setEraInfo(eraInfo?.name === currentEra.name ? null : currentEra)}
+            onClick={() => {
+              const next = eraInfo?.name === currentEra.name ? null : currentEra
+              setEraInfo(next)
+              if (next) setPanelOpen(false)
+            }}
             className="rounded-full bg-black/60 px-3 py-1 backdrop-blur-sm focus:outline-none hover:bg-black/75 transition-colors"
           >
             <span className="select-none whitespace-nowrap text-xs tracking-widest text-amber-400 uppercase">
