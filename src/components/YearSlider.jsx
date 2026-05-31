@@ -1,9 +1,21 @@
 import { useState, useId } from 'react'
+import eras from '../data/eras'
 
 const MIN = 900
 const MAX = 2026
 
 const TICKS = [900, 1200, 1521, 1800, 1898, 2026]
+
+const ERA_COLORS = [
+  '#14b8a6',
+  '#22c55e',
+  '#3b82f6',
+  '#f97316',
+  '#ef4444',
+  '#a855f7',
+  '#6366f1',
+  '#eab308',
+]
 
 export default function YearSlider({ year, onChange, hasEvents }) {
   const [inputVal, setInputVal] = useState(String(year))
@@ -31,13 +43,12 @@ export default function YearSlider({ year, onChange, hasEvents }) {
     setInputVal(String(parsed))
   }
 
-
   return (
     <div
-      className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 overflow-hidden rounded-2xl bg-black/60 backdrop-blur-md w-[min(580px,calc(100vw-3rem))]"
+      className="absolute bottom-0 left-0 right-0 z-10 bg-black/65 backdrop-blur-md rounded-t-2xl"
       style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
     >
-      <div className="mx-auto max-w-2xl px-5 py-4">
+      <div className="px-5 py-4">
         <div className="flex items-center gap-4">
 
           {/* Left: year input */}
@@ -81,7 +92,7 @@ export default function YearSlider({ year, onChange, hasEvents }) {
           {/* Divider */}
           <div className="h-10 w-px shrink-0 bg-white/10" />
 
-          {/* Right: arrow buttons + slider track + milestone ticks */}
+          {/* Right: arrow buttons + slider track + era band + milestone ticks */}
           <div className="flex min-w-0 flex-1 items-center gap-2">
 
             <button
@@ -105,13 +116,40 @@ export default function YearSlider({ year, onChange, hasEvents }) {
                 onChange={(e) => onChange(Number(e.target.value))}
                 style={{ '--fill': `${progress}%` }}
               />
-              <div className="relative mt-2 h-3">
+
+              {/* Era color band */}
+              <div className="relative mt-1.5 h-1.5 rounded-full overflow-hidden bg-white/5">
+                {eras.map((era, i) => {
+                  const left  = ((era.startYear - MIN) / (MAX - MIN)) * 100
+                  const width = ((era.endYear   - MIN) / (MAX - MIN)) * 100 - left
+                  return (
+                    <div
+                      key={era.name}
+                      className="absolute top-0 h-full"
+                      style={{
+                        left: `${left}%`,
+                        width: `${width}%`,
+                        background: ERA_COLORS[i % ERA_COLORS.length],
+                        opacity: 0.45,
+                      }}
+                    />
+                  )
+                })}
+                {/* Active year cursor line */}
+                <div
+                  className="absolute top-0 h-full w-0.5 bg-white/70 rounded-full"
+                  style={{ left: `${progress}%`, transform: 'translateX(-50%)' }}
+                />
+              </div>
+
+              {/* Tick labels */}
+              <div className="relative mt-1.5 h-4">
                 {TICKS.map((tick) => {
                   const pct = ((tick - MIN) / (MAX - MIN)) * 100
                   return (
                     <span
                       key={tick}
-                      className="absolute -translate-x-1/2 select-none text-[9px] text-white/35"
+                      className="absolute -translate-x-1/2 select-none text-[9px] font-medium text-white/40"
                       style={{ left: `${pct}%` }}
                     >
                       {tick}
