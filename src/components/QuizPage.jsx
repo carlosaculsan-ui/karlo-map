@@ -24,7 +24,7 @@ function DifficultyScreen({ onSelect, onBack }) {
     <div className="flex h-full flex-col items-center justify-center px-6">
       <button
         onClick={onBack}
-        className="absolute left-5 top-5 flex items-center gap-1.5 text-[10px] tracking-[0.3em] text-white/30 uppercase hover:text-white/60 transition-colors focus:outline-none"
+        className="absolute left-5 top-5 flex min-h-[44px] items-center gap-1.5 text-[10px] tracking-[0.3em] text-white/30 uppercase hover:text-white/60 transition-colors focus:outline-none"
       >
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
           <path d="M19 12H5M12 5l-7 7 7 7" />
@@ -103,7 +103,7 @@ function QuizScreen({ questions, onFinish, onQuit }) {
             <span className="text-[10px] tracking-[0.3em] text-white/30 uppercase">{score} correct</span>
             <button
               onClick={onQuit}
-              className="text-[10px] tracking-[0.25em] text-white/20 uppercase hover:text-red-400/70 transition-colors focus:outline-none"
+              className="inline-flex min-h-[44px] items-center text-[10px] tracking-[0.25em] text-white/20 uppercase hover:text-red-400/70 transition-colors focus:outline-none"
             >
               Quit
             </button>

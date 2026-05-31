@@ -352,7 +352,7 @@ export default function MapView({ selectedYear, onYearChange, onOpenQuiz }) {
       {/* Era info popup */}
       {eraInfo && (
         <div
-          className="absolute top-24 left-1/2 z-20 -translate-x-1/2 w-80 max-w-[calc(100vw-2rem)] rounded-2xl p-4 md:top-14"
+          className="absolute top-24 left-1/2 z-20 -translate-x-1/2 w-80 max-w-[calc(100vw-1rem)] rounded-2xl p-4 md:top-14 md:max-w-[calc(100vw-2rem)]"
           style={{
             background: 'rgba(5, 8, 15, 0.93)',
             backdropFilter: 'blur(18px)',
@@ -368,7 +368,7 @@ export default function MapView({ selectedYear, onYearChange, onOpenQuiz }) {
                 {eraInfo.startYear} – {eraInfo.endYear}
               </p>
               <h3
-                className="mt-1.5 text-[11px] font-semibold tracking-[0.25em] text-white/70 uppercase leading-snug"
+                className="mt-1.5 text-[11px] font-semibold tracking-[0.15em] text-white/70 uppercase leading-snug"
                 style={{ fontFamily: "'Cinzel', serif" }}
               >
                 {eraInfo.name}
@@ -399,7 +399,7 @@ export default function MapView({ selectedYear, onYearChange, onOpenQuiz }) {
       {/* Quiz FAB */}
       <button
         onClick={onOpenQuiz}
-        className="absolute bottom-36 right-4 z-20 flex h-12 w-12 flex-col items-center justify-center gap-0.5 rounded-full bg-orange-500 shadow-lg shadow-orange-500/30 transition-all duration-200 hover:bg-orange-400 hover:scale-105 focus:outline-none"
+        className="absolute bottom-36 right-4 z-30 flex h-12 w-12 flex-col items-center justify-center gap-0.5 rounded-full bg-orange-500 shadow-lg shadow-orange-500/30 transition-all duration-200 hover:bg-orange-400 hover:scale-105 focus:outline-none"
         aria-label="Open quiz"
       >
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="text-white">

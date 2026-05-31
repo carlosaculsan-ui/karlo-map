@@ -123,7 +123,7 @@ export default function YearSlider({ year, onChange, hasEvents }) {
               onClick={() => onChange(Math.max(MIN, year - 1))}
               disabled={year <= MIN}
               aria-label="Previous year"
-              className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-white/40 transition-colors hover:bg-white/10 hover:text-white/80 disabled:cursor-not-allowed disabled:opacity-20 focus:outline-none"
+              className="flex h-7 w-7 min-h-[44px] min-w-[44px] md:min-h-0 md:min-w-0 shrink-0 items-center justify-center rounded-full text-white/40 transition-colors hover:bg-white/10 hover:text-white/80 disabled:cursor-not-allowed disabled:opacity-20 focus:outline-none"
             >
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M15 18l-6-6 6-6" />
@@ -188,7 +188,7 @@ export default function YearSlider({ year, onChange, hasEvents }) {
               onClick={() => onChange(Math.min(MAX, year + 1))}
               disabled={year >= MAX}
               aria-label="Next year"
-              className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-white/40 transition-colors hover:bg-white/10 hover:text-white/80 disabled:cursor-not-allowed disabled:opacity-20 focus:outline-none"
+              className="flex h-7 w-7 min-h-[44px] min-w-[44px] md:min-h-0 md:min-w-0 shrink-0 items-center justify-center rounded-full text-white/40 transition-colors hover:bg-white/10 hover:text-white/80 disabled:cursor-not-allowed disabled:opacity-20 focus:outline-none"
             >
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M9 18l6-6-6-6" />
