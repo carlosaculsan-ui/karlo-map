@@ -296,15 +296,21 @@ export default function MapView({ selectedYear, onYearChange, onOpenQuiz }) {
       markersRef.current.push(marker)
     })
 
+    const isMobile = window.innerWidth < 768
+    const pad = isMobile
+      ? { top: 80, bottom: 360, left: 60, right: 60 }
+      : { top: 80, bottom: 80, left: 60, right: 360 }
+
     if (yearEvts.length === 1) {
       mapRef.current.flyTo({
         center: [yearEvts[0].lng, yearEvts[0].lat],
         zoom: 9, duration: 1200, essential: true,
+        padding: pad,
       })
     } else {
       const bounds = new maplibregl.LngLatBounds()
       yearEvts.forEach(e => bounds.extend([e.lng, e.lat]))
-      mapRef.current.fitBounds(bounds, { padding: 80, duration: 1200 })
+      mapRef.current.fitBounds(bounds, { padding: pad, duration: 1200 })
     }
 
     setPanelOpen(true)
