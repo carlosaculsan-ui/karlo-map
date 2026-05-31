@@ -1,4 +1,4 @@
-import { useState, useId } from 'react'
+import { useState, useId, useRef, useEffect } from 'react'
 import eras from '../data/eras'
 
 const MIN = 900
@@ -18,10 +18,12 @@ const ERA_COLORS = [
 ]
 
 export default function YearSlider({ year, onChange, hasEvents }) {
-  const [inputVal, setInputVal] = useState(String(year))
-  const [error, setError]       = useState(false)
-  const [focused, setFocused]   = useState(false)
-  const inputId = useId()
+  const [inputVal,  setInputVal]  = useState(String(year))
+  const [error,     setError]     = useState(false)
+  const [errorMsg,  setErrorMsg]  = useState('')
+  const [focused,   setFocused]   = useState(false)
+  const inputRef = useRef(null)
+  const inputId  = useId()
 
   // Keep input display in sync with slider/arrow changes, but not while user is typing
   if (!focused && inputVal !== String(year)) {
@@ -32,16 +34,37 @@ export default function YearSlider({ year, onChange, hasEvents }) {
 
   const commit = (raw) => {
     const parsed = parseInt(raw, 10)
-    if (isNaN(parsed) || parsed < MIN || parsed > MAX) {
+    if (isNaN(parsed) || isNaN(Number(raw.trim()))) {
       setError(true)
+      setErrorMsg('Please enter a valid number')
       setInputVal(String(year))
-      setTimeout(() => setError(false), 600)
+      setTimeout(() => setError(false), 2000)
+      return
+    }
+    if (parsed < MIN || parsed > MAX) {
+      setError(true)
+      setErrorMsg(`Must be between ${MIN} and ${MAX}`)
+      setInputVal(String(year))
+      setTimeout(() => setError(false), 2000)
       return
     }
     setError(false)
+    setErrorMsg('')
     onChange(parsed)
     setInputVal(String(parsed))
   }
+
+  // Press Y to focus the year input (when not already in a text field)
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key !== 'y' && e.key !== 'Y') return
+      if (['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName)) return
+      e.preventDefault()
+      inputRef.current?.focus()
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [])
 
   return (
     <div
@@ -65,6 +88,7 @@ export default function YearSlider({ year, onChange, hasEvents }) {
               )}
             </div>
             <input
+              ref={inputRef}
               id={inputId}
               type="number"
               min={MIN}
@@ -80,12 +104,12 @@ export default function YearSlider({ year, onChange, hasEvents }) {
               className={`w-full rounded-lg bg-white/8 px-2 py-1 text-center font-mono text-3xl font-bold outline-none transition-all duration-200
                 [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none
                 ${error
-                  ? 'text-red-400 ring-1 ring-red-500/70'
+                  ? 'text-red-400 ring-2 ring-red-500/80'
                   : 'text-orange-300 ring-1 ring-orange-400/30 hover:ring-orange-400/50 focus:ring-orange-400/70'
                 }`}
             />
-            <p className={`mt-1 text-center text-[8px] tracking-widest uppercase transition-colors duration-200 ${error ? 'text-red-400/70' : 'text-white/20'}`}>
-              {error ? `${MIN} – ${MAX}` : 'enter year'}
+            <p className={`mt-1 min-h-[12px] text-center text-[8px] tracking-wide transition-colors duration-200 ${error ? 'text-red-400' : 'text-white/20'}`}>
+              {error ? errorMsg : 'Press Y to focus'}
             </p>
           </div>
 

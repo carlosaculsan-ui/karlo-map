@@ -168,6 +168,7 @@ export default function MapView({ selectedYear, onYearChange }) {
   const [mapTheme,     setMapTheme]     = useState('explore')
   const [eraInfo,      setEraInfo]      = useState(null)
   const [themeLoading, setThemeLoading] = useState(false)
+  const [tileLoading,  setTileLoading]  = useState(false)
 
   // ── Global Escape handler — closes whichever overlay is topmost ──────────
   useEffect(() => {
@@ -189,6 +190,7 @@ export default function MapView({ selectedYear, onYearChange }) {
       style: STYLES.explore,
       center: [122.0, 12.0],
       zoom: 5,
+      fadeDuration: 400,
     })
 
     mapRef.current.addControl(
@@ -197,6 +199,9 @@ export default function MapView({ selectedYear, onYearChange }) {
     )
 
     mapRef.current.once('idle', () => setMapReady(true))
+
+    mapRef.current.on('dataloading', () => setTileLoading(true))
+    mapRef.current.on('idle',        () => setTileLoading(false))
 
     return () => {
       if (animFrameRef.current) cancelAnimationFrame(animFrameRef.current)
@@ -416,6 +421,14 @@ export default function MapView({ selectedYear, onYearChange }) {
         onClose={() => setPanelOpen(false)}
       />
 
+
+      {/* Tile-loading bar — slim indicator at top during any tile fetch */}
+      <div
+        className="pointer-events-none absolute top-0 left-0 right-0 z-30 h-0.5 transition-opacity duration-300"
+        style={{ opacity: tileLoading && mapReady ? 1 : 0 }}
+      >
+        <div className="h-full w-full bg-gradient-to-r from-orange-500/0 via-orange-400 to-orange-500/0 animate-pulse" />
+      </div>
 
       {/* Theme-switch veil — covers white flash during style transition */}
       <div
