@@ -102,28 +102,28 @@ function makeMarkerEl(category) {
 
   const wrapper = document.createElement('div')
   Object.assign(wrapper.style, {
-    position: 'relative', width: '32px', height: '32px',
-    display: 'flex', alignItems: 'center', justifyContent: 'center',
-    cursor: 'pointer',
+    width: '28px', height: '38px', cursor: 'pointer',
   })
 
-  const ring = document.createElement('div')
-  Object.assign(ring.style, {
-    position: 'absolute', inset: '0', borderRadius: '50%',
-    border: `2px solid ${color}`,
-    animation: 'markerPulse 2s ease-out infinite',
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+  svg.setAttribute('width', '28')
+  svg.setAttribute('height', '38')
+  svg.setAttribute('viewBox', '0 0 28 38')
+  svg.setAttribute('fill', 'none')
+  Object.assign(svg.style, {
+    filter: `drop-shadow(0 3px 10px ${color}99)`,
+    animation: 'pinFloat 3s ease-in-out infinite',
   })
 
-  const dot = document.createElement('div')
-  Object.assign(dot.style, {
-    position: 'relative', zIndex: '1', width: '14px', height: '14px',
-    borderRadius: '50%', background: color,
-    border: '2.5px solid rgba(255,255,255,0.9)',
-    boxShadow: `0 0 14px ${color}bb, 0 0 28px ${color}44`,
-  })
+  svg.innerHTML = `
+    <path d="M14 2C8.477 2 4 6.477 4 13C4 21.5 14 36 14 36C14 36 24 21.5 24 13C24 6.477 19.523 2 14 2Z"
+          fill="${color}dd" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+    <circle cx="14" cy="13" r="5" fill="rgba(255,255,255,0.15)"/>
+    <circle cx="14" cy="13" r="3" fill="rgba(255,255,255,0.85)"/>
+    <circle cx="14" cy="13" r="1.5" fill="${color}"/>
+  `
 
-  wrapper.appendChild(ring)
-  wrapper.appendChild(dot)
+  wrapper.appendChild(svg)
   return wrapper
 }
 
@@ -289,7 +289,7 @@ export default function MapView({ selectedYear, onYearChange }) {
       <EffectsLayer effect={activeEffect} />
 
       {/* Map theme toggle */}
-      <div className="absolute left-4 top-4 z-10 flex overflow-hidden rounded-full bg-black/35 backdrop-blur-sm">
+      <div className="absolute left-4 top-4 z-10 flex overflow-hidden rounded-full bg-black/50 backdrop-blur-sm ring-1 ring-white/10">
         {([
           { key: 'explore', label: 'Explore', Icon: SunIcon  },
           { key: 'light',   label: 'Minimal', Icon: MoonIcon },
@@ -298,7 +298,9 @@ export default function MapView({ selectedYear, onYearChange }) {
             key={key}
             onClick={() => setMapTheme(key)}
             className={`flex items-center gap-1.5 px-3 py-1.5 text-[10px] tracking-[0.2em] uppercase transition-all duration-200 ${
-              mapTheme === key ? 'bg-white/20 text-white' : 'text-white/40 hover:text-white/70'
+              mapTheme === key
+                ? 'bg-orange-500 text-white shadow-inner'
+                : 'text-white/35 hover:text-white/65'
             }`}
           >
             <Icon />
@@ -332,16 +334,15 @@ export default function MapView({ selectedYear, onYearChange }) {
           }}
         >
           <div className="absolute left-8 right-8 top-0 h-px rounded-full bg-gradient-to-r from-transparent via-amber-500/40 to-transparent" />
-          <div className="mb-1 flex items-start justify-between gap-3">
+          <div className="mb-3 flex items-start justify-between gap-3">
             <div>
               <p
-                className="text-[10px] tracking-[0.35em] text-amber-400/60 uppercase mb-1"
-                style={{ fontFamily: "'Cinzel', serif" }}
+                className="font-mono text-2xl font-bold text-amber-400 leading-none tracking-tight"
               >
                 {eraInfo.startYear} – {eraInfo.endYear}
               </p>
               <h3
-                className="text-sm font-semibold text-white leading-snug"
+                className="mt-1.5 text-[11px] font-semibold tracking-[0.25em] text-white/70 uppercase leading-snug"
                 style={{ fontFamily: "'Cinzel', serif" }}
               >
                 {eraInfo.name}
@@ -356,7 +357,8 @@ export default function MapView({ selectedYear, onYearChange }) {
               </svg>
             </button>
           </div>
-          <p className="mt-2 text-xs leading-relaxed text-white/50">
+          <div className="h-px bg-white/8 mb-3" />
+          <p className="text-xs leading-relaxed text-white/45">
             {eraInfo.description}
           </p>
         </div>
@@ -377,14 +379,40 @@ export default function MapView({ selectedYear, onYearChange }) {
 
       {/* Dark loading veil — fades out when map tiles are ready */}
       <div
-        className="pointer-events-none absolute inset-0 z-50 flex items-center justify-center bg-[#070b12] transition-opacity duration-700"
+        className="pointer-events-none absolute inset-0 z-50 flex flex-col items-center justify-center gap-6 bg-[#070b12] transition-opacity duration-700"
         style={{ opacity: mapReady ? 0 : 1 }}
       >
+        {/* Compass rose */}
+        <div style={{ animation: 'compassSpin 8s linear infinite' }}>
+          <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
+            {/* Outer ring */}
+            <circle cx="36" cy="36" r="34" stroke="rgba(251,191,36,0.12)" strokeWidth="1" />
+            <circle cx="36" cy="36" r="28" stroke="rgba(251,191,36,0.08)" strokeWidth="0.5" strokeDasharray="3 5" />
+            {/* Cardinal points */}
+            <polygon points="36,4 39,34 36,30 33,34" fill="rgba(251,191,36,0.9)" />
+            <polygon points="36,68 39,38 36,42 33,38" fill="rgba(251,191,36,0.3)" />
+            <polygon points="4,36 34,33 30,36 34,39" fill="rgba(251,191,36,0.3)" />
+            <polygon points="68,36 38,33 42,36 38,39" fill="rgba(251,191,36,0.3)" />
+            {/* Intercardinal ticks */}
+            {[45,135,225,315].map(deg => (
+              <line
+                key={deg}
+                x1="36" y1="10" x2="36" y2="16"
+                stroke="rgba(251,191,36,0.25)"
+                strokeWidth="1"
+                transform={`rotate(${deg} 36 36)`}
+              />
+            ))}
+            {/* Center dot */}
+            <circle cx="36" cy="36" r="3" fill="rgba(251,191,36,0.7)" />
+            <circle cx="36" cy="36" r="1.5" fill="#070b12" />
+          </svg>
+        </div>
         <p
-          className="text-[11px] tracking-[0.5em] text-orange-400/50 uppercase"
+          className="text-[10px] tracking-[0.55em] text-amber-400/40 uppercase"
           style={{ fontFamily: "'Cinzel', serif", animation: 'fadeIn 1s ease forwards' }}
         >
-          Loading
+          Charting the archipelago
         </p>
       </div>
     </div>
