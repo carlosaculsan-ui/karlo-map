@@ -1,12 +1,22 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import IntroScreen from './components/IntroScreen'
 import MapView from './components/MapView'
 import QuizPage from './components/QuizPage'
 
+function getInitialYear() {
+  const params = new URLSearchParams(window.location.search)
+  const y = parseInt(params.get('year'), 10)
+  return Number.isFinite(y) && y >= 900 && y <= 2026 ? y : 900
+}
+
 export default function App() {
   const [screen, setScreen] = useState('intro')
   const [fading, setFading] = useState(false)
-  const [selectedYear, setSelectedYear] = useState(900)
+  const [selectedYear, setSelectedYear] = useState(getInitialYear)
+
+  useEffect(() => {
+    window.history.replaceState(null, '', `?year=${selectedYear}`)
+  }, [selectedYear])
 
   const navigate = (to) => {
     setFading(true)

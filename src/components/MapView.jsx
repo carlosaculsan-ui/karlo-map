@@ -5,6 +5,9 @@ import events from '../data/events'
 import eras from '../data/eras'
 import YearSlider from './YearSlider'
 import EventPanel from './EventPanel'
+import SearchOverlay from './SearchOverlay'
+import EventBrowserPanel from './EventBrowserPanel'
+import CommandHub from './CommandHub'
 import EffectsLayer from './EffectsLayer'
 
 const MAPTILER_KEY = import.meta.env.VITE_MAPTILER_KEY
@@ -139,32 +142,6 @@ function makeMarkerEl() {
   return wrapper
 }
 
-// ── Icon components ───────────────────────────────────────────────────────────
-
-function SunIcon() {
-  return (
-    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-      <circle cx="12" cy="12" r="4" />
-      <line x1="12" y1="2"  x2="12" y2="5"  />
-      <line x1="12" y1="19" x2="12" y2="22" />
-      <line x1="4.22"  y1="4.22"  x2="6.34"  y2="6.34"  />
-      <line x1="17.66" y1="17.66" x2="19.78" y2="19.78" />
-      <line x1="2"  y1="12" x2="5"  y2="12" />
-      <line x1="19" y1="12" x2="22" y2="12" />
-      <line x1="4.22"  y1="19.78" x2="6.34"  y2="17.66" />
-      <line x1="17.66" y1="6.34"  x2="19.78" y2="4.22"  />
-    </svg>
-  )
-}
-
-function MoonIcon() {
-  return (
-    <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-    </svg>
-  )
-}
-
 // ── Component ─────────────────────────────────────────────────────────────────
 
 export default function MapView({ selectedYear, onYearChange, onOpenQuiz }) {
@@ -182,17 +159,32 @@ export default function MapView({ selectedYear, onYearChange, onOpenQuiz }) {
   const [themeLoading,   setThemeLoading]   = useState(false)
   const [tileLoading,    setTileLoading]    = useState(false)
   const [activeEventIdx, setActiveEventIdx] = useState(null)
+  const [showSearch,     setShowSearch]     = useState(false)
+  const [showBrowser,    setShowBrowser]    = useState(false)
+  const [showHub,        setShowHub]        = useState(false)
+  const pendingEventRef = useRef(null)
 
-  // ── Global Escape handler — closes whichever overlay is topmost ──────────
+  // ── Global Escape / search-shortcut keyboard handler ─────────────────────
   useEffect(() => {
     const onKey = (e) => {
-      if (e.key !== 'Escape') return
-      if (eraInfo)    { setEraInfo(null);    return }
-      if (panelOpen)  { setPanelOpen(false); return }
+      if (e.key === 'Escape') {
+        if (showHub)     { setShowHub(false);     return }
+        if (showSearch)  { setShowSearch(false);  return }
+        if (showBrowser) { setShowBrowser(false); return }
+        if (eraInfo)     { setEraInfo(null);      return }
+        if (panelOpen)   { setPanelOpen(false);   return }
+        return
+      }
+      if (e.key === '/' && !['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName)) {
+        e.preventDefault()
+        setShowHub(false)
+        setShowSearch(s => !s)
+        setShowBrowser(false)
+      }
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [eraInfo, panelOpen])
+  }, [showHub, showSearch, showBrowser, eraInfo, panelOpen])
 
   // ── Init map ──────────────────────────────────────────────────────────────
   useEffect(() => {
@@ -275,9 +267,6 @@ export default function MapView({ selectedYear, onYearChange, onOpenQuiz }) {
     animFrameRef.current = requestAnimationFrame(tick)
   }, [selectedYear, mapReady])
 
-  // ── Reset active event when year changes ─────────────────────────────────
-  useEffect(() => { setActiveEventIdx(null) }, [selectedYear])
-
   // ── Markers + panel open state ────────────────────────────────────────────
   useEffect(() => {
     if (!mapReady || !mapRef.current) return
@@ -286,7 +275,17 @@ export default function MapView({ selectedYear, onYearChange, onOpenQuiz }) {
     markersRef.current = []
 
     const yearEvts = events.filter(e => e.year === selectedYear)
-    const era      = getEraForYear(selectedYear)
+
+    // Resolve pending active-event set by handleEventSelect cross-year navigation
+    const pending = pendingEventRef.current
+    pendingEventRef.current = null
+    if (pending != null) {
+      const pendingEvt = events[pending]
+      const idx = pendingEvt ? yearEvts.findIndex(e => e === pendingEvt) : -1
+      setActiveEventIdx(idx >= 0 ? idx : null)
+    } else {
+      setActiveEventIdx(null)
+    }
 
     if (yearEvts.length === 0) {
       setPanelOpen(true)
@@ -323,6 +322,20 @@ export default function MapView({ selectedYear, onYearChange, onOpenQuiz }) {
     setPanelOpen(true)
   }, [selectedYear, mapReady])
 
+  // ── Event select handler (called from search / browser overlays) ──────────
+  const handleEventSelect = (event) => {
+    setShowSearch(false)
+    setShowBrowser(false)
+    setPanelOpen(true)
+    if (event.year === selectedYear) {
+      const yearEvts = events.filter(e => e.year === event.year)
+      setActiveEventIdx(yearEvts.indexOf(event))
+    } else {
+      pendingEventRef.current = events.indexOf(event)
+      onYearChange(event.year)
+    }
+  }
+
   // ── Derived render values ─────────────────────────────────────────────────
   const currentEra      = getEraForYear(selectedYear)
   const exactYearEvents = events.filter(e => e.year === selectedYear)
@@ -334,26 +347,17 @@ export default function MapView({ selectedYear, onYearChange, onOpenQuiz }) {
 
       <EffectsLayer effect={activeEffect} />
 
-      {/* Map theme toggle */}
-      <div className="absolute left-4 top-4 z-10 flex overflow-hidden rounded-full bg-black/50 backdrop-blur-sm ring-1 ring-white/10">
-        {([
-          { key: 'explore', label: 'Explore', Icon: SunIcon  },
-          { key: 'light',   label: 'Minimal', Icon: MoonIcon },
-        ]).map(({ key, label, Icon }) => (
-          <button
-            key={key}
-            onClick={() => setMapTheme(key)}
-            className={`flex items-center gap-1.5 px-3 py-1.5 text-[10px] tracking-[0.2em] uppercase transition-all duration-200 ${
-              mapTheme === key
-                ? 'bg-orange-500 text-white shadow-inner'
-                : 'text-white/35 hover:text-white/65'
-            }`}
-          >
-            <Icon />
-            {label}
-          </button>
-        ))}
-      </div>
+      {/* Command hub — single entry point for all secondary actions */}
+      <CommandHub
+        open={showHub}
+        onClose={() => setShowHub(false)}
+        onToggle={() => setShowHub(h => !h)}
+        mapTheme={mapTheme}
+        onThemeChange={setMapTheme}
+        onOpenSearch={() => setShowSearch(true)}
+        onOpenBrowse={() => setShowBrowser(true)}
+        onOpenQuiz={onOpenQuiz}
+      />
 
       {/* Era badge — top-center, appears only when an era is active */}
       {currentEra && (
@@ -424,24 +428,18 @@ export default function MapView({ selectedYear, onYearChange, onOpenQuiz }) {
         </div>
       )}
 
+      {showSearch && (
+        <SearchOverlay onSelect={handleEventSelect} onClose={() => setShowSearch(false)} />
+      )}
+      {showBrowser && (
+        <EventBrowserPanel onSelect={handleEventSelect} onClose={() => setShowBrowser(false)} />
+      )}
+
       <YearSlider
         year={selectedYear}
         onChange={onYearChange}
         hasEvents={exactYearEvents.length > 0}
       />
-
-      {/* Quiz FAB */}
-      <button
-        onClick={onOpenQuiz}
-        className="absolute bottom-36 right-4 z-30 flex h-12 w-12 flex-col items-center justify-center gap-0.5 rounded-full bg-orange-500 shadow-lg shadow-orange-500/30 transition-all duration-200 hover:bg-orange-400 hover:scale-105 focus:outline-none"
-        aria-label="Open quiz"
-      >
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
-          <path d="M12 20h9" />
-          <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
-        </svg>
-        <span className="text-[7px] font-bold tracking-[0.2em] text-white/80 uppercase leading-none">Quiz</span>
-      </button>
 
       {/* Reopen tab — appears on the right edge when panel is closed */}
       {!panelOpen && (

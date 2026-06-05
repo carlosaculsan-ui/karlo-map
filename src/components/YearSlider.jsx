@@ -1,5 +1,6 @@
 import { useState, useId, useRef, useEffect } from 'react'
 import eras from '../data/eras'
+import events from '../data/events'
 
 const MIN = 900
 const MAX = 2026
@@ -17,11 +18,14 @@ const ERA_COLORS = [
   '#eab308',
 ]
 
+const EVENT_YEARS = [...new Set(events.map(e => e.year))].sort((a, b) => a - b)
+
 export default function YearSlider({ year, onChange, hasEvents }) {
   const [inputVal,  setInputVal]  = useState(String(year))
   const [error,     setError]     = useState(false)
   const [errorMsg,  setErrorMsg]  = useState('')
   const [focused,   setFocused]   = useState(false)
+  const [isPlaying, setIsPlaying] = useState(false)
   const inputRef = useRef(null)
   const inputId  = useId()
 
@@ -65,6 +69,16 @@ export default function YearSlider({ year, onChange, hasEvents }) {
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
   }, [])
+
+  useEffect(() => {
+    if (!isPlaying) return
+    const id = setInterval(() => {
+      const next = EVENT_YEARS.find(y => y > year)
+      if (!next) { setIsPlaying(false); return }
+      onChange(next)
+    }, 5000)
+    return () => clearInterval(id)
+  }, [isPlaying, year, onChange])
 
   return (
     <div
@@ -197,6 +211,27 @@ export default function YearSlider({ year, onChange, hasEvents }) {
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M9 18l6-6-6-6" />
               </svg>
+            </button>
+
+            <button
+              onClick={() => setIsPlaying(p => !p)}
+              aria-label={isPlaying ? 'Pause tour' : 'Play tour'}
+              className={`flex h-7 w-7 min-h-[44px] min-w-[44px] md:min-h-0 md:min-w-0 shrink-0 items-center justify-center rounded-full ring-1 transition-colors focus:outline-none ${
+                isPlaying
+                  ? 'bg-orange-500 ring-orange-400/60 text-white hover:bg-orange-400'
+                  : 'bg-white/15 ring-white/25 text-white/80 hover:bg-orange-500/70 hover:ring-orange-400/60 hover:text-white'
+              }`}
+            >
+              {isPlaying ? (
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor">
+                  <rect x="6" y="4" width="4" height="16" rx="1" />
+                  <rect x="14" y="4" width="4" height="16" rx="1" />
+                </svg>
+              ) : (
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5,3 19,12 5,21" />
+                </svg>
+              )}
             </button>
 
           </div>
