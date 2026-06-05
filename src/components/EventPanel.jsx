@@ -1,3 +1,5 @@
+import { useEffect, useRef } from 'react'
+
 // Mental model: red = conflict · blue = governance · amber = culture/spirit · teal = commerce · purple = disaster · indigo = exploration
 const BADGE = {
   revolution: { bg: 'bg-red-500/20',    text: 'text-red-400',    label: 'Revolution' },
@@ -11,6 +13,12 @@ const BADGE = {
 }
 
 export default function EventPanel({ events, open, onClose }) {
+  const scrollRef = useRef(null)
+
+  useEffect(() => {
+    if (open && scrollRef.current) scrollRef.current.scrollTop = 0
+  }, [open, events])
+
   return (
     <div
       className="event-panel-wrapper absolute z-20 transition-all duration-300 ease-out"
@@ -52,7 +60,7 @@ export default function EventPanel({ events, open, onClose }) {
         </div>
 
         {/* Scrollable event cards / empty state */}
-        <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 py-4">
+        <div ref={scrollRef} className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 py-4">
           {events.length === 0 ? (
             <div className="flex flex-col items-center justify-center gap-3 py-8 text-center">
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5">
