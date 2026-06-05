@@ -76,16 +76,19 @@ export default function YearSlider({ year, onChange, hasEvents }) {
 
           {/* Left: year input */}
           <div className="w-28 shrink-0">
-            <div className="mb-1.5 flex items-center gap-1.5">
-              <label
-                htmlFor={inputId}
-                className="select-none text-[10px] tracking-[0.35em] text-white/30 uppercase cursor-pointer"
-              >
-                Year
-              </label>
-              {hasEvents && (
-                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-orange-500" />
-              )}
+            <div className="mb-1.5 flex items-center justify-between">
+              <div className="flex items-center gap-1.5">
+                <label
+                  htmlFor={inputId}
+                  className="select-none text-[10px] tracking-[0.35em] text-white/30 uppercase cursor-pointer"
+                >
+                  Year
+                </label>
+                {hasEvents && (
+                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-orange-500" title="Historical event" />
+                )}
+              </div>
+              <span className="text-[9px] tracking-[0.2em] text-white/20 uppercase">AD</span>
             </div>
             <input
               ref={inputRef}
@@ -170,12 +173,13 @@ export default function YearSlider({ year, onChange, hasEvents }) {
               <div className="relative mt-1.5 h-4 hidden md:block">
                 {TICKS.map((tick) => {
                   const pct = ((tick - MIN) / (MAX - MIN)) * 100
+                  const tx  = pct <= 0 ? '0%' : pct >= 100 ? '-100%' : '-50%'
                   return (
                     <button
                       key={tick}
                       onClick={() => onChange(tick)}
-                      className="absolute -translate-x-1/2 text-[9px] font-medium text-white/40 hover:text-orange-400 transition-colors focus:outline-none"
-                      style={{ left: `${pct}%` }}
+                      className="absolute text-[9px] font-medium text-white/40 hover:text-orange-400 transition-colors focus:outline-none"
+                      style={{ left: `${pct}%`, transform: `translateX(${tx})` }}
                     >
                       {tick}
                     </button>

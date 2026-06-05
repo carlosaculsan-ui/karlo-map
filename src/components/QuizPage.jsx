@@ -95,7 +95,7 @@ function QuizScreen({ questions, onFinish, onQuit }) {
   const progress = ((index) / questions.length) * 100
 
   return (
-    <div className="flex h-full flex-col px-5 py-6">
+    <div className="relative flex h-full flex-col px-5 py-6">
       {/* Progress */}
       <div className="mb-5">
         <div className="mb-1.5 flex items-center justify-between">

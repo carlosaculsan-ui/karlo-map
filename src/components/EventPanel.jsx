@@ -34,7 +34,7 @@ export default function EventPanel({ events, open, onClose, activeIdx }) {
       <div
         className="relative h-full rounded-t-2xl md:rounded-2xl flex flex-col ring-1 ring-white/8"
         style={{
-          background: 'rgba(26, 25, 23, 0.95)',
+          background: 'rgba(8, 11, 18, 0.95)',
           backdropFilter: 'blur(20px)',
         }}
       >
@@ -66,7 +66,7 @@ export default function EventPanel({ events, open, onClose, activeIdx }) {
         </div>
 
         {/* Scrollable event cards / empty state */}
-        <div ref={scrollRef} className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 py-4">
+        <div ref={scrollRef} className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 pt-4 pb-16" style={{ scrollbarGutter: 'stable' }}>
           {events.length === 0 ? (
             <div className="flex flex-col items-center justify-center gap-3 py-8 text-center">
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5">
