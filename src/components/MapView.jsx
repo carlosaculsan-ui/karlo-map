@@ -232,11 +232,13 @@ export default function MapView({ selectedYear, onYearChange, onOpenQuiz }) {
     setThemeLoading(true)
     map.setStyle(STYLES[mapTheme])
 
-    // GL layers are wiped on setStyle — re-add trade routes once new style loads
+    // GL layers are wiped on setStyle — re-add trade routes once new style loads.
+    // Reveal after style.load + a short grace period so first tiles paint before
+    // the veil lifts; no need to wait for full idle (that's what caused the 2-3s black screen).
     map.once('style.load', () => {
       const era = currentEraRef.current
       if (era?.tradeRoutes?.length) addRouteLayersToMap(map, era)
-      map.once('idle', () => setThemeLoading(false))
+      setTimeout(() => setThemeLoading(false), 350)
     })
   }, [mapTheme, mapReady])
 
@@ -476,11 +478,18 @@ export default function MapView({ selectedYear, onYearChange, onOpenQuiz }) {
         <div className="h-full w-full bg-gradient-to-r from-orange-500/0 via-orange-400 to-orange-500/0 animate-pulse" />
       </div>
 
-      {/* Theme-switch veil — covers white flash during style transition */}
+      {/* Theme-switch veil — covers flash during style transition */}
       <div
-        className="pointer-events-none absolute inset-0 z-40 bg-[#0a0d14] transition-opacity duration-500"
+        className="pointer-events-none absolute inset-0 z-40 flex items-center justify-center bg-[#0a0d14] transition-opacity duration-500"
         style={{ opacity: themeLoading ? 1 : 0 }}
-      />
+      >
+        <p
+          className="text-[10px] tracking-[0.45em] text-amber-400/50 uppercase"
+          style={{ fontFamily: "'Cinzel', serif" }}
+        >
+          {mapTheme === 'explore' ? 'Explore' : 'Minimal'}
+        </p>
+      </div>
 
       {/* Dark loading veil — fades out when map tiles are ready */}
       <div
