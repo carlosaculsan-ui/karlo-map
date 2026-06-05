@@ -29,9 +29,9 @@ export default function App() {
   const handleBegin = () => navigate('map')
 
   return (
-    <div className="h-screen w-screen overflow-hidden bg-black">
+    <div className="h-full w-full overflow-hidden bg-black">
       <div
-        className="relative h-screen w-screen transition-opacity duration-[400ms]"
+        className="relative h-full w-full transition-opacity duration-[400ms]"
         style={{ opacity: fading ? 0 : 1 }}
       >
         {screen === 'intro' && <IntroScreen onBegin={handleBegin} />}
