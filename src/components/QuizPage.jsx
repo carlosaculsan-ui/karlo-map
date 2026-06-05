@@ -64,6 +64,7 @@ function QuizScreen({ questions, onFinish, onQuit }) {
   const [index,    setIndex]    = useState(0)
   const [selected, setSelected] = useState(null)
   const [score,    setScore]    = useState(0)
+  const [quitting, setQuitting] = useState(false)
 
   const q        = questions[index]
   const answered = selected !== null
@@ -102,7 +103,7 @@ function QuizScreen({ questions, onFinish, onQuit }) {
           <div className="flex items-center gap-3">
             <span className="text-[10px] tracking-[0.3em] text-white/30 uppercase">{score} correct</span>
             <button
-              onClick={onQuit}
+              onClick={() => setQuitting(true)}
               className="inline-flex min-h-[44px] items-center text-[10px] tracking-[0.25em] text-white/20 uppercase hover:text-red-400/70 transition-colors focus:outline-none"
             >
               Quit
@@ -160,6 +161,31 @@ function QuizScreen({ questions, onFinish, onQuit }) {
           >
             {isLast ? 'See Results' : 'Next Question'}
           </button>
+        </div>
+      )}
+
+      {/* Quit confirmation overlay */}
+      {quitting && (
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-5 px-8 text-center"
+          style={{ background: 'rgba(7, 11, 18, 0.96)', backdropFilter: 'blur(8px)' }}
+        >
+          <p className="text-[10px] tracking-[0.4em] text-white/30 uppercase" style={{ fontFamily: "'Cinzel', serif" }}>End quiz?</p>
+          <p className="text-4xl font-bold font-mono text-orange-400">{score}<span className="text-xl text-white/20">/{index + 1}</span></p>
+          <p className="text-xs text-white/30">correct so far · question {index + 1} of {questions.length}</p>
+          <div className="flex w-full max-w-xs flex-col gap-2.5 pt-2">
+            <button
+              onClick={() => setQuitting(false)}
+              className="w-full rounded-xl bg-orange-500 py-3 text-sm font-bold tracking-wide text-white transition-colors hover:bg-orange-400 focus:outline-none"
+            >
+              Continue Quiz
+            </button>
+            <button
+              onClick={onQuit}
+              className="w-full rounded-xl border border-white/10 py-3 text-sm text-white/40 transition-colors hover:border-white/20 hover:text-white/60 focus:outline-none"
+            >
+              End Quiz
+            </button>
+          </div>
         </div>
       )}
     </div>

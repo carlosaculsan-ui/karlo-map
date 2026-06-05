@@ -21,18 +21,29 @@ export default function App() {
   return (
     <div className="h-screen w-screen overflow-hidden bg-black">
       <div
-        className="h-screen w-screen transition-opacity duration-[400ms]"
+        className="relative h-screen w-screen transition-opacity duration-[400ms]"
         style={{ opacity: fading ? 0 : 1 }}
       >
         {screen === 'intro' && <IntroScreen onBegin={handleBegin} />}
-        {screen === 'map'   && (
-          <MapView
-            selectedYear={selectedYear}
-            onYearChange={setSelectedYear}
-            onOpenQuiz={() => navigate('quiz')}
-          />
+
+        {/* MapView stays mounted from first visit onward to avoid re-initialising the map */}
+        {screen !== 'intro' && (
+          <div
+            className="absolute inset-0"
+            style={{
+              visibility: screen === 'map' ? 'visible' : 'hidden',
+              pointerEvents: screen === 'map' ? 'auto' : 'none',
+            }}
+          >
+            <MapView
+              selectedYear={selectedYear}
+              onYearChange={setSelectedYear}
+              onOpenQuiz={() => navigate('quiz')}
+            />
+          </div>
         )}
-        {screen === 'quiz'  && <QuizPage onBack={() => navigate('map')} />}
+
+        {screen === 'quiz' && <QuizPage onBack={() => navigate('map')} />}
       </div>
     </div>
   )

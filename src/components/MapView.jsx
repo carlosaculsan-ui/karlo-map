@@ -436,11 +436,11 @@ export default function MapView({ selectedYear, onYearChange, onOpenQuiz }) {
         className="absolute bottom-36 right-4 z-30 flex h-12 w-12 flex-col items-center justify-center gap-0.5 rounded-full bg-orange-500 shadow-lg shadow-orange-500/30 transition-all duration-200 hover:bg-orange-400 hover:scale-105 focus:outline-none"
         aria-label="Open quiz"
       >
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="text-white">
-          <circle cx="12" cy="12" r="10" />
-          <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-          <line x1="12" y1="17" x2="12.01" y2="17" />
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
+          <path d="M12 20h9" />
+          <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
         </svg>
+        <span className="text-[7px] font-bold tracking-[0.2em] text-white/80 uppercase leading-none">Quiz</span>
       </button>
 
       {/* Reopen tab — appears on the right edge when panel is closed */}
