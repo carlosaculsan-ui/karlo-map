@@ -89,7 +89,7 @@ export default function YearSlider({ year, onChange, hasEvents }) {
         <div className="flex items-center gap-4">
 
           {/* Left: year input */}
-          <div className="w-28 shrink-0">
+          <div className="w-24 md:w-28 shrink-0">
             <div className="mb-1.5 flex items-center justify-between">
               <div className="flex items-center gap-1.5">
                 <label
@@ -102,7 +102,30 @@ export default function YearSlider({ year, onChange, hasEvents }) {
                   <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-orange-500" title="Historical event" />
                 )}
               </div>
-              <span className="text-[9px] tracking-[0.2em] text-white/20 uppercase">AD</span>
+              <div className="flex items-center gap-1.5">
+                <span className="text-[9px] tracking-[0.2em] text-white/20 uppercase">AD</span>
+                {/* Play/pause button — mobile only, lives here to free up slider width */}
+                <button
+                  onClick={() => setIsPlaying(p => !p)}
+                  aria-label={isPlaying ? 'Pause tour' : 'Play tour'}
+                  className={`md:hidden flex h-5 w-5 items-center justify-center rounded-full ring-1 transition-colors focus:outline-none ${
+                    isPlaying
+                      ? 'bg-orange-500 ring-orange-400/60 text-white'
+                      : 'bg-white/10 ring-white/20 text-white/60 hover:bg-orange-500/50'
+                  }`}
+                >
+                  {isPlaying ? (
+                    <svg width="7" height="7" viewBox="0 0 24 24" fill="currentColor">
+                      <rect x="6" y="4" width="4" height="16" rx="1" />
+                      <rect x="14" y="4" width="4" height="16" rx="1" />
+                    </svg>
+                  ) : (
+                    <svg width="7" height="7" viewBox="0 0 24 24" fill="currentColor">
+                      <polygon points="5,3 19,12 5,21" />
+                    </svg>
+                  )}
+                </button>
+              </div>
             </div>
             <input
               ref={inputRef}
@@ -216,7 +239,7 @@ export default function YearSlider({ year, onChange, hasEvents }) {
             <button
               onClick={() => setIsPlaying(p => !p)}
               aria-label={isPlaying ? 'Pause tour' : 'Play tour'}
-              className={`flex h-7 w-7 min-h-[44px] min-w-[44px] md:min-h-0 md:min-w-0 shrink-0 items-center justify-center rounded-full ring-1 transition-colors focus:outline-none ${
+              className={`hidden md:flex h-7 w-7 shrink-0 items-center justify-center rounded-full ring-1 transition-colors focus:outline-none ${
                 isPlaying
                   ? 'bg-orange-500 ring-orange-400/60 text-white hover:bg-orange-400'
                   : 'bg-white/15 ring-white/25 text-white/80 hover:bg-orange-500/70 hover:ring-orange-400/60 hover:text-white'

@@ -386,7 +386,7 @@ export default function MapView({ selectedYear, onYearChange, onOpenQuiz }) {
 
       {/* Era badge — top-center, appears only when an era is active */}
       {currentEra && (
-        <div className="absolute top-14 left-1/2 z-10 -translate-x-1/2 md:top-4">
+        <div className="absolute top-[4.25rem] left-1/2 z-10 -translate-x-1/2 md:top-4">
           <button
             onClick={() => {
               const next = eraInfo?.name === currentEra.name ? null : currentEra
@@ -466,23 +466,41 @@ export default function MapView({ selectedYear, onYearChange, onOpenQuiz }) {
         hasEvents={exactYearEvents.length > 0}
       />
 
-      {/* Reopen tab — appears on the right edge when panel is closed */}
+      {/* Reopen panel button — pill above the slider on mobile, vertical tab on desktop */}
       {!panelOpen && (
-        <button
-          onClick={() => setPanelOpen(true)}
-          className="absolute top-36 right-0 z-20 flex flex-col items-center gap-1 rounded-l-xl bg-black/70 px-2 py-3 backdrop-blur-sm ring-1 ring-white/10 transition-colors hover:bg-black/85 focus:outline-none"
-        >
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="text-white/50">
-            <rect x="3" y="3" width="18" height="18" rx="2" />
-            <line x1="9" y1="3" x2="9" y2="21" />
-          </svg>
-          <span
-            className="select-none text-[8px] tracking-[0.3em] text-white/40 uppercase"
-            style={{ writingMode: 'vertical-rl', fontFamily: "'Cinzel', serif" }}
+        <>
+          {/* Mobile: pill floating above the year slider */}
+          <button
+            onClick={() => setPanelOpen(true)}
+            className="md:hidden absolute z-20 left-1/2 -translate-x-1/2 flex items-center gap-2 rounded-full bg-black/75 px-4 py-2 backdrop-blur-sm ring-1 ring-white/10 transition-colors hover:bg-black/90 focus:outline-none"
+            style={{ bottom: 'calc(6.5rem + env(safe-area-inset-bottom, 0px) + 0.5rem)' }}
           >
-            {exactYearEvents.length > 0 ? `${exactYearEvents.length} Event${exactYearEvents.length > 1 ? 's' : ''}` : 'Events'}
-          </span>
-        </button>
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="text-orange-400/70">
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <line x1="9" y1="3" x2="9" y2="21" />
+            </svg>
+            <span className="select-none text-[10px] tracking-[0.3em] text-white/50 uppercase" style={{ fontFamily: "'Cinzel', serif" }}>
+              {exactYearEvents.length > 0 ? `${exactYearEvents.length} Event${exactYearEvents.length > 1 ? 's' : ''}` : 'Events'}
+            </span>
+          </button>
+
+          {/* Desktop: vertical tab on the right edge */}
+          <button
+            onClick={() => setPanelOpen(true)}
+            className="hidden md:flex absolute top-36 right-0 z-20 flex-col items-center gap-1 rounded-l-xl bg-black/70 px-2 py-3 backdrop-blur-sm ring-1 ring-white/10 transition-colors hover:bg-black/85 focus:outline-none"
+          >
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="text-white/50">
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <line x1="9" y1="3" x2="9" y2="21" />
+            </svg>
+            <span
+              className="select-none text-[8px] tracking-[0.3em] text-white/40 uppercase"
+              style={{ writingMode: 'vertical-rl', fontFamily: "'Cinzel', serif" }}
+            >
+              {exactYearEvents.length > 0 ? `${exactYearEvents.length} Event${exactYearEvents.length > 1 ? 's' : ''}` : 'Events'}
+            </span>
+          </button>
+        </>
       )}
 
       <EventPanel

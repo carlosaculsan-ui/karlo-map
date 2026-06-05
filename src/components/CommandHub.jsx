@@ -37,7 +37,7 @@ export default function CommandHub({
       <button
         onClick={onToggle}
         aria-label="Open menu"
-        className={`flex h-9 w-9 items-center justify-center rounded-full backdrop-blur-sm ring-1 transition-all duration-200 focus:outline-none ${
+        className={`flex h-9 w-9 min-h-[44px] min-w-[44px] md:min-h-0 md:min-w-0 items-center justify-center rounded-full backdrop-blur-sm ring-1 transition-all duration-200 focus:outline-none ${
           open
             ? 'bg-orange-500 ring-orange-400/60 text-white shadow-lg shadow-orange-500/25'
             : 'bg-black/60 ring-white/15 text-white/55 hover:bg-black/75 hover:text-white/85'
