@@ -12,10 +12,11 @@ const BADGE = {
   exploration:{ bg: 'bg-indigo-500/20', text: 'text-indigo-400', label: 'Exploration'},
 }
 
-export default function EventPanel({ events, open, onClose, activeIdx }) {
+export default function EventPanel({ events, open, onClose, activeIdx, onCardClick }) {
   const scrollRef  = useRef(null)
   const cardRefs   = useRef([])
 
+  // Scroll to active card when it changes
   useEffect(() => {
     if (!open || !scrollRef.current) return
     if (activeIdx != null && cardRefs.current[activeIdx]) {
@@ -24,6 +25,15 @@ export default function EventPanel({ events, open, onClose, activeIdx }) {
       scrollRef.current.scrollTop = 0
     }
   }, [open, events, activeIdx])
+
+  // Pulse the active card whenever activeIdx changes
+  useEffect(() => {
+    if (activeIdx == null || !cardRefs.current[activeIdx]) return
+    const el = cardRefs.current[activeIdx]
+    el.classList.remove('card-pulse')
+    void el.offsetWidth
+    el.classList.add('card-pulse')
+  }, [activeIdx])
 
   return (
     <div
@@ -97,10 +107,13 @@ export default function EventPanel({ events, open, onClose, activeIdx }) {
                   <div
                     key={i}
                     ref={el => { cardRefs.current[i] = el }}
+                    onClick={() => onCardClick?.(i)}
                     className={`rounded-xl border p-4 transition-colors duration-300 ${
+                      onCardClick ? 'cursor-pointer' : ''
+                    } ${
                       i === activeIdx
                         ? 'border-amber-400/30 bg-white/[0.06]'
-                        : 'border-white/5 bg-white/[0.03]'
+                        : 'border-white/5 bg-white/[0.03] hover:border-white/10 hover:bg-white/[0.05]'
                     }`}
                   >
                     <div className="mb-2.5 flex items-start justify-between gap-3">

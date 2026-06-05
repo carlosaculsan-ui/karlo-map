@@ -295,7 +295,13 @@ export default function MapView({ selectedYear, onYearChange, onOpenQuiz }) {
 
     yearEvts.forEach((event, i) => {
       const el = makeMarkerEl()
-      el.addEventListener('click', () => { setPanelOpen(true); setActiveEventIdx(i) })
+      el.addEventListener('click', () => {
+        setPanelOpen(true)
+        setActiveEventIdx(i)
+        el.classList.remove('marker-active')
+        void el.offsetWidth
+        el.classList.add('marker-active')
+      })
       const marker = new maplibregl.Marker({ element: el })
         .setLngLat([event.lng, event.lat])
         .addTo(mapRef.current)
@@ -321,6 +327,25 @@ export default function MapView({ selectedYear, onYearChange, onOpenQuiz }) {
 
     setPanelOpen(true)
   }, [selectedYear, mapReady])
+
+  // ── Sync active-marker CSS class (highlight + initial pulse) ────────────
+  useEffect(() => {
+    markersRef.current.forEach((marker, i) => {
+      const el = marker.getElement()
+      if (!el) return
+      el.classList.toggle('marker-active', i === activeEventIdx)
+    })
+  }, [activeEventIdx])
+
+  // ── Card click: scroll panel to card and pulse marker ────────────────────
+  const handleCardClick = (i) => {
+    setActiveEventIdx(i)
+    const el = markersRef.current[i]?.getElement()
+    if (!el) return
+    el.classList.remove('marker-active')
+    void el.offsetWidth
+    el.classList.add('marker-active')
+  }
 
   // ── Event select handler (called from search / browser overlays) ──────────
   const handleEventSelect = (event) => {
@@ -465,6 +490,7 @@ export default function MapView({ selectedYear, onYearChange, onOpenQuiz }) {
         open={panelOpen}
         onClose={() => setPanelOpen(false)}
         activeIdx={activeEventIdx}
+        onCardClick={handleCardClick}
       />
 
 
