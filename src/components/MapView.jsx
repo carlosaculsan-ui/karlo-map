@@ -175,12 +175,13 @@ export default function MapView({ selectedYear, onYearChange, onOpenQuiz }) {
   const currentEraRef       = useRef(null)   // tracks active era for style.load re-add
   const animFrameRef        = useRef(null)   // requestAnimationFrame id for dash animation
 
-  const [mapReady,     setMapReady]     = useState(false)
-  const [panelOpen,    setPanelOpen]    = useState(false)
-  const [mapTheme,     setMapTheme]     = useState('explore')
-  const [eraInfo,      setEraInfo]      = useState(null)
-  const [themeLoading, setThemeLoading] = useState(false)
-  const [tileLoading,  setTileLoading]  = useState(false)
+  const [mapReady,       setMapReady]       = useState(false)
+  const [panelOpen,      setPanelOpen]      = useState(false)
+  const [mapTheme,       setMapTheme]       = useState('explore')
+  const [eraInfo,        setEraInfo]        = useState(null)
+  const [themeLoading,   setThemeLoading]   = useState(false)
+  const [tileLoading,    setTileLoading]    = useState(false)
+  const [activeEventIdx, setActiveEventIdx] = useState(null)
 
   // ── Global Escape handler — closes whichever overlay is topmost ──────────
   useEffect(() => {
@@ -272,6 +273,9 @@ export default function MapView({ selectedYear, onYearChange, onOpenQuiz }) {
     animFrameRef.current = requestAnimationFrame(tick)
   }, [selectedYear, mapReady])
 
+  // ── Reset active event when year changes ─────────────────────────────────
+  useEffect(() => { setActiveEventIdx(null) }, [selectedYear])
+
   // ── Markers + panel open state ────────────────────────────────────────────
   useEffect(() => {
     if (!mapReady || !mapRef.current) return
@@ -288,9 +292,9 @@ export default function MapView({ selectedYear, onYearChange, onOpenQuiz }) {
       return
     }
 
-    yearEvts.forEach(event => {
+    yearEvts.forEach((event, i) => {
       const el = makeMarkerEl()
-      el.addEventListener('click', () => setPanelOpen(true))
+      el.addEventListener('click', () => { setPanelOpen(true); setActiveEventIdx(i) })
       const marker = new maplibregl.Marker({ element: el })
         .setLngLat([event.lng, event.lat])
         .addTo(mapRef.current)
@@ -460,6 +464,7 @@ export default function MapView({ selectedYear, onYearChange, onOpenQuiz }) {
         events={exactYearEvents}
         open={panelOpen}
         onClose={() => setPanelOpen(false)}
+        activeIdx={activeEventIdx}
       />
 
 

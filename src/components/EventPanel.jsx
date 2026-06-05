@@ -12,12 +12,18 @@ const BADGE = {
   exploration:{ bg: 'bg-indigo-500/20', text: 'text-indigo-400', label: 'Exploration'},
 }
 
-export default function EventPanel({ events, open, onClose }) {
-  const scrollRef = useRef(null)
+export default function EventPanel({ events, open, onClose, activeIdx }) {
+  const scrollRef  = useRef(null)
+  const cardRefs   = useRef([])
 
   useEffect(() => {
-    if (open && scrollRef.current) scrollRef.current.scrollTop = 0
-  }, [open, events])
+    if (!open || !scrollRef.current) return
+    if (activeIdx != null && cardRefs.current[activeIdx]) {
+      scrollRef.current.scrollTo({ top: cardRefs.current[activeIdx].offsetTop - 8, behavior: 'smooth' })
+    } else {
+      scrollRef.current.scrollTop = 0
+    }
+  }, [open, events, activeIdx])
 
   return (
     <div
@@ -90,7 +96,12 @@ export default function EventPanel({ events, open, onClose }) {
                 return (
                   <div
                     key={i}
-                    className="rounded-xl border border-white/5 bg-white/[0.03] p-4"
+                    ref={el => { cardRefs.current[i] = el }}
+                    className={`rounded-xl border p-4 transition-colors duration-300 ${
+                      i === activeIdx
+                        ? 'border-amber-400/30 bg-white/[0.06]'
+                        : 'border-white/5 bg-white/[0.03]'
+                    }`}
                   >
                     <div className="mb-2.5 flex items-start justify-between gap-3">
                       <h3 className="text-sm font-bold leading-snug text-white tracking-wide">
