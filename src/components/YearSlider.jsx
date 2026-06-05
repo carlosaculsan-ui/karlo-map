@@ -148,8 +148,8 @@ export default function YearSlider({ year, onChange, hasEvents }) {
                   : 'text-orange-300 ring-1 ring-orange-400/30 hover:ring-orange-400/50 focus:ring-orange-400/70'
                 }`}
             />
-            <p className={`mt-1 min-h-[12px] text-center text-[8px] tracking-wide transition-colors duration-200 ${error ? 'text-red-400' : 'text-white/20'}`}>
-              {error ? errorMsg : 'Press Y to focus'}
+            <p className={`mt-1 min-h-[12px] text-center text-[9px] tracking-wide transition-colors duration-200 ${error ? 'text-red-400' : 'text-white/20'}`}>
+              {error ? errorMsg : <span className="hidden md:inline">Press Y to focus</span>}
             </p>
           </div>
 

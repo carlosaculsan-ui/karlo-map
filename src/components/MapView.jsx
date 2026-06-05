@@ -393,9 +393,9 @@ export default function MapView({ selectedYear, onYearChange, onOpenQuiz }) {
               setEraInfo(next)
               if (next) setPanelOpen(false)
             }}
-            className="group flex items-center gap-1.5 rounded-full bg-black/60 px-3 py-1 backdrop-blur-sm ring-1 ring-transparent focus:outline-none hover:bg-black/75 hover:ring-amber-400/30 transition-all duration-200"
+            className="group flex items-center gap-1.5 rounded-full bg-black/60 px-3 py-1 backdrop-blur-sm ring-1 ring-transparent focus:outline-none hover:bg-black/75 hover:ring-amber-400/30 transition-all duration-200 max-w-[calc(100vw-4rem)] overflow-hidden"
           >
-            <span className="select-none whitespace-nowrap text-xs tracking-widest text-amber-400 group-hover:text-amber-300 uppercase transition-colors duration-200">
+            <span className="select-none truncate text-xs tracking-widest text-amber-400 group-hover:text-amber-300 uppercase transition-colors duration-200">
               {currentEra.name}
             </span>
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="text-amber-400/50 group-hover:text-amber-300/80 shrink-0 transition-colors duration-200">

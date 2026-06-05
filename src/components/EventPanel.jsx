@@ -59,7 +59,7 @@ export default function EventPanel({ events, open, onClose, activeIdx, onCardCli
         {/* Header */}
         <div className="flex shrink-0 items-center justify-between px-4 pt-1.5 pb-1.5 md:pt-4 md:pb-3 border-b border-white/5">
           <span
-            className="select-none text-[11px] tracking-[0.45em] text-orange-400/80 uppercase"
+            className="select-none text-[11px] tracking-[0.45em] text-orange-400 uppercase"
             style={{ fontFamily: "'Cinzel', serif" }}
           >
             Events
