@@ -124,13 +124,6 @@ export default function IntroScreen({ onBegin }) {
           Begin
         </button>
 
-        {/* Year range hint */}
-        <p
-          className="text-[10px] tracking-[0.3em] text-white/25 uppercase"
-          style={{ animation: 'fadeIn 1.2s 1.8s ease forwards', opacity: 0 }}
-        >
-          Spanning 1,126 years
-        </p>
       </div>
     </div>
   )

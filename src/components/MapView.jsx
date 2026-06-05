@@ -284,6 +284,7 @@ export default function MapView({ selectedYear, onYearChange, onOpenQuiz }) {
 
     if (yearEvts.length === 0) {
       setPanelOpen(true)
+      mapRef.current.flyTo({ center: [122.0, 12.0], zoom: 5, duration: 1000, essential: true })
       return
     }
 

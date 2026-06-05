@@ -6,7 +6,7 @@ import QuizPage from './components/QuizPage'
 export default function App() {
   const [screen, setScreen] = useState('intro')
   const [fading, setFading] = useState(false)
-  const [selectedYear, setSelectedYear] = useState(1896)
+  const [selectedYear, setSelectedYear] = useState(900)
 
   const navigate = (to) => {
     setFading(true)
