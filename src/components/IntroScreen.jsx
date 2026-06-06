@@ -118,7 +118,7 @@ export default function IntroScreen({ onBegin }) {
         {/* Begin button */}
         <button
           onClick={onBegin}
-          className="mt-2 rounded-full bg-gradient-to-r from-amber-600 to-orange-500 px-10 py-3 text-xs tracking-[0.3em] text-white uppercase shadow-lg shadow-orange-500/30 transition-all duration-200 hover:brightness-110 hover:shadow-orange-500/50 active:scale-95"
+          className="mt-2 rounded-full bg-gradient-to-r from-amber-600 to-orange-500 px-10 py-3.5 text-xs tracking-[0.3em] text-white uppercase shadow-lg shadow-orange-500/30 transition-all duration-200 hover:brightness-110 hover:shadow-orange-500/50 active:scale-95"
           style={{ animation: 'fadeIn 1s 1.4s ease forwards', opacity: 0 }}
         >
           Begin

@@ -66,7 +66,7 @@ export default function EventPanel({ events, open, onClose, activeIdx, onCardCli
           </span>
           <button
             onClick={onClose}
-            className="flex h-6 w-6 min-h-[40px] min-w-[40px] md:min-h-0 md:min-w-0 items-center justify-center rounded-full bg-white/5 text-white/40 transition-colors hover:bg-white/10 hover:text-white/80 focus:outline-none"
+            className="flex h-6 w-6 min-h-[44px] min-w-[44px] md:min-h-0 md:min-w-0 items-center justify-center rounded-full bg-white/5 text-white/40 transition-colors hover:bg-white/10 hover:text-white/80 focus:outline-none"
             aria-label="Close panel"
           >
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
