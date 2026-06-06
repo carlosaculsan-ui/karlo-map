@@ -176,18 +176,19 @@ html, body, #root {
 }
 
 /* ─── EventPanel responsive positioning ─────────────────────────── */
-/* Mobile: slides up from bottom as a sheet                          */
-/* Desktop (md+): slides in from the right as a side panel          */
+/* Mobile: position:fixed full-width bottom sheet                    */
+/* Desktop (md+): position:absolute right-side panel                 */
 
 .event-panel-wrapper {
-  left: 0.75rem;
-  right: 0.75rem;
-  bottom: calc(6.5rem + env(safe-area-inset-bottom, 0px));
-  height: min(38vh, 300px);
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: min(50vh, 360px);
 }
 
 .event-panel-wrapper[data-open="false"] {
-  transform: translateY(110%);
+  transform: translateY(105%);
 }
 
 .event-panel-wrapper[data-open="true"] {
@@ -196,6 +197,7 @@ html, body, #root {
 
 @media (min-width: 768px) {
   .event-panel-wrapper {
+    position: absolute;
     top: 4rem;
     right: 0.75rem;
     bottom: 9rem;

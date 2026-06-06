@@ -310,7 +310,7 @@ export default function MapView({ selectedYear, onYearChange, onOpenQuiz }) {
 
     const isMobile = window.innerWidth < 768
     const pad = isMobile
-      ? { top: 80, bottom: 360, left: 60, right: 60 }
+      ? { top: 80, bottom: 400, left: 60, right: 60 }
       : { top: 80, bottom: 80, left: 60, right: 360 }
 
     if (yearEvts.length === 1) {
@@ -473,7 +473,7 @@ export default function MapView({ selectedYear, onYearChange, onOpenQuiz }) {
           <button
             onClick={() => setPanelOpen(true)}
             className="md:hidden absolute z-20 left-1/2 -translate-x-1/2 flex items-center gap-2 rounded-full bg-black/75 px-4 py-2 backdrop-blur-sm ring-1 ring-white/10 transition-colors hover:bg-black/90 focus:outline-none"
-            style={{ bottom: 'calc(6.5rem + env(safe-area-inset-bottom, 0px) + 0.5rem)' }}
+            style={{ bottom: 'calc(6rem + env(safe-area-inset-bottom, 0px))' }}
           >
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="text-orange-400/70">
               <rect x="3" y="3" width="18" height="18" rx="2" />
