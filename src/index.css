@@ -153,6 +153,14 @@ input[type='range'].timeline-slider::-moz-range-thumb {
   pointer-events: none !important;
 }
 
+/* ─── MapLibre control touch targets (mobile only) ─────────────── */
+@media (max-width: 767px) {
+  .maplibregl-ctrl-group button {
+    width: 44px !important;
+    height: 44px !important;
+  }
+}
+
 /* ─── Focus & tap highlight reset ──────────────────────────────── */
 /* Remove default browser focus rings — components use custom styles */
 *:focus {

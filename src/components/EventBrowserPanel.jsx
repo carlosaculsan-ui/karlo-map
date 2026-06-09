@@ -32,7 +32,7 @@ export default function EventBrowserPanel({ onSelect, onClose }) {
         </div>
         <button
           onClick={onClose}
-          className="flex h-7 w-7 items-center justify-center rounded-full bg-white/5 text-white/40 transition-colors hover:bg-white/10 hover:text-white/80 focus:outline-none"
+          className="flex h-7 w-7 min-h-[44px] min-w-[44px] md:min-h-0 md:min-w-0 items-center justify-center rounded-full bg-white/5 text-white/40 transition-colors hover:bg-white/10 hover:text-white/80 focus:outline-none"
         >
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
             <path d="M18 6L6 18M6 6l12 12" />
