@@ -50,7 +50,7 @@ export default function EventBrowserPanel({ onSelect, onClose }) {
             <button
               key={cat}
               onClick={() => setActiveCat(cat)}
-              className={`rounded-full px-3 py-1 text-[10px] font-semibold capitalize tracking-wide transition-colors focus:outline-none ${
+              className={`rounded-full px-3 py-1 min-h-[44px] md:min-h-0 text-[10px] font-semibold capitalize tracking-wide transition-colors focus:outline-none ${
                 isActive
                   ? 'bg-orange-500 text-white'
                   : `bg-white/5 ${badge?.text ?? 'text-white/40'} hover:bg-white/10`

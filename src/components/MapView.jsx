@@ -415,7 +415,7 @@ export default function MapView({ selectedYear, onYearChange, onOpenQuiz }) {
       {/* Era info popup */}
       {eraInfo && (
         <div
-          className="absolute top-24 left-1/2 z-20 -translate-x-1/2 w-80 max-w-[calc(100vw-1rem)] rounded-2xl p-4 md:top-14 md:max-w-[calc(100vw-2rem)]"
+          className="absolute top-28 left-1/2 z-20 -translate-x-1/2 w-80 max-w-[calc(100vw-1rem)] rounded-2xl p-4 md:top-14 md:max-w-[calc(100vw-2rem)]"
           style={{
             background: 'rgba(5, 8, 15, 0.93)',
             backdropFilter: 'blur(18px)',
