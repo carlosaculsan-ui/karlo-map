@@ -76,7 +76,7 @@ export default function EventPanel({ events, open, onClose, activeIdx, onCardCli
         </div>
 
         {/* Scrollable event cards / empty state */}
-        <div ref={scrollRef} className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 pt-4" style={{ scrollbarGutter: 'stable', paddingBottom: 'max(3.5rem, calc(1rem + env(safe-area-inset-bottom, 0px)))' }}>
+        <div ref={scrollRef} className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 pt-4 pb-8" style={{ scrollbarGutter: 'stable' }}>
           {events.length === 0 ? (
             <div className="flex flex-col items-center justify-center gap-3 py-8 text-center">
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5">
